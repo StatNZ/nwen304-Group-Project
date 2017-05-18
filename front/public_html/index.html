@@ -14,10 +14,7 @@ and open the template in the editor.
         <link href="css/main_site.css" rel="stylesheet">
                 
         <!-- the starting scripts needed for our site -->
-        <script src="js/jquery-3.2.1.js"></script>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/jquery-ui.min.js"></script>
-
+      
     </head>
     
     
@@ -25,30 +22,89 @@ and open the template in the editor.
     
     <body>
         <div id="container">
-            <nav class="navigation">
-              <a id="home-button" href="" title="Home">Home</a>
-              <a id="menu-button" href="#menu" title="Menu">Menu</a>
-              <a id="order-button" href="#orders" title="Orders">Orders</a>
-              <a id="kart-button"  href="#kart" title="Kart">Kart</a>
-            </nav>
-        
-
-        <div id="flashing-images">
-            flash as images to go here
-        </div>
-        
-        <div id="latest-catalog">
-            the latest catalog to go here
-        </div>
-        
-        <div id="bottom-header">
-            <nav class="help-buttons">
-                <ul>
-                    <li>Help</li>
-                    <li>Contact</li>
-                </ul>
-            </nav>
-        </div>
+            <div id="wrapper">
+                <div id="holder">
+                    
+                    <div id="home">
+                        <ul>
+                            <li class="pad">
+                                <a href="#"><span>Home</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="menu">
+                        <ul id="using">
+                            <li class="pad"><a href="#"><span>Menu</span></a>
+                                <ul>
+                                    <!-- This is not an error -->
+                                    <div class="sub-wrapper-menu">
+                                        <div class="sub-container">
+                                            <div class="sub-holder">
+                                                <div class="sub-l">
+                                                    <h3>Men</h3>
+                                                    <ul>
+                                                        <li><a href="#">Men</a></li>
+                                                        <li><a href="#">Men</a></li>
+                                                        <li><a href="#">Men</a></li>
+                                                        <li><a href="#">Men</a></li>
+                                                        <li><a href="#">Men</a></li>
+                                                        <li><a href="#">Men</a></li>
+                                                        <li><a href="#">Men</a></li>                                                        
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="sub-c">
+                                                    <h3>Women</h3>
+                                                    <ul>
+                                                        <li><a href="#">Women</a></li>
+                                                        <li><a href="#">Women</a></li>
+                                                        <li><a href="#">Women</a></li>
+                                                        <li><a href="#">Women</a></li>
+                                                        <li><a href="#">Women</a></li>
+                                                        <li><a href="#">Women</a></li>
+                                                        <li><a href="#">Women</a></li>
+                                                    </ul>
+                                                </div>
+                                                
+                                                <div class="sub-r">
+                                                    <h3>Kids</h3>
+                                                    <ul>
+                                                        <li><a href="#">Kids</a></li>
+                                                        <li><a href="#">Kids</a></li>
+                                                        <li><a href="#">Kids</a></li>
+                                                        <li><a href="#">Kids</a></li>
+                                                        <li><a href="#">Kids</a></li>
+                                                        <li><a href="#">Kids</a></li>
+                                                        <li><a href="#">Kids</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="orders">
+                        <ul>
+                            <li class="pad">
+                                <a href="#"><span>Orders</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="kart">
+                        <ul>
+                            <li class="pad">
+                                <a href="#"><span>Kart</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
         
         <script src="main_site.js"></script>

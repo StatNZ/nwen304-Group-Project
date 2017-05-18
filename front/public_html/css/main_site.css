@@ -9,28 +9,113 @@ and open the template in the editor.
 */
 
 body {
-}
-.navigation {
-  top: 0;
-  left: 0;
-  padding: 0 10%;
-  width: 100%;
-  position: fixed;
-  color: #fff;
-  box-sizing: border-box;
-  background: #363636;
-  text-align: right;
+    margin: 0px;
+    padding: 0px;
+    font-family: arial;
+    font-size: 14.5px;
 }
 
-.navigation a {
-  color: inherit;
-  margin: 35px 5px;
-  line-height: 150%;
-  padding: 0 5px 0 20px;
-  display: inline-block;
-  text-decoration: none;
+ul li {
+    list-style: none;
 }
 
-.navigation a.active { color: yellow; }
+#container {
+    width: 100%;
+}
 
-.navigation a:first-child { border: 0; }
+wrapper {
+    width: 980px;
+    margin: 0px auto;
+    
+}
+
+h3 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 12px;
+    margin: 0;
+    padding: 0px 0px 12px 0px;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+li.pad {
+    float: left;
+}
+
+#holder li {
+    color: #838080;
+    text-decoration: none;
+    transition: 0.1s;
+}
+
+a {
+    color: #838080;
+    text-decoration: none;
+    display: block;
+    transition: 0.1s;
+}
+
+.pad a {
+    padding: 18px 17px 22px 17px;
+    
+}
+
+#holder ul {
+    width: 100%;
+}
+
+#holder ul li span {
+    padding: 7px 0px;
+}
+
+.pad > a:hover, using > li:hover > a {
+    background: #262626;
+}
+
+#home ul li a:hover span {
+    transition: 0.1s;
+}
+
+#menu ul li a:hover span, .using > li:hover > a > span {
+    border-bottom: 2px solid #FF6E00;
+    transition: 0.1s;
+}
+
+.sub-wrapper-menu {
+    border-bottom: 5px solid #6159CC;
+    width: 100%;
+    height: auto;
+    background: #262626;
+    position: absolute;
+    left: 0px;
+    padding: 40px 0px;
+}
+
+.sub-wrapper-menu a:hover {
+    color: #6159CC;
+    transition: 0.3s;
+}
+
+#holder ul li > ul {
+    position: absolute;
+    left: -9000px;
+}
+
+#holder ul li:hover ul {
+    left: 0px;
+}
+
+.sub-container {
+    width: 900px;
+    margin: 0px auto;
+}
+
+.sub-l {
+    float: left;
+    width: 250px;
+}
