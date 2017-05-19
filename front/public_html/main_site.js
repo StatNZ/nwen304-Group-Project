@@ -17,6 +17,14 @@ $(document).ready( function (e) {
         "images/stock-photo-200657659.jpg"
     ];
    
+   /* Because we set our heather to a certain height, we must
+    * ensure that the rest of the layout conforms to 1 - header height
+    */
+   var windowWidth = $(window).width();
+   var windowHeight = $(window).height();
+   $('#header').width(windowWidth);
+   $('#header').height(windowHeight * 0.4);
+   
     
     /* Set out images to all be the same size, regardless */
     $img.width($(window).width());
@@ -59,9 +67,7 @@ $(document).ready( function (e) {
     */
    $(".mega-dropdown").hover(function(){
         // need to get this working somehows
-        var stuff = $(this).children('ul');
-                stuff.show(5000);
-        //        alert(stuff);
+        $(this).children('ul').show(500);
     },
         function(){
             $(this).children('ul').hide("fast");

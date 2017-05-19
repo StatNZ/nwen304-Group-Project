@@ -1,7 +1,10 @@
 
+body, html {
+    height: 100%;
+    width: 100%;
+}
 
 #header-container {
-    width: 100%;
     margin: 0;
     background: #fff;
 }
@@ -17,8 +20,8 @@
 
 /* This controls all the navigation bar and mega
    drop down menu */
-.navbar.navbar-default {
-  width: 70%;
+.navbar,
+.navbar-default {
   margin: 0 0 0 auto;
   background: inherit;
   border: 0;
@@ -32,9 +35,9 @@
 
 }
 
-.navbar-default .navbar-nav > li > a {
+.navbar-default,
+.navbar-nav > li > a {
     /* changes the size of the buttons */
-    width: 150px;
     font-weight: bold;
 }
 
@@ -85,18 +88,25 @@
   font-weight: bold;
 }
 
-.dropdown.mega-dropdown:hover > .dropdown-menu.mega-dropdown-menu.row { 
+.dropdown .mega-dropdown:hover > .dropdown-menu .mega-dropdown-menu .row { 
     display: block; 
+    background: inherit;
 }
 
-.navbar-default .navbar-nav>li>a { color: #fff; }
+.navbar-default,
+.navbar-nav > li > a { 
+    color: #fff;
+}
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default,
+.navbar-nav > li > a:hover {
   color: #000;
   background: #fff;
 }
 
-.dropdown-menu .mega-dropdown-menu .row li:hover {
+.dropdown-menu, 
+.mega-dropdown-menu, 
+.row li:hover {
   list-style-type: none;
   list-style-position: inside;
   background: #fff;
