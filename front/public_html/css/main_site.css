@@ -1,121 +1,106 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : May 17, 2017, 3:38:04 PM
-    Author     : jackmac
-*/
 
-body {
-    margin: 0px;
-    padding: 0px;
-    font-family: arial;
-    font-size: 14.5px;
-}
 
-ul li {
-    list-style: none;
-}
-
-#container {
+#header-container {
     width: 100%;
-}
-
-wrapper {
-    width: 980px;
-    margin: 0px auto;
-    
-}
-
-h3 {
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: normal;
-    font-size: 12px;
     margin: 0;
-    padding: 0px 0px 12px 0px;
+    background: #fff;
 }
 
-ul {
-    padding: 0px;
-    margin: 0px;
-}
-
-li.pad {
+#empty {
     float: left;
+    width: 30%;
+    height: 50px;
+    background: inherit;
 }
 
-#holder li {
-    color: #838080;
-    text-decoration: none;
-    transition: 0.1s;
+
+
+/* This controls all the navigation bar and mega
+   drop down menu */
+.navbar.navbar-default {
+  width: 70%;
+  margin: 0 0 0 auto;
+  background: inherit;
+  border: 0;
+  border-radius: 0;
+  text-align: center;
 }
 
-a {
-    color: #838080;
-    text-decoration: none;
-    display: block;
-    transition: 0.1s;
+.navbar-nav > li > .dropdown-menu {
+  margin-top: 0px;
+  border-top: 0px;
+
 }
 
-.pad a {
-    padding: 18px 17px 22px 17px;
-    
+.navbar-default .navbar-nav > li > a {
+    /* changes the size of the buttons */
+    width: 150px;
+    font-weight: bold;
 }
 
-#holder ul {
-    width: 100%;
+.mega-dropdown { 
+    position: static !important;/*width:100%;*/
+  
 }
 
-#holder ul li span {
-    padding: 7px 0px;
+.mega-dropdown-menu {
+  padding: 20px 0px;
+  width: 70%;
+  
+  /* The size of our drop down menu
+   * the height is controlled by jquery
+   * in main_site.js */
+  
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 
-.pad > a:hover, using > li:hover > a {
-    background: #262626;
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
 }
 
-#home ul li a:hover span {
-    transition: 0.1s;
+.mega-dropdown-menu > li > ul > li { list-style: none; }
+
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #999;
+  white-space: normal;
 }
 
-#menu ul li a:hover span, .using > li:hover > a > span {
-    border-bottom: 2px solid #FF6E00;
-    transition: 0.1s;
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+  color: #444;
+  background-color: #f5f5f5;
 }
 
-.sub-wrapper-menu {
-    border-bottom: 5px solid #6159CC;
-    width: 100%;
-    height: auto;
-    background: #262626;
-    position: absolute;
-    left: 0px;
-    padding: 40px 0px;
+.mega-dropdown-menu .dropdown-header {
+  color: #428bca;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.sub-wrapper-menu a:hover {
-    color: #6159CC;
-    transition: 0.3s;
+.dropdown.mega-dropdown:hover > .dropdown-menu.mega-dropdown-menu.row { 
+    display: block; 
 }
 
-#holder ul li > ul {
-    position: absolute;
-    left: -9000px;
+.navbar-default .navbar-nav>li>a { color: #fff; }
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #000;
+  background: #fff;
 }
 
-#holder ul li:hover ul {
-    left: 0px;
+.dropdown-menu .mega-dropdown-menu .row li:hover {
+  list-style-type: none;
+  list-style-position: inside;
+  background: #fff;
 }
 
-.sub-container {
-    width: 900px;
-    margin: 0px auto;
-}
-
-.sub-l {
-    float: left;
-    width: 250px;
-}
+.megamenu-headline { padding: 0 32px; }
+/* This ends all the drop down stuff */
