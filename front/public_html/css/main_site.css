@@ -2,9 +2,11 @@
 body, html {
     height: 100%;
     width: 100%;
+    display: inline;
 }
 
 #header-container {
+    width: 100%;
     margin: 0;
     background: #fff;
 }
@@ -15,8 +17,6 @@ body, html {
     height: 50px;
     background: inherit;
 }
-
-
 
 /* This controls all the navigation bar and mega
    drop down menu */

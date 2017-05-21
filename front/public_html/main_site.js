@@ -8,22 +8,37 @@ $(document).ready( function (e) {
     
     // Globals
     var $img = $("#top-banner-images"), i = 0, speed = 300;
+    var bannerImagesLength = 10;
 
    
     /* Load all our images for our top banner into this array */
     var images = [
-        "images/1391275534_nithiin.gif",
-        "images/chictravelphotos-22june154-1326.jpg",
-        "images/stock-photo-200657659.jpg"
+        'ban1.jpg',
+        'ban2.jpg',
+        'ban3.jpg',
+        'ban4.jpg',
+        'ban5.jpg',
+        'ban6.jpg',
+        'ban7.jpg',
+        'ban8.jpg',
+        'ban9.jpg',
+        'images/stock-photo-200657659.jpg'
     ];
+    
+    /*
+    var count = 0;
+    for (count; count < 9; count++){
+        images.add('bannerImages/ban' + (count + 1) + '.jpg');
+    }
+    */
    
    /* Because we set our heather to a certain height, we must
     * ensure that the rest of the layout conforms to 1 - header height
     */
    var windowWidth = $(window).width();
    var windowHeight = $(window).height();
-   $('#header').width(windowWidth);
-   $('#header').height(windowHeight * 0.4);
+   //$('#header').width(windowWidth);
+   //$('#header').height(windowHeight * 0.4);
    
     
     /* Set out images to all be the same size, regardless */
@@ -45,10 +60,11 @@ $(document).ready( function (e) {
      */
     window.setInterval(function() {
         $img.fadeOut(speed, function() {
-            $img.attr("src", images[(++i % images.length)]);
+            //$img.attr("src", images[(++i % images.length)]);
+            $img.attr('src', 'bannerImages/ban' + (++i % bannerImagesLength) +'.jpg');
             $img.fadeIn(speed);
         });
-    }, 10000);
+    }, 1000);
    
    /* Use this funciton to change the top banner pictures to 
     * suit the category you are currently looking at, We will copy 
@@ -67,10 +83,12 @@ $(document).ready( function (e) {
     */
    $(".mega-dropdown").hover(function(){
         // need to get this working somehows
+        
+        /* this option must have no time */
         $(this).children('ul').show(500);
     },
         function(){
-            $(this).children('ul').hide("fast");
+            $(this).children('ul').hide();
 	});
    
 }); 
