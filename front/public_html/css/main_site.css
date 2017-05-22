@@ -1,8 +1,8 @@
 
+
 body, html {
     height: 100%;
     width: 100%;
-    display: block;
 }
 
 #main-body {
@@ -10,20 +10,10 @@ body, html {
     height: 100%;
 }
 
-/* This controls all the navigation bar and mega
-   drop down menu */
-.navbar,
-.navbar-default {
-  margin: auto;
-  background: inherit;
-  border: 0;
-  border-radius: 0;
-  text-align: center;
-}
-
-.nav-justified > li > .dropdown-menu {
-  margin-top: 0px;
-  border-top: 0px;
+.navbar {
+    background: #fff;
+    border: 0px;
+    margin: auto;
 }
 
 .navbar-default,
@@ -32,28 +22,44 @@ body, html {
     font-weight: bold;
 }
 
+/* Controls inside the dropdown menu, borders etc */
+.nav-justified > li > .dropdown-menu {
+  margin-top: 0px;
+  border: 0px;
+}
+
+/* This ensures our dropdown can consume the entire
+ * width of the screen */
 .mega-dropdown { 
     position: static !important;/*width:100%;*/
 }
 
-/* The dropdown menu functionality */
-.mega-dropdown-menu {
-  /* The size of our drop down menu
-   * the height and width is controlled by jquery
-   * in main_site.js */
-  border: 0px;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-}
-
-.mega-dropdown-menu > li > ul {
-    margin: 0px;
-}
-
+/* Inside the drop down, changes all the
+ * li elements to not have any effects */
 .mega-dropdown-menu > li > ul > li { 
     list-style: none; 
 }
 
+
+.megamenu-headline { 
+    padding: 0 32px; 
+}
+
+/* changes the color of the buttons
+ * in the navbar */
+.navbar-default,
+.nav-justified > li > a { 
+    color: #000;
+}
+
+/* takes away our hover color */
+.navbar-default,
+.nav-justified > li > a:hover {
+  background: #fff;
+}
+
+/* Controls the color scheme inside the drop down
+ * menu */
 .mega-dropdown-menu > li > ul > li > a {
   clear: both;
   padding: 3px 20px;
@@ -63,45 +69,10 @@ body, html {
   white-space: normal;
 }
 
-.mega-dropdown-menu > li ul > li > a:hover,
-.mega-dropdown-menu > li ul > li > a:focus {
-  text-decoration: none;
-  color: #444;
-  background-color: #f5f5f5;
-}
-
+/* Controls the Sub menu header 
+ * inside the dropdown menu */
 .mega-dropdown-menu .dropdown-header {
   color: #428bca;
   font-size: 18px;
   font-weight: bold;
 }
-
-.dropdown .mega-dropdown:hover > .dropdown-menu .mega-dropdown-menu .row { 
-    background: inherit;
-}
-
-.navbar-default,
-.nav-justified > li > a { 
-    color: #000;
-}
-
-.navbar-default,
-.nav-justified > li > a:hover {
-  color: #000;
-  background: #fff;
-}
-
-.dropdown-menu, 
-.mega-dropdown-menu, 
-.row li:hover {
-  list-style-type: none;
-  list-style-position: inside;
-  background: #fff;
-}
-
-.megamenu-headline { 
-    padding: 0 32px; 
-}
-
-
-/* This ends all the drop down stuff */

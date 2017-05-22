@@ -70,7 +70,7 @@ $(document).ready( function (e) {
         
         // now that we are inside the dropdown menu, we can
         // set the spacing of the items inside to be exact
-        dropdownMenuInsideSpacing ();
+        //dropdownMenuInsideSpacing ();
           
     },
         function(){
