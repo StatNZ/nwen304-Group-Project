@@ -2,52 +2,64 @@
 body, html {
     height: 100%;
     width: 100%;
-    display: block;
+    display: inline;
 }
 
-#main-body {
-    background: #000;
-    height: 100%;
+#header-container {
+    width: 100%;
+    margin: 0;
+    background: #fff;
+}
+
+#empty {
+    float: left;
+    width: 30%;
+    height: 50px;
+    background: inherit;
 }
 
 /* This controls all the navigation bar and mega
    drop down menu */
 .navbar,
 .navbar-default {
-  margin: auto;
+  margin: 0 0 0 auto;
   background: inherit;
   border: 0;
   border-radius: 0;
   text-align: center;
 }
 
-.nav-justified > li > .dropdown-menu {
+.navbar-nav > li > .dropdown-menu {
   margin-top: 0px;
   border-top: 0px;
+
 }
 
 .navbar-default,
-.nav-justified > li > a {
+.navbar-nav > li > a {
     /* changes the size of the buttons */
     font-weight: bold;
 }
 
 .mega-dropdown { 
     position: static !important;/*width:100%;*/
+  
 }
 
-/* The dropdown menu functionality */
 .mega-dropdown-menu {
+  padding: 20px 0px;
+  text-align: right;
   /* The size of our drop down menu
    * the height and width is controlled by jquery
    * in main_site.js */
-  border: 0px;
+  
   box-shadow: none;
   -webkit-box-shadow: none;
 }
 
 .mega-dropdown-menu > li > ul {
-    margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 .mega-dropdown-menu > li > ul > li { 
@@ -55,8 +67,9 @@ body, html {
 }
 
 .mega-dropdown-menu > li > ul > li > a {
-  clear: both;
+  display: block;
   padding: 3px 20px;
+  clear: both;
   font-weight: normal;
   line-height: 1.428571429;
   color: #999;
@@ -77,16 +90,17 @@ body, html {
 }
 
 .dropdown .mega-dropdown:hover > .dropdown-menu .mega-dropdown-menu .row { 
+    display: block; 
     background: inherit;
 }
 
 .navbar-default,
-.nav-justified > li > a { 
-    color: #000;
+.navbar-nav > li > a { 
+    color: #fff;
 }
 
 .navbar-default,
-.nav-justified > li > a:hover {
+.navbar-nav > li > a:hover {
   color: #000;
   background: #fff;
 }
@@ -99,9 +113,5 @@ body, html {
   background: #fff;
 }
 
-.megamenu-headline { 
-    padding: 0 32px; 
-}
-
-
+.megamenu-headline { padding: 0 32px; }
 /* This ends all the drop down stuff */
