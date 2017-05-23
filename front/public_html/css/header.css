@@ -65,7 +65,7 @@
 /* Controls the Sub menu header
  * inside the dropdown menu */
 .mega-dropdown-menu .dropdown-header {
-    color: #428bca;
+    color: #444444;
     font-size: 18px;
     font-weight: bold;
 }
@@ -85,4 +85,12 @@
 
 .nav_button {
     text-transform: uppercase;
+}
+
+/*
+ * When the screen is to small, we add the scrollbar
+ * so the text doesn't overflow into main page
+ */
+.row {
+    overflow: scroll;
 }

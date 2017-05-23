@@ -13,7 +13,7 @@ $(document).ready(function () {
     var $windowHeight = $(window).height();
     var $originalDropdownHeight = dropdownMenuInitialSize();
 
-    var dropdownMenuInterval = 0, i = 1, speed = 300, interval_time = 5000;
+    var dropdownMenuInterval = 0, i = 1, speed = 300, interval_time = 2000;
 
     /*
      * This is called when the window is resized. Controls the settings
@@ -31,7 +31,7 @@ $(document).ready(function () {
      * this for the women and kids section aswell
      */
      $(".men-cat-items").hover(function () {
-        clearInterval(dropdownMenuInterval);
+        clearDropdownImage();
 
         var catItem = $(this).text().toLowerCase();
         var dir = 'dropdown_images/';
@@ -46,7 +46,7 @@ $(document).ready(function () {
                 break;
         }
 
-        displayMultileDropdownImages(img, dir);
+        displayDropdownImages(img, dir, $(this));
     });
 
     /**
@@ -54,9 +54,10 @@ $(document).ready(function () {
      * @param img
      * @param dir
      */
-    function displayMultileDropdownImages (img, dir) {
+    function displayDropdownImages (img, dir, $this) {
         // we give it an image first
         img.attr('src', dir + '1.jpg');
+        img.attr('alt', $this.text() + ' goes here');
 
         // now we set its interval for the image to change
         dropdownMenuInterval = setInterval(function () {
@@ -65,6 +66,7 @@ $(document).ready(function () {
                     i = 0;
                 }
                 img.attr('src', dir + (++i) + '.jpg');
+                img.attr('alt', $(this).text() + ' goes here');
                 img.fadeIn();
             });
         }, interval_time);
@@ -85,13 +87,20 @@ $(document).ready(function () {
 
     });
 
+    function clearDropdownImage () {
+        clearInterval(dropdownMenuInterval);
+        $('#dropdown_image').attr('src', '');
+        $('#dropdown_image').attr('alt', '');
+    }
+
 
     /*
      * Controls the opening and closing of our drop-down menu,
      */
     $(".mega-dropdown").hover(function(){
         // remove the image in the dropdown
-        $('#dropdown_image').attr('src', '');
+        clearDropdownImage();
+
 
         // show the menu
         $(this).children('ul').show();
@@ -113,7 +122,7 @@ $(document).ready(function () {
 
         var dropDownHeight = $('.row').height();
 
-        $('.mega-dropdown-menu').height(dropDownHeight * 1.3);
+        $('.mega-dropdown-menu').height($('#header').height() - $('.navbar').height());
         $('.mega-dropdown-menu').width($windowWidth);
         return dropDownHeight;
     }
