@@ -10,8 +10,7 @@ $(document).ready( function (e) {
     var $img = $("#top-banner-images"), i = 0, speed = 300;
 
     // Changing Globals
-    var bannerImagesLength = 10;
-
+    imageBannerInitialSize();
 
     /* Load all our images for our top banner into this array */
     var images = [
@@ -27,21 +26,21 @@ $(document).ready( function (e) {
     window.setInterval(function() {
         $img.fadeOut(speed, function() {
             $img.attr("src", images[(++i % images.length)]);
-            //$img.attr('src', 'bannerImages/ban' + (++i % bannerImagesLength) +'.jpg');
+            //$img.attr('src', 'banner_images/ban' + (++i % bannerImagesLength) +'.jpg');
             $img.fadeIn(speed);
         });
-    }, 3000);
+    }, 30000);
 
     /* Set out images to all be the same size, regardless */
     function imageBannerInitialSize() {
         $img.width($(window).width());
-        $img.height(windowHeight * 0.4);
+        $img.height($(window).height() * 0.4);
     }
 
     /*
     var count = 0;
     for (count; count < 9; count++){
-        images[count] = ('bannerImages/ban' + (count + 1) + '.jpg');
+        images[count] = ('banner_images/ban' + (count + 1) + '.jpg');
     }
     */
 

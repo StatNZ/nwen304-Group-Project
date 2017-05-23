@@ -15,6 +15,19 @@
     font-weight: bold;
 }
 
+/* changes the color of the buttons
+ * in the navbar */
+.navbar-default,
+.nav-justified > li > a {
+    color: #000;
+}
+
+/* takes away our hover color */
+.navbar-default,
+.nav-justified > li > a:hover {
+    background: #fff;
+}
+
 /* Controls inside the dropdown menu, borders etc */
 .nav-justified > li > .dropdown-menu {
     margin-top: 0px;
@@ -36,19 +49,6 @@
 
 .megamenu-headline {
     padding: 0 32px;
-}
-
-/* changes the color of the buttons
- * in the navbar */
-.navbar-default,
-.nav-justified > li > a {
-    color: #000;
-}
-
-/* takes away our hover color */
-.navbar-default,
-.nav-justified > li > a:hover {
-    background: #fff;
 }
 
 /* Controls the color scheme inside the drop down

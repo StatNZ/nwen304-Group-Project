@@ -30,11 +30,47 @@ $(document).ready(function () {
      * this for the women and kids section aswell
      */
     $(".men-cat-items").hover(function () {
-        //var manImageName = '';
-        var image = $("#top-banner-images");
-        //image.attr('src', manImageName);
-        //image.fadeIn();
+        var catItem = $(this).text().toLowerCase();
+        var dir = 'dropdown_images/';
+        var img = $('#dropdown_image');
+
+        switch (catItem) {
+            case 'footwear':
+                dir += 'shoes';
+                break;
+        }
+        //displayMultileDropdownImages(img, dir);
     });
+
+    /* not really a good idea */
+    function displayMultileDropdownImages (element, dir) {
+        var i=1, speed = 300;
+        element.height($originalDropdownHeight/1.5);
+
+        window.setInterval(function() {
+            element.fadeOut(speed, function() {
+                element.attr('src', dir + (++i % 5) + '.jpg');
+                element.fadeIn(speed);
+            });
+        }, 5000);
+    }
+
+    $(".women-cat-items").hover(function () {
+        var catItem = $(this).text().toLowerCase();
+        var dir = 'dropdown_images/';
+        var img = $('#women_dropdown_img');
+        alert (catItem);
+        switch (catItem) {
+            case 'shoes':
+                dir += catItem + '1.jpg';
+                break;
+        }
+        img.attr('src', dir);
+        img.fadeIn(300);
+        img.height($originalDropdownHeight/1.5);
+
+    });
+
 
     /*
      * Controls the opening and closing of our drop-down menu,
@@ -45,7 +81,7 @@ $(document).ready(function () {
 
         // now that we are inside the dropdown menu, we can
         // set the spacing of the items inside to be exact
-        dropdownMenuInsideSpacing ();
+        //dropdownMenuInsideSpacing ();
 
     }, function(){
         $(this).children('ul').hide();

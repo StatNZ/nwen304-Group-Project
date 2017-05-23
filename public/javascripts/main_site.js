@@ -28,7 +28,7 @@ $(document).ready( function (e) {
     /*
     var count = 0;
     for (count; count < 9; count++){
-        images.add('bannerImages/ban' + (count + 1) + '.jpg');
+        images.add('banner_images/ban' + (count + 1) + '.jpg');
     }
     */
    
@@ -61,7 +61,7 @@ $(document).ready( function (e) {
     window.setInterval(function() {
         $img.fadeOut(speed, function() {
             //$img.attr("src", images[(++i % images.length)]);
-            $img.attr('src', 'bannerImages/ban' + (++i % bannerImagesLength) +'.jpg');
+            $img.attr('src', 'banner_images/ban' + (++i % bannerImagesLength) +'.jpg');
             $img.fadeIn(speed);
         });
     }, 1000);
