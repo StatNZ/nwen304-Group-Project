@@ -82,3 +82,7 @@
     box-shadow: none;
     -webkit-box-shadow: none;
 }
+
+.nav_button {
+    text-transform: uppercase;
+}

@@ -13,6 +13,7 @@ $(document).ready(function () {
     var $windowHeight = $(window).height();
     var $originalDropdownHeight = dropdownMenuInitialSize();
 
+    var dropdownMenuInterval = 0, i = 1, speed = 300, interval_time = 5000;
 
     /*
      * This is called when the window is resized. Controls the settings
@@ -29,7 +30,9 @@ $(document).ready(function () {
      * suit the category you are currently looking at, We will copy
      * this for the women and kids section aswell
      */
-    $(".men-cat-items").hover(function () {
+     $(".men-cat-items").hover(function () {
+        clearInterval(dropdownMenuInterval);
+
         var catItem = $(this).text().toLowerCase();
         var dir = 'dropdown_images/';
         var img = $('#dropdown_image');
@@ -38,28 +41,39 @@ $(document).ready(function () {
             case 'footwear':
                 dir += 'shoes';
                 break;
+            case 'casual shirts':
+                dir += 'cs';
+                break;
         }
-        //displayMultileDropdownImages(img, dir);
+
+        displayMultileDropdownImages(img, dir);
     });
 
-    /* not really a good idea */
-    function displayMultileDropdownImages (element, dir) {
-        var i=1, speed = 300;
-        element.height($originalDropdownHeight/1.5);
+    /**
+     * Helper Method: Used for setting a picture to change at
+     * @param img
+     * @param dir
+     */
+    function displayMultileDropdownImages (img, dir) {
+        // we give it an image first
+        img.attr('src', dir + '1.jpg');
 
-        window.setInterval(function() {
-            element.fadeOut(speed, function() {
-                element.attr('src', dir + (++i % 5) + '.jpg');
-                element.fadeIn(speed);
+        // now we set its interval for the image to change
+        dropdownMenuInterval = setInterval(function () {
+            img.fadeOut(speed, function () {
+                if (i == 7) {
+                    i = 0;
+                }
+                img.attr('src', dir + (++i) + '.jpg');
+                img.fadeIn();
             });
-        }, 5000);
+        }, interval_time);
     }
 
     $(".women-cat-items").hover(function () {
         var catItem = $(this).text().toLowerCase();
         var dir = 'dropdown_images/';
         var img = $('#women_dropdown_img');
-        alert (catItem);
         switch (catItem) {
             case 'shoes':
                 dir += catItem + '1.jpg';
@@ -76,12 +90,15 @@ $(document).ready(function () {
      * Controls the opening and closing of our drop-down menu,
      */
     $(".mega-dropdown").hover(function(){
-        // need to get this working somehows
+        // remove the image in the dropdown
+        $('#dropdown_image').attr('src', '');
+
+        // show the menu
         $(this).children('ul').show();
 
         // now that we are inside the dropdown menu, we can
         // set the spacing of the items inside to be exact
-        //dropdownMenuInsideSpacing ();
+        dropdownMenuInsideSpacing ();
 
     }, function(){
         $(this).children('ul').hide();
