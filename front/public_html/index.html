@@ -10,14 +10,15 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-                
-        <!-- the starting scripts needed for our site -->
-        <script src="js/jquery-ui.min.js"></script>
-        <script src="js/jquery.min.js"></script>
-        
         <!-- style sheet -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main_site.css" >
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/main_site.css">
+
+
+        <!-- the starting scripts needed for our site -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
 
     </head>
 
@@ -34,10 +35,10 @@ and open the template in the editor.
                                 <a class="dropdown-toggle" data-toggle=""></a>
                             </li>
                             <li class="dropdown mega-dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Home</a>
                             </li>
                             <li class="dropdown mega-dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu</a>
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown">Menu</a>
                                 <ul class="dropdown-menu mega-dropdown-menu row dropdown-menu-right">
                                     <div class="megamenu-headline">
                                         <h2>Shop</h2>
@@ -49,7 +50,7 @@ and open the template in the editor.
                                             <li class="men-cat-items"><a href="men-shoes.html">Shoes</a></li>
                                             <li class="men-cat-items"><a href="men-tops.html">Tops</a></li>
                                             <li class="men-cat-items"><a href="men-pants.html">Pants</a></li>
-                                            <li class="men-cat-items"><a href="men-formal">Formal</a></li>
+                                            <li class="men-cat-items"><a href="men-formal.html">Formal</a></li>
                                         </ul>
                                     </li>
                                     <li class="col-sm-3">
@@ -89,21 +90,28 @@ and open the template in the editor.
                         </ul>
                 </nav>
             </div>
-        
-        <div id="main-body">
-            <div id="flashing-images"> flash as images to go here </div> 
-                <div id="latest-catalog"> the latest catalog to go here </div>
-                    <div id="bottom-header"> 
-                        <nav class="help-buttons"> 
-                            <ul> 
-                                <li>Help</li> 
-                                <li>Contact</li> 
-                            </ul> 
-                        </nav> 
-                    </div>
-        </div>
-        
-        <script src="js/main_site.js"></script>
 
+        <div id="main-body">
+            <div id="flashing-images">
+                flash as images to go here
+            </div>
+
+            <div id="latest-catalog"> the latest catalog to go here </div>
+
+            <div id="bottom-header">
+                <nav class="help-buttons">
+                    <ul>
+                        <li>Help</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- The header .js file -->
+        <script src="js/header.js"></script>
+
+        <!-- The actual body .js file -->
+        <script src="js/main_site.js"></script>
     </body>
 </html>
