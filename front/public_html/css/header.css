@@ -62,7 +62,7 @@
     white-space: normal;
 }
 
-/* Controls the Sub jnkjkmenu header
+/* Controls the Sub menu header
  * inside the dropdown menu */
 .mega-dropdown-menu .dropdown-header {
     color: #444444;
@@ -88,7 +88,7 @@
 }
 
 #shopping-kart-images {
-    height: 40px;
+    height: 30px;
 
 }
 
