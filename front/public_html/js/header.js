@@ -151,3 +151,4 @@ $(document).ready(function () {
         $('#dropdown_image').attr('alt', '');
     }
 })
+

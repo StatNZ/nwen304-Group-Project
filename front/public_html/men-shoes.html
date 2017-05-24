@@ -12,7 +12,9 @@ and open the template in the editor.
 
     <!-- style sheet -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/header.css" >
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main_site.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
     <!-- the starting scripts needed for our site -->
     <script src="js/jquery.min.js"></script>
@@ -23,65 +25,76 @@ and open the template in the editor.
     <body>
 
         <div id="header">
-            <nav class="navbar navbar-fixed-top">
-                <ul class="nav nav-justified">
-                    <li class="dropdown mega-dropdown">
-                        <a class="dropdown-toggle" data-toggle=""></a>
-                    </li>
-                    <li class="dropdown mega-dropdown">
-                        <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-                    </li>
-                    <li class="dropdown mega-dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Menu</a>
-                        <ul class="dropdown-menu mega-dropdown-menu row dropdown-menu-right">
-                            <div class="megamenu-headline">
-                                <h2>Shop</h2>
-                            </div>
-                            <li class="divider"></li>
-                            <li class="col-sm-3">
-                                <ul>
-                                    <li class="dropdown-header">Men</li>
-                                    <li class="men-cat-items"><a href="men-shoes.html">Shoes</a></li>
-                                    <li class="men-cat-items"><a href="men-tops.html">Tops</a></li>
-                                    <li class="men-cat-items"><a href="men-pants.html">Pants</a></li>
-                                    <li class="men-cat-items"><a href="men-formal.html">Formal</a></li>
-                                </ul>
-                            </li>
-                            <li class="col-sm-3">
-                                <ul>
-                                    <li class="dropdown-header">Women</li>
-                                    <li class="women-cat-items"><a href="#">Shoes</a></li>
-                                    <li class="women-cat-items"><a href="#">Tops</a></li>
-                                    <li class="women-cat-items"><a href="#">Pants</a></li>
-                                    <li class="women-cat-items"><a href="#">Suits</a></li>
-                                </ul>
-                            </li>
-                            <li class="col-sm-3">
-                                <ul>
-                                    <li class="dropdown-header">Kids</li>
-                                    <li class="kids-cat-items"><a href="#">Shoes</a></li>
-                                    <li class="kids-cat-items"><a href="#">Tops</a></li>
-                                    <li class="kids-cat-items"><a href="#">Pants</a></li>
-                                    <li class="kids-cat-items"><a href="#">Suits</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown mega-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="">
-                            Orders</a>
-                    </li>
-                    <li class="dropdown mega-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="">
-                            Kart</a>
-                    </li>
-                    <li class="dropdown mega-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="">Login</a>
-                    </li>
-                    <li class="dropdown mega-dropdown">
-                        <a class="dropdown-toggle" data-toggle=""></a>
-                    </li>
-                </ul>
+            <!-- The functionality for our navbar -->
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-collapse collapse">
+                    <!-- Below is the left-hand side of our navbar -->
+                    <ul class="nav navbar-nav navbar-left">
+                        <li class="dropdown mega-dropdown">
+                            <a href="index.html" class="nav_button dropdown-toggle" data-toggle="dropdown">Home</a>
+                        </li>
+                        <li class="dropdown mega-dropdown">
+                            <a href="" class="nav_button dropdown-toggle" data-toggle="dropdown">Menu</a>
+                            <ul class="dropdown-menu mega-dropdown-menu row dropdown-menu-right">
+                                <div class="megamenu-headline">
+                                    <h2>Shop</h2>
+                                </div>
+                                <li class="divider"></li>
+                                <li class="col-sm-3">
+                                    <ul>
+                                        <li class="dropdown-header">Men</li>
+                                        <li class="men-cat-items"><a href="men-tops.html">Casual Shirts</a></li>
+                                        <li class="men-cat-items"><a href="men-pants.html">Jeans</a></li>
+                                        <li class="men-cat-items"><a href="men-shoes.html">Footwear</a></li>
+                                        <li class="men-cat-items"><a href="men-formal.html">Shorts</a></li>
+                                        <li class="men-cat-items"><a href="men-formal.html">Watches</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-sm-3">
+                                    <ul>
+                                        <li class="dropdown-header">Women</li>
+                                        <li class="women-cat-items"><a href="#">Dresses</a></li>
+                                        <li class="women-cat-items"><a href="#">Churidar Suits</a></li>
+                                        <li class="women-cat-items"><a href="#">Kurtas</a></li>
+                                        <li class="women-cat-items"><a href="#">Sandals</a></li>
+                                        <li class="women-cat-items"><a href="#">Office Wear</a></li>
+                                        <li class="women-cat-items"><a href="#">Artificial Jewellery</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-sm-3">
+                                    <ul>
+                                        <li class="dropdown-header">Kids</li>
+                                        <li class="kids-cat-items"><a href="#">Baby Apparel</a></li>
+                                        <li class="kids-cat-items"><a href="#">Kids Apparel</a></li>
+                                        <li class="kids-cat-items"><a href="#">Boys Apparel</a></li>
+                                        <li class="kids-cat-items"><a href="#">Kids Toys</a></li>
+                                    </ul>
+                                </li>
+                                <li class="col-sm-3">
+                                    <ul>
+                                        <img id="dropdown_image" alt="" src="" ></img>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown mega-dropdown">
+                            <a href="#" class="nav_button dropdown-toggle" data-toggle="dropdown">
+                                Orders</a>
+                        </li>
+                    </ul>
+
+                    <!-- Below is the right hand side of our navbar -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown mega-dropdown">
+                            <a href="" class="nav_button dropdown-toggle" data-toggle="dropdown">
+                                <img id="shopping-kart-images" src="images/kart-img.png"></img>
+                            </a>
+                        </li>
+                        <li class="dropdown mega-dropdown">
+                            <a href="#" class="nav_button dropdown-toggle" data-toggle="dropdown">Login/Register</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
 
