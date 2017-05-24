@@ -1,4 +1,4 @@
-/**
+/*
  * Created by Status O'Brien on 23/05/17.
  *
  * This file contains all the information for our header. Includes
@@ -13,7 +13,7 @@ $(document).ready(function () {
     var $windowHeight = $(window).height();
     var $originalDropdownHeight = dropdownMenuInitialSize();
 
-    var dropdownMenuInterval = 0, i = 1, speed = 300, interval_time = 2000;
+    var dropdownMenuImageInterval = 0, i = 1, speed = 300, interval_time = 2000;
 
     /**
      * This is called when the window is resized. Controls the settings
@@ -60,7 +60,7 @@ $(document).ready(function () {
         img.attr('alt', $this.text() + ' goes here');
 
         // now we set its interval for the image to change
-        dropdownMenuInterval = setInterval(function () {
+        dropdownMenuImageInterval = setInterval(function () {
             img.fadeOut(speed, function () {
                 if (i == 7) {
                     i = 0;
@@ -115,8 +115,9 @@ $(document).ready(function () {
     function dropdownMenuInitialSize () {
 
         var dropDownHeight = $('.row').height();
+        var newHeight = $('#header').height() - $('.navbar').height();
 
-        $('.mega-dropdown-menu').height($('#header').height() - $('.navbar').height());
+        $('.mega-dropdown-menu').height(newHeight);
         $('.mega-dropdown-menu').width($windowWidth);
         return dropDownHeight;
     }
@@ -145,7 +146,7 @@ $(document).ready(function () {
      * menu.
      */
     function clearDropdownImage () {
-        clearInterval(dropdownMenuInterval);
+        clearInterval(dropdownMenuImageInterval);
         $('#dropdown_image').attr('src', '');
         $('#dropdown_image').attr('alt', '');
     }
