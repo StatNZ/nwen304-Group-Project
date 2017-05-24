@@ -6,10 +6,12 @@
 .navbar {
     background: #fff;
     border: 0px;
-    margin: auto;
+    margin: 0px;
 }
 
 .navbar-default,
+.navbar-left > li > a,
+.navbar-right > li > a,
 .nav-justified > li > a {
     /* changes the size of the buttons */
     font-weight: bold;
@@ -18,17 +20,23 @@
 /* changes the color of the buttons
  * in the navbar */
 .navbar-default,
+.navbar-left > li > a,
+.navbar-right > li > a,
 .nav-justified > li > a {
     color: #000;
 }
 
 /* takes away our hover color */
 .navbar-default,
+.navbar-left > li > a:hover,
+.navbar-right > li > a:hover,
 .nav-justified > li > a:hover {
     background: #fff;
 }
 
 /* Controls inside the dropdown menu, borders etc */
+.navbar-left > li > .dropdown-menu,
+.navbar-right > li > .dropdown-menu,
 .nav-justified > li > .dropdown-menu {
     margin-top: 0px;
     border: 0px;
@@ -37,7 +45,7 @@
 /* This ensures our dropdown can consume the entire
  * width of the screen */
 .mega-dropdown {
-    position: static !important;/*width:100%;*/
+    position:  static !important;/*width:100%;*/
 }
 
 /* Inside the drop down, changes all the
@@ -87,9 +95,15 @@
     text-transform: uppercase;
 }
 
-#shopping-kart-images {
-    height: 30px;
+.nav_button,
+.dropdown-toggle {
+    padding: 0px;
+    background: inherit;
+    border: 0px;
+}
 
+#shopping-kart-images {
+    height: 20px;
 }
 
 /*

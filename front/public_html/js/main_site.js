@@ -7,6 +7,7 @@
 $(document).ready( function (e) {
 
     // Global
+    var windowWidth = $(window).width();
     var $img = $("#top-banner-images"), i = 0, speed = 300;
 
     /** Load all our images for our top banner into this array */

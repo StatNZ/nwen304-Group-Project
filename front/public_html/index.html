@@ -25,11 +25,11 @@ and open the template in the editor.
 <body>
 
 <div id="header">
-    <nav class="navbar navbar-default">
-        <ul class="nav nav-pills nav-justified">
-            <li class="dropdown mega-dropdown">
-                <a class="dropdown-toggle" data-toggle=""></a>
-            </li>
+    <nav class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-collapse collapse">
+        <!-- Below is the left-hand side of our navbar -->
+        <ul class="nav navbar-nav navbar-left">
             <li class="dropdown mega-dropdown">
                 <a href="index.html" class="nav_button dropdown-toggle" data-toggle="dropdown">Home</a>
             </li>
@@ -59,7 +59,6 @@ and open the template in the editor.
                             <li class="women-cat-items"><a href="#">Sandals</a></li>
                             <li class="women-cat-items"><a href="#">Office Wear</a></li>
                             <li class="women-cat-items"><a href="#">Artificial Jewellery</a></li>
-
                         </ul>
                     </li>
                     <li class="col-sm-3">
@@ -79,22 +78,23 @@ and open the template in the editor.
                 </ul>
             </li>
             <li class="dropdown mega-dropdown">
-                <a href="#" class="nav_button dropdown-toggle" data-toggle="">
+                <a href="#" class="nav_button dropdown-toggle" data-toggle="dropdown">
                     Orders</a>
             </li>
+        </ul>
+
+        <!-- Below is the right hand side of our navbar -->
+        <ul class="nav navbar-nav navbar-right">
             <li class="dropdown mega-dropdown">
-                <a href="#" class="nav_button dropdown-toggle" data-toggle="">Login/Register</a>
-            </li>
-            <li class="dropdown mega-dropdown">
-                <a class="dropdown-toggle" data-toggle=""></a>
-            </li>
-            <li class="dropdown mega-dropdown">
-                <a href="#" class="nav_button dropdown-toggle" data-toggle="">
+                <a href="#" class="nav_button dropdown-toggle" data-toggle="dropdown">
                     <img id="shopping-kart-images" src="images/kart-img.png"></img>
                 </a>
             </li>
-
+            <li class="dropdown mega-dropdown">
+                <a href="#" class="nav_button dropdown-toggle" data-toggle="dropdown">Login/Register</a>
+            </li>
         </ul>
+        </div>
     </nav>
 
     <div id="header-flash-image">

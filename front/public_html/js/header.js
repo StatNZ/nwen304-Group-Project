@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     var dropdownMenuInterval = 0, i = 1, speed = 300, interval_time = 2000;
 
-    /*
+    /**
      * This is called when the window is resized. Controls the settings
      * of all our headers upon resize.
      */
@@ -26,7 +26,8 @@ $(document).ready(function () {
     });
 
 
-    /* Use this funciton to change the top banner pictures to
+    /**
+     * Use this funciton to change the top banner pictures to
      * suit the category you are currently looking at, We will copy
      * this for the women and kids section aswell
      */
@@ -50,9 +51,8 @@ $(document).ready(function () {
     });
 
     /**
-     * Helper Method: Used for setting a picture to change at
-     * @param img
-     * @param dir
+     * Helper Method: Used for setting a picture to change at a given
+     * time interval
      */
     function displayDropdownImages (img, dir, $this) {
         // we give it an image first
@@ -87,14 +87,8 @@ $(document).ready(function () {
 
     });
 
-    function clearDropdownImage () {
-        clearInterval(dropdownMenuInterval);
-        $('#dropdown_image').attr('src', '');
-        $('#dropdown_image').attr('alt', '');
-    }
 
-
-    /*
+    /**
      * Controls the opening and closing of our drop-down menu,
      */
     $(".mega-dropdown").hover(function(){
@@ -113,7 +107,7 @@ $(document).ready(function () {
         $(this).children('ul').hide();
     });
 
-    /*
+    /**
      * This function sets our drop down menu to be
      * a specific size, we will also use this function
      * when the window changes its size
@@ -127,7 +121,7 @@ $(document).ready(function () {
         return dropDownHeight;
     }
 
-    /*
+    /**
      * Controls the positioning of the columns inside
      * the drop-down menu. Places our items in a nice
      * manner
@@ -144,5 +138,15 @@ $(document).ready(function () {
             'padding-top': height + 'px',
             'padding-bottom': height + 'px'
         });
+    }
+
+    /**
+     * Removes the dropdown image that is displayed in the dropdown
+     * menu.
+     */
+    function clearDropdownImage () {
+        clearInterval(dropdownMenuInterval);
+        $('#dropdown_image').attr('src', '');
+        $('#dropdown_image').attr('alt', '');
     }
 })
