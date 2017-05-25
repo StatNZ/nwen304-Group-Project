@@ -21,21 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/public_html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="147" column="30" lean-forward="true" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
+            <state relative-caret-position="394">
+              <caret line="161" column="82" lean-forward="true" selection-start-line="161" selection-start-column="82" selection-end-line="161" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footer.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/public_html/css/footer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+            <state relative-caret-position="422">
+              <caret line="65" column="52" lean-forward="false" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -126,8 +126,8 @@
         <option value="$PROJECT_DIR$/front/public_html/js/main_site.js" />
         <option value="$PROJECT_DIR$/front/public_html/css/header.css" />
         <option value="$PROJECT_DIR$/front/public_html/css/main_site.css" />
-        <option value="$PROJECT_DIR$/front/public_html/index.html" />
         <option value="$PROJECT_DIR$/front/public_html/css/footer.css" />
+        <option value="$PROJECT_DIR$/front/public_html/index.html" />
       </list>
     </option>
   </component>
@@ -399,7 +399,7 @@
       <workItem from="1495597327132" duration="290000" />
       <workItem from="1495597762491" duration="11000" />
       <workItem from="1495597779068" duration="433000" />
-      <workItem from="1495691774806" duration="6078000" />
+      <workItem from="1495691774806" duration="6794000" />
     </task>
     <task id="LOCAL-00001" summary="Added appropriate css files and split .js files into appropriate sections">
       <created>1495506828138</created>
@@ -457,11 +457,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495696772810</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Worked on footer, added in social media icons">
+      <created>1495698317118</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1495698317118</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31602000" />
+    <option name="totallyTimeSpent" value="32318000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -511,7 +518,8 @@
     <MESSAGE value="Change header css" />
     <MESSAGE value="created new branch" />
     <MESSAGE value="Created base footer section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created base footer section" />
+    <MESSAGE value="Worked on footer, added in social media icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on footer, added in social media icons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -902,18 +910,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/public_html/index.html">
+    <entry file="file://$PROJECT_DIR$/front/public_html/css/footer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="147" column="30" lean-forward="true" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
+        <state relative-caret-position="422">
+          <caret line="65" column="52" lean-forward="false" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/public_html/css/footer.css">
+    <entry file="file://$PROJECT_DIR$/front/public_html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+        <state relative-caret-position="394">
+          <caret line="161" column="82" lean-forward="true" selection-start-line="161" selection-start-column="82" selection-end-line="161" selection-end-column="82" />
           <folding />
         </state>
       </provider>
