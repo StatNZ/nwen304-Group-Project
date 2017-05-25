@@ -100,7 +100,6 @@ $(document).ready(function () {
 
         // now that we are inside the dropdown menu, we can
         // set the spacing of the items inside to be exact
-        dropdownMenuInsideSpacing ();
 
     }, function(){
         $(this).children('ul').hide();
@@ -134,7 +133,7 @@ $(document).ready(function () {
         var height = (colsHeight - $originalDropdownHeight) / 2;
 
         $('.mega-dropdown-menu').children('li').children('ul').css({
-            'padding-left': width + 'px',
+            'padding-right': width + 'px',
             'padding-top': height + 'px',
             'padding-bottom': height + 'px'
         });
