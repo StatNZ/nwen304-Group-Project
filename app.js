@@ -4,17 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var pg = require('pg').native;
-
-var connectionString = 'postgres://lewiskier:nwen304databasepass@depot:5432/lewiskier_jdbc';
 
 var routes = require('./routes/index');
 
 var app = express();
-
-client = new pg.Client(connectionString);
-client.connect();
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,9 +21,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use('/img',express.static(path.join(__dirname, 'public/images')));
-//app.use('/js',express.static(path.join(__dirname, 'public/javascripts')));
-//app.use('/css',express.static(path.join(__dirname, 'public/stylesheets')));
 
 app.use('/', routes);
 
