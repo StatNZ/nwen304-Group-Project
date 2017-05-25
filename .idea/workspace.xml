@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/css/main_site.css" afterPath="$PROJECT_DIR$/front/public_html/css/main_site.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/index.html" afterPath="$PROJECT_DIR$/front/public_html/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/public_html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="94" column="17" lean-forward="true" selection-start-line="90" selection-start-column="12" selection-end-line="94" selection-end-column="17" />
+            <state relative-caret-position="245">
+              <caret line="147" column="30" lean-forward="true" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -35,8 +34,8 @@
       <file leaf-file-name="footer.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/public_html/css/footer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="512">
+              <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -65,7 +64,7 @@
       <file leaf-file-name="header.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/public_html/css/header.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
+            <state relative-caret-position="-9">
               <caret line="58" column="8" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="8" />
               <folding />
             </state>
@@ -400,7 +399,7 @@
       <workItem from="1495597327132" duration="290000" />
       <workItem from="1495597762491" duration="11000" />
       <workItem from="1495597779068" duration="433000" />
-      <workItem from="1495691774806" duration="4743000" />
+      <workItem from="1495691774806" duration="6078000" />
     </task>
     <task id="LOCAL-00001" summary="Added appropriate css files and split .js files into appropriate sections">
       <created>1495506828138</created>
@@ -451,11 +450,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495598107664</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Created base footer section">
+      <created>1495696772810</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1495696772810</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30267000" />
+    <option name="totallyTimeSpent" value="31602000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,7 +510,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="Change header css" />
     <MESSAGE value="created new branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="created new branch" />
+    <MESSAGE value="Created base footer section" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created base footer section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -889,7 +896,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/public_html/css/header.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
+        <state relative-caret-position="-9">
           <caret line="58" column="8" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="8" />
           <folding />
         </state>
@@ -897,16 +904,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/public_html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="94" column="17" lean-forward="true" selection-start-line="90" selection-start-column="12" selection-end-line="94" selection-end-column="17" />
+        <state relative-caret-position="245">
+          <caret line="147" column="30" lean-forward="true" selection-start-line="147" selection-start-column="30" selection-end-line="147" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/public_html/css/footer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="512">
+          <caret line="69" column="13" lean-forward="false" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
           <folding />
         </state>
       </provider>
