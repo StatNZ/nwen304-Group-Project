@@ -25,7 +25,6 @@ $(document).ready(function () {
         $originalDropdownHeight = dropdownMenuInitialSize();
     });
 
-
     /**
      * Use this funciton to change the top banner pictures to
      * suit the category you are currently looking at, We will copy
