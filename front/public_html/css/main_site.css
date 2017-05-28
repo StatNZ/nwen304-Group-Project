@@ -22,8 +22,6 @@ body, html {
     height: 100%;
 }
 
-
-
 .advertisement {
     width: 100%;
     background: black;
@@ -50,25 +48,48 @@ body, html {
     list-style: none;
 }
 
-#ad-woman {
-    margin-top: 50px;
-    width: 50%;
-    height: 100%;
-    background: yellow;
+.category {
+    margin-top: 5%;
 }
 
-#ad-men {
-    margin-top: -50%;
-    margin-left: 50%;
-    width: 50%;
-    height: 100%;
-    background: blue;
+.women, .men{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
 
+.women {
+    margin-left: 21%;
+}
+
+.men {
+    margin-left: 43%;
+}
+
+.category a:hover{
+    color: gray;
+    text-decoration: none;
 }
 
 .ad {
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+.ad1, .ad2{
+    padding: 10px 20px 30px;
+    width: 40%;
+}
+
+.ad1 {
+    margin-left: 5%;
+}
+
+.ad2 {
+    margin-left: 10%;
+}
+
+.ad1:hover, .ad2:hover {
+    opacity: 0.5;
 }
 
 #top-banner-images {
