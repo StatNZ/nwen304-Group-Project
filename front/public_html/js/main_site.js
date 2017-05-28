@@ -11,9 +11,9 @@ $(document).ready( function (e) {
 
     /** Load all our images for our top banner into this array */
     var images = [
-        'images/stock-photo-200657659.jpg',
-        'images/1391275534_nithiin.gif',
-        'images/chictravelphotos-22june154-1326.jpg'
+        'images/banner1.jpg',
+        'images/banner2.jpg',
+        'images/banner4.jpg'
     ];
 
     /**
