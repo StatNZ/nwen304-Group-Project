@@ -14,3 +14,48 @@ body, html {
     background: white;
     height: 100%;
 }
+
+
+
+.advertisement {
+    width: 100%;
+    background: black;
+    text-align: center;
+    color: white;
+    list-style: none;
+}
+
+.advertisement a:hover {
+    color: gray;
+    text-decoration: none;
+}
+
+.advertisement a {
+    color: white;
+}
+
+.sale {
+    list-style: none;
+    font-size: 30px;
+}
+
+.coupon {
+    list-style: none;
+}
+
+#flashing-images {
+    margin-top: 50px;
+    width: 50%;
+    height: 100%;
+    background: yellow;
+}
+
+#ad {
+    width: 50%;
+    height: 100%;
+}
+
+#top-banner-images {
+    width: 100%;
+    height: 100%;
+}
