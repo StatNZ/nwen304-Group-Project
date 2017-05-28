@@ -1,4 +1,5 @@
 
+/* This CSS file is for the front page */
 
 body, html {
     height: 100%;
@@ -60,14 +61,10 @@ body, html {
 
 .women {
     margin-left: 21%;
-    background-color: black;
-    color: white;
 }
 
 .men {
     margin-left: 43%;
-    background-color: black;
-    color: white;
 }
 
 .category a:hover{
