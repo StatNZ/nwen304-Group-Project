@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/1391275534_nithiin.gif" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/ad1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/ad2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/ad3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/banner1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/banner2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/banner3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/banner4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/facebook-icon.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/insta-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/snapchat-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/twitter-logo.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/css/footer.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/css/main_site.css" afterPath="$PROJECT_DIR$/front/public_html/css/main_site.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/index.html" afterPath="$PROJECT_DIR$/front/public_html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/js/main_site.js" afterPath="$PROJECT_DIR$/front/public_html/js/main_site.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +35,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/public_html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+            <state relative-caret-position="41">
+              <caret line="90" column="47" lean-forward="true" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -411,7 +419,7 @@
       <workItem from="1495597762491" duration="11000" />
       <workItem from="1495597779068" duration="433000" />
       <workItem from="1495691774806" duration="7062000" />
-      <workItem from="1495955652142" duration="5593000" />
+      <workItem from="1495955652142" duration="5934000" />
     </task>
     <task id="LOCAL-00001" summary="Added appropriate css files and split .js files into appropriate sections">
       <created>1495506828138</created>
@@ -497,11 +505,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495960238625</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="trying to add in advertising images">
+      <created>1495963630902</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1495963630902</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38829000" />
+    <option name="totallyTimeSpent" value="39170000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -554,7 +569,8 @@
     <MESSAGE value="Worked on footer, added in social media icons" />
     <MESSAGE value="Worked on footer, tried to fix social media links" />
     <MESSAGE value="Added in &quot;coupon code&quot; section/banner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added in &quot;coupon code&quot; section/banner" />
+    <MESSAGE value="trying to add in advertising images" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to add in advertising images" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -993,8 +1009,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/public_html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="111" column="0" lean-forward="true" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+        <state relative-caret-position="41">
+          <caret line="90" column="47" lean-forward="true" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
           <folding />
         </state>
       </provider>
