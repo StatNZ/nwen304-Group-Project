@@ -1,4 +1,4 @@
-/**
+/*
  * Created by Status O'Brien on 23/05/17.
  *
  * This file contains all the information for our header. Includes
@@ -13,9 +13,9 @@ $(document).ready(function () {
     var $windowHeight = $(window).height();
     var $originalDropdownHeight = dropdownMenuInitialSize();
 
-    var dropdownMenuInterval = 0, i = 1, speed = 300, interval_time = 2000;
+    var dropdownMenuImageInterval = 0, i = 1, speed = 300, interval_time = 2000;
 
-    /*
+    /**
      * This is called when the window is resized. Controls the settings
      * of all our headers upon resize.
      */
@@ -25,8 +25,8 @@ $(document).ready(function () {
         $originalDropdownHeight = dropdownMenuInitialSize();
     });
 
-
-    /* Use this funciton to change the top banner pictures to
+    /**
+     * Use this funciton to change the top banner pictures to
      * suit the category you are currently looking at, We will copy
      * this for the women and kids section aswell
      */
@@ -50,9 +50,8 @@ $(document).ready(function () {
     });
 
     /**
-     * Helper Method: Used for setting a picture to change at
-     * @param img
-     * @param dir
+     * Helper Method: Used for setting a picture to change at a given
+     * time interval
      */
     function displayDropdownImages (img, dir, $this) {
         // we give it an image first
@@ -60,7 +59,7 @@ $(document).ready(function () {
         img.attr('alt', $this.text() + ' goes here');
 
         // now we set its interval for the image to change
-        dropdownMenuInterval = setInterval(function () {
+        dropdownMenuImageInterval = setInterval(function () {
             img.fadeOut(speed, function () {
                 if (i == 7) {
                     i = 0;
@@ -87,14 +86,8 @@ $(document).ready(function () {
 
     });
 
-    function clearDropdownImage () {
-        clearInterval(dropdownMenuInterval);
-        $('#dropdown_image').attr('src', '');
-        $('#dropdown_image').attr('alt', '');
-    }
 
-
-    /*
+    /**
      * Controls the opening and closing of our drop-down menu,
      */
     $(".mega-dropdown").hover(function(){
@@ -107,13 +100,12 @@ $(document).ready(function () {
 
         // now that we are inside the dropdown menu, we can
         // set the spacing of the items inside to be exact
-        dropdownMenuInsideSpacing ();
 
     }, function(){
         $(this).children('ul').hide();
     });
 
-    /*
+    /**
      * This function sets our drop down menu to be
      * a specific size, we will also use this function
      * when the window changes its size
@@ -121,13 +113,14 @@ $(document).ready(function () {
     function dropdownMenuInitialSize () {
 
         var dropDownHeight = $('.row').height();
+        var newHeight = $('#header').height() - $('.navbar').height();
 
-        $('.mega-dropdown-menu').height($('#header').height() - $('.navbar').height());
+        $('.mega-dropdown-menu').height(newHeight);
         $('.mega-dropdown-menu').width($windowWidth);
         return dropDownHeight;
     }
 
-    /*
+    /**
      * Controls the positioning of the columns inside
      * the drop-down menu. Places our items in a nice
      * manner
@@ -140,9 +133,20 @@ $(document).ready(function () {
         var height = (colsHeight - $originalDropdownHeight) / 2;
 
         $('.mega-dropdown-menu').children('li').children('ul').css({
-            'padding-left': width + 'px',
+            'padding-right': width + 'px',
             'padding-top': height + 'px',
             'padding-bottom': height + 'px'
         });
     }
+
+    /**
+     * Removes the dropdown image that is displayed in the dropdown
+     * menu.
+     */
+    function clearDropdownImage () {
+        clearInterval(dropdownMenuImageInterval);
+        $('#dropdown_image').attr('src', '');
+        $('#dropdown_image').attr('alt', '');
+    }
 })
+

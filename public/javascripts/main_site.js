@@ -22,7 +22,7 @@ $(document).ready( function (e) {
         'ban7.jpg',
         'ban8.jpg',
         'ban9.jpg',
-        'images/stock-photo-200657659.jpg'
+        'images/main_banner3.jpg'
     ];
     
     /*
