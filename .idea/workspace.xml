@@ -419,7 +419,7 @@
       <updated>1495492293563</updated>
       <workItem from="1495492296642" duration="24777000" />
       <workItem from="1495597327132" duration="290000" />
-      <workItem from="1495965609740" duration="1575000" />
+      <workItem from="1495965609740" duration="1613000" />
     </task>
     <task id="LOCAL-00001" summary="Added appropriate css files and split .js files into appropriate sections">
       <created>1495506828138</created>
@@ -477,11 +477,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495966959992</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="created new branch">
+      <created>1495967492820</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1495967492820</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26655000" />
+    <option name="totallyTimeSpent" value="26693000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -533,7 +540,8 @@
     <MESSAGE value="pushing header" />
     <MESSAGE value="just checking" />
     <MESSAGE value="merging has completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="merging has completed" />
+    <MESSAGE value="created new branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="created new branch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
