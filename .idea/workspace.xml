@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/ad1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/ad2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/ad3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/banner1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/banner2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/banner3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/banner4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/facebook-icon.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/insta-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/snapchat-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/images/twitter-logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/public_html/css/footer.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/css/main_site.css" afterPath="$PROJECT_DIR$/front/public_html/css/main_site.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/index.html" afterPath="$PROJECT_DIR$/front/public_html/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,8 +25,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/public_html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="90" column="47" lean-forward="true" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+            <state relative-caret-position="484">
+              <caret line="126" column="20" lean-forward="true" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -67,10 +57,10 @@
       <file leaf-file-name="main_site.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/public_html/css/main_site.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+            <state relative-caret-position="542">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="59" selection-end-column="1" />
               <folding>
-                <marker date="1495962978000" expanded="true" signature="61:75" ph="{...}" />
+                <marker date="1495964255000" expanded="true" signature="61:75" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -145,8 +135,8 @@
         <option value="$PROJECT_DIR$/front/public_html/css/header.css" />
         <option value="$PROJECT_DIR$/front/public_html/css/footer.css" />
         <option value="$PROJECT_DIR$/front/public_html/js/main_site.js" />
-        <option value="$PROJECT_DIR$/front/public_html/css/main_site.css" />
         <option value="$PROJECT_DIR$/front/public_html/index.html" />
+        <option value="$PROJECT_DIR$/front/public_html/css/main_site.css" />
       </list>
     </option>
   </component>
@@ -419,7 +409,7 @@
       <workItem from="1495597762491" duration="11000" />
       <workItem from="1495597779068" duration="433000" />
       <workItem from="1495691774806" duration="7062000" />
-      <workItem from="1495955652142" duration="5934000" />
+      <workItem from="1495955652142" duration="6273000" />
     </task>
     <task id="LOCAL-00001" summary="Added appropriate css files and split .js files into appropriate sections">
       <created>1495506828138</created>
@@ -512,11 +502,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495963630902</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="trying to add in advertising images">
+      <created>1495963996109</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1495963996109</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39170000" />
+    <option name="totallyTimeSpent" value="39509000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,7 +619,7 @@
         <state relative-caret-position="120">
           <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
-            <marker date="1495962978000" expanded="true" signature="61:75" ph="{...}" />
+            <marker date="1495964255000" expanded="true" signature="61:75" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -678,7 +675,7 @@
         <state relative-caret-position="120">
           <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
-            <marker date="1495962978000" expanded="true" signature="61:75" ph="{...}" />
+            <marker date="1495964255000" expanded="true" signature="61:75" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -734,7 +731,7 @@
         <state relative-caret-position="120">
           <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
-            <marker date="1495962978000" expanded="true" signature="61:75" ph="{...}" />
+            <marker date="1495964255000" expanded="true" signature="61:75" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -790,7 +787,7 @@
         <state relative-caret-position="120">
           <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
-            <marker date="1495962978000" expanded="true" signature="61:75" ph="{...}" />
+            <marker date="1495964255000" expanded="true" signature="61:75" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -874,7 +871,7 @@
         <state relative-caret-position="120">
           <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
           <folding>
-            <marker date="1495962978000" expanded="true" signature="61:75" ph="{...}" />
+            <marker date="1495964255000" expanded="true" signature="61:75" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -999,18 +996,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/public_html/css/main_site.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="54" column="17" lean-forward="true" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+        <state relative-caret-position="542">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="59" selection-end-column="1" />
           <folding>
-            <marker date="1495962978000" expanded="true" signature="61:75" ph="{...}" />
+            <marker date="1495964255000" expanded="true" signature="61:75" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/public_html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="90" column="47" lean-forward="true" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
+        <state relative-caret-position="484">
+          <caret line="126" column="20" lean-forward="true" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
           <folding />
         </state>
       </provider>

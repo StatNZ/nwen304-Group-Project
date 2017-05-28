@@ -43,11 +43,20 @@ body, html {
     list-style: none;
 }
 
-#flashing-images {
+#ad-woman {
     margin-top: 50px;
     width: 50%;
     height: 100%;
     background: yellow;
+}
+
+#ad-men {
+    margin-top: -50%;
+    margin-left: 50%;
+    width: 50%;
+    height: 100%;
+    background: blue;
+
 }
 
 #ad {
