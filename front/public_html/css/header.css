@@ -161,3 +161,8 @@
 .right-addon input {
     padding-right: 30px;
 }
+
+.ui-dialog-titlebar-close {
+    -webkit-box-shadow: none;
+    visibility: hidden;
+}

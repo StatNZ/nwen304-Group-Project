@@ -89,22 +89,61 @@ $(document).ready(function () {
     /************************************************
      ************* LOG IN/OUT FUNCTIONS *************
      ************************************************/
+    $('.error').hide();
 
-    $('#login-modal').dialog({modal:true, autoOpen:false,
-    buttons: {
-        "Log In" : function () {
-
-        },
-
-        // second button
-        "Cancel" : function () { $(this).dialog('close'); }
-    }
+    /**
+     * Stops modal from auto opening, and opens the modal
+     */
+    $('#login-modal').dialog({
+        autoOpen: false
     });
 
+    $('.btn-login').on('click', function () {
+        // validate the form. pass the correct information
+        // to the server. If the server invalidates
+        // display the error
+
+        // we also would like to change the login/register button to a logged in image
+        $('.error').show();
+    })
+
+    /**
+     * Because we removed the exit button, we have to do
+     * this manually.
+     */
+    $('.close').on('click', function () {
+        $('.error').hide(); // just in case it was not reset
+
+        $('#login-modal').dialog('close');
+    });
+
+    /**
+     * Entry point into our login-register dialog box
+     */
     $('.login-register').on('click', function () {
-        alert ('clicking yall ass');
         $('#login-modal').dialog('open');
+
+        // this sets the email field as the focus
+        $('.form-control').focus();
     });
+
+    /**
+     * Display the register input fields, remove the
+     * login input fields
+     */
+    $('#register-btn').on('click', function () {
+        $('.loginBox').hide();
+        $('.registerBox').show();
+        $('.login-footer').hide();
+        $('.register-footer').show();
+    });
+    /** The opposite to the above method */
+    $('#login-btn').on('click', function () {
+        $('.registerBox').hide();
+        $('.loginBox').show();
+        $('.register-footer').hide();
+        $('.login-footer').show();
+    })
 
     /************************************************
      ************* SEARCH BAR FUNCTIONS *************
