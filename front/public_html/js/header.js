@@ -26,9 +26,10 @@ $(document).ready(function () {
     });
 
     /**
-     * Use this funciton to change the top banner pictures to
-     * suit the category you are currently looking at, We will copy
-     * this for the women and kids section aswell
+     * Use this funciton to change and display the image within the
+     * dropdown menu to suit the category you are currently looking at,
+     * We will copy this for the women and kids sections, which are
+     * the two functions posted below.
      */
      $(".men-cat-items").hover(function () {
         clearDropdownImage();
@@ -50,27 +51,8 @@ $(document).ready(function () {
     });
 
     /**
-     * Helper Method: Used for setting a picture to change at a given
-     * time interval
+     * Same as .men-cat-items function, should be above this function
      */
-    function displayDropdownImages (img, dir, $this) {
-        // we give it an image first
-        img.attr('src', dir + '1.jpg');
-        img.attr('alt', $this.text() + ' goes here');
-
-        // now we set its interval for the image to change
-        dropdownMenuImageInterval = setInterval(function () {
-            img.fadeOut(speed, function () {
-                if (i == 7) {
-                    i = 0;
-                }
-                img.attr('src', dir + (++i) + '.jpg');
-                img.attr('alt', $(this).text() + ' goes here');
-                img.fadeIn();
-            });
-        }, interval_time);
-    }
-
     $(".women-cat-items").hover(function () {
         var catItem = $(this).text().toLowerCase();
         var dir = 'dropdown_images/';
@@ -85,7 +67,6 @@ $(document).ready(function () {
         img.height($originalDropdownHeight/1.5);
 
     });
-
 
     /**
      * Controls the opening and closing of our drop-down menu,
@@ -104,6 +85,63 @@ $(document).ready(function () {
     }, function(){
         $(this).children('ul').hide();
     });
+
+    /************************************************
+     ************* LOG IN/OUT FUNCTIONS *************
+     ************************************************/
+
+    $('#login-modal').dialog({modal:true, autoOpen:false,
+    buttons: {
+        "Log In" : function () {
+
+        },
+
+        // second button
+        "Cancel" : function () { $(this).dialog('close'); }
+    }
+    });
+
+    $('.login-register').on('click', function () {
+        alert ('clicking yall ass');
+        $('#login-modal').dialog('open');
+    });
+
+    /************************************************
+     ************* SEARCH BAR FUNCTIONS *************
+     ************************************************/
+
+    /**
+     * Query the search when the user presses the enter button.
+     * This is an alternative to onClick
+     */
+    $('.form-control').keypress(function(e){
+        if (e.which == 13 && validateSearchInput()){
+            // process the information
+            var query = $(this).val().toLowerCase();
+            // call the appropriate function
+            return false;
+        }
+    });
+
+    /**
+     * Query the search when the user clicks the icon.
+     * This is an alternative to 'enter' keypress
+     */
+    $('.glyphicon').on('click', function () {
+        // instantly return if the search bar is empty
+        validateSearchInput();
+
+        // user has clicked the search icon,
+        var query = $(this).val().toLowerCase();
+
+        // call the appropriate function
+    })
+
+
+    /************************************************
+     *********** SPECIAL FUNCTION CALLS *************
+     ***********   AND HELPER METHODS   *************
+     ************************************************/
 
     /**
      * This function sets our drop down menu to be
@@ -147,6 +185,42 @@ $(document).ready(function () {
         clearInterval(dropdownMenuImageInterval);
         $('#dropdown_image').attr('src', '');
         $('#dropdown_image').attr('alt', '');
+    }
+
+    /**
+     * Helper Method:
+     * Used for setting a picture to change at a given
+     * time interval
+     */
+    function displayDropdownImages (img, dir, $this) {
+        // we give it an image first
+        img.attr('src', dir + '1.jpg');
+        img.attr('alt', $this.text() + ' goes here');
+
+        // now we set its interval for the image to change
+        dropdownMenuImageInterval = setInterval(function () {
+            img.fadeOut(speed, function () {
+                if (i == 7) {
+                    i = 0;
+                }
+                img.attr('src', dir + (++i) + '.jpg');
+                img.attr('alt', $(this).text() + ' goes here');
+                img.fadeIn();
+            });
+        }, interval_time);
+    }
+
+    /**
+     * Validates the search input given by the user
+     */
+    function validateSearchInput () {
+        var query = $('.form-control').val().toLowerCase();
+        if (query == '') {
+            alert ('empty string') // error check for now (testing)
+            return false;
+        }
+        // will also need to check against XSS
+        return true;
     }
 })
 

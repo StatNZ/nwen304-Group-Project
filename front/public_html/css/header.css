@@ -142,8 +142,6 @@
 .inner-addon .glyphicon {
     position: absolute;
     padding: 2px 8px;
-    pointer-events: none;
-
 }
 
 /* align icon */
