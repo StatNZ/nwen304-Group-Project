@@ -14,9 +14,9 @@ $(document).ready( function (e) {
 
     /** Load all our images for our top banner into this array */
     var images = [
-        'images/main_banner3.jpg',
-        'images/main_banner1.jpg',
-        'images/main_banner2.jpg'
+        'images/banner1.jpg',
+        'images/banner2.jpg',
+        'images/banner4.jpg'
     ];
 
     /**
