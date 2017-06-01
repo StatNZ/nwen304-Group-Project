@@ -1,4 +1,6 @@
 /*
+ * Created by Status O'Brien on 23/05/17.
+ *
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -7,13 +9,14 @@
 $(document).ready( function (e) {
 
     // Global
+    var windowWidth = $(window).width();
     var $img = $("#top-banner-images"), i = 0, speed = 300;
 
     /** Load all our images for our top banner into this array */
     var images = [
-        'images/stock-photo-200657659.jpg',
-        'images/1391275534_nithiin.gif',
-        'images/chictravelphotos-22june154-1326.jpg'
+        'images/banner1.jpg',
+        'images/banner2.jpg',
+        'images/banner4.jpg'
     ];
 
     /**
@@ -28,5 +31,3 @@ $(document).ready( function (e) {
     }, 10000);
 
 });
-
-

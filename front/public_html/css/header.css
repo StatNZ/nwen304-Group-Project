@@ -6,10 +6,12 @@
 .navbar {
     background: #fff;
     border: 0px;
-    margin: auto;
+    margin: 0px;
 }
 
 .navbar-default,
+.navbar-left > li > a,
+.navbar-right > li > a,
 .nav-justified > li > a {
     /* changes the size of the buttons */
     font-weight: bold;
@@ -18,17 +20,23 @@
 /* changes the color of the buttons
  * in the navbar */
 .navbar-default,
+.navbar-left > li > a,
+.navbar-right > li > a,
 .nav-justified > li > a {
     color: #000;
 }
 
 /* takes away our hover color */
 .navbar-default,
+.navbar-left > li > a:hover,
+.navbar-right > li > a:hover,
 .nav-justified > li > a:hover {
     background: #fff;
 }
 
 /* Controls inside the dropdown menu, borders etc */
+.navbar-left > li > .dropdown-menu,
+.navbar-right > li > .dropdown-menu,
 .nav-justified > li > .dropdown-menu {
     margin-top: 0px;
     border: 0px;
@@ -37,7 +45,7 @@
 /* This ensures our dropdown can consume the entire
  * width of the screen */
 .mega-dropdown {
-    position: static !important;/*width:100%;*/
+    position:  static !important;/*width:100%;*/
 }
 
 /* Inside the drop down, changes all the
@@ -87,9 +95,15 @@
     text-transform: uppercase;
 }
 
-#shopping-kart-images {
-    height: 30px;
+.nav_button,
+.dropdown-toggle {
+    padding: 0px;
+    background: inherit;
+    border: 0px;
+}
 
+#shopping-kart-images {
+    height: 20px;
 }
 
 /*
@@ -98,4 +112,57 @@
  */
 .row {
     overflow: scroll;
+}
+
+.collapse {
+    background: inherit;
+}
+
+/*
+ * All below controls our search bar functionality
+ */
+.form-control {
+    height: 20px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    -webkit-box-shadow: none;
+    -webkit-border-radius: 0;
+    background: inherit;
+}
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+    outline: none;
+    text-outline: none;
+}
+
+/* style icon */
+.inner-addon .fa-search {
+    position: absolute;
+    padding: 2px 8px;
+}
+
+/* align icon */
+.left-addon .fa-search  {
+    left:  0px;
+}
+
+.right-addon .fa-search {
+    right: 0px;
+}
+
+/* add padding  */
+.left-addon input  {
+    padding-left:  30px;
+}
+
+.right-addon input {
+    padding-right: 30px;
+}
+
+.ui-dialog-titlebar-close {
+    -webkit-box-shadow: none;
+    visibility: hidden;
 }
