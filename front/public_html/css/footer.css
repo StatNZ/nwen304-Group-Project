@@ -23,6 +23,10 @@
 
 }
 
+.footer-section {
+    list-style: none;
+}
+
 .top-link a{
     font-weight: bold;
     font-size: 25px;
@@ -31,6 +35,10 @@
 .links li{
     font-size: 15px;
     color: white;
+    list-style: none;
+}
+
+.links > ul  li {
     list-style: none;
 }
 
