@@ -26,11 +26,12 @@ $(document).ready(function () {
     });
 
     /**
-     * Use this funciton to change the top banner pictures to
-     * suit the category you are currently looking at, We will copy
-     * this for the women and kids section aswell
+     * Use this funciton to change and display the image within the
+     * dropdown menu to suit the category you are currently looking at,
+     * We will copy this for the women and kids sections, which are
+     * the two functions posted below.
      */
-     $(".men-cat-items").hover(function () {
+    $(".men-cat-items").hover(function () {
         clearDropdownImage();
 
         var catItem = $(this).text().toLowerCase();
@@ -50,27 +51,8 @@ $(document).ready(function () {
     });
 
     /**
-     * Helper Method: Used for setting a picture to change at a given
-     * time interval
+     * Same as .men-cat-items function, should be above this function
      */
-    function displayDropdownImages (img, dir, $this) {
-        // we give it an image first
-        img.attr('src', dir + '1.jpg');
-        img.attr('alt', $this.text() + ' goes here');
-
-        // now we set its interval for the image to change
-        dropdownMenuImageInterval = setInterval(function () {
-            img.fadeOut(speed, function () {
-                if (i == 7) {
-                    i = 0;
-                }
-                img.attr('src', dir + (++i) + '.jpg');
-                img.attr('alt', $(this).text() + ' goes here');
-                img.fadeIn();
-            });
-        }, interval_time);
-    }
-
     $(".women-cat-items").hover(function () {
         var catItem = $(this).text().toLowerCase();
         var dir = 'dropdown_images/';
@@ -82,15 +64,14 @@ $(document).ready(function () {
         }
         img.attr('src', dir);
         img.fadeIn(300);
-        img.height($originalDropdownHeight/1.5);
+        img.height($originalDropdownHeight / 1.5);
 
     });
-
 
     /**
      * Controls the opening and closing of our drop-down menu,
      */
-    $(".mega-dropdown").hover(function(){
+    $(".mega-dropdown").hover(function () {
         // remove the image in the dropdown
         clearDropdownImage();
 
@@ -101,16 +82,115 @@ $(document).ready(function () {
         // now that we are inside the dropdown menu, we can
         // set the spacing of the items inside to be exact
 
-    }, function(){
+    }, function () {
         $(this).children('ul').hide();
     });
+
+    /************************************************
+     ************* LOG IN/OUT FUNCTIONS *************
+     ************************************************/
+    $('.error').hide();
+
+    /**
+     * Stops modal from auto opening, and opens the modal
+     */
+    $('#login-modal').dialog({
+        autoOpen: false
+    });
+
+    $('.btn-login').on('click', function () {
+        // validate the form. pass the correct information
+        // to the server. If the server invalidates
+        // display the error
+
+        $('.login-register').addClass('fa fa-user');
+        $('.login-register').text('');
+
+        // we also would like to change the login/register button to a logged in image
+        $('.error').show();
+    })
+
+    /**
+     * Because we removed the exit button, we have to do
+     * this manually.
+     */
+    $('.close').on('click', function () {
+        $('.error').hide(); // just in case it was not reset
+
+        $('#login-modal').dialog('close');
+    });
+
+    /**
+     * Entry point into our login-register dialog box
+     */
+    $('.login-register').on('click', function () {
+        $('#login-modal').dialog('open');
+
+        // this sets the email field as the focus
+        $('#email').focus();
+    });
+
+    /**
+     * Display the register input fields, remove the
+     * login input fields
+     */
+    $('#register-btn').on('click', function () {
+        $('.loginBox').hide();
+        $('.registerBox').show();
+        $('.login-footer').hide();
+        $('.register-footer').show();
+    });
+    /** The opposite to the above method */
+    $('#login-btn').on('click', function () {
+        $('.registerBox').hide();
+        $('.loginBox').show();
+        $('.register-footer').hide();
+        $('.login-footer').show();
+    })
+
+    /************************************************
+     ************* SEARCH BAR FUNCTIONS *************
+     ************************************************/
+
+    /**
+     * Query the search when the user presses the enter button.
+     * This is an alternative to onClick
+     */
+    $('.form-control').keypress(function (e) {
+        if (e.which == 13 && validateSearchInput()) {
+            // process the information
+            var query = $(this).val().toLowerCase();
+            // call the appropriate function
+            return false;
+        }
+    });
+
+    /**
+     * Query the search when the user clicks the icon.
+     * This is an alternative to 'enter' keypress
+     */
+    $('.fa-search').on('click', function () {
+        // instantly return if the search bar is empty
+        validateSearchInput();
+
+        // user has clicked the search icon,
+        var query = $(this).val().toLowerCase();
+
+        // call the appropriate function
+    })
+
+
+    /************************************************
+     *********** SPECIAL FUNCTION CALLS *************
+     ***********   AND HELPER METHODS   *************
+     ************************************************/
 
     /**
      * This function sets our drop down menu to be
      * a specific size, we will also use this function
      * when the window changes its size
      */
-    function dropdownMenuInitialSize () {
+    function dropdownMenuInitialSize() {
 
         var dropDownHeight = $('.row').height();
         var newHeight = $('#header').height() - $('.navbar').height();
@@ -125,7 +205,7 @@ $(document).ready(function () {
      * the drop-down menu. Places our items in a nice
      * manner
      */
-    function dropdownMenuInsideSpacing () {
+    function dropdownMenuInsideSpacing() {
         var classesLength = $('.col-sm-3').length;
         var colsWidth = $('.col-sm-3').width();
         var colsHeight = $('.mega-dropdown-menu').height();
@@ -143,10 +223,47 @@ $(document).ready(function () {
      * Removes the dropdown image that is displayed in the dropdown
      * menu.
      */
-    function clearDropdownImage () {
+    function clearDropdownImage() {
         clearInterval(dropdownMenuImageInterval);
         $('#dropdown_image').attr('src', '');
         $('#dropdown_image').attr('alt', '');
     }
+
+    /**
+     * Helper Method:
+     * Used for setting a picture to change at a given
+     * time interval
+     */
+    function displayDropdownImages(img, dir, $this) {
+        // we give it an image first
+        img.attr('src', dir + '1.jpg');
+        img.attr('alt', $this.text() + ' goes here');
+
+        // now we set its interval for the image to change
+        dropdownMenuImageInterval = setInterval(function () {
+            img.fadeOut(speed, function () {
+                if (i == 7) {
+                    i = 0;
+                }
+                img.attr('src', dir + (++i) + '.jpg');
+                img.attr('alt', $(this).text() + ' goes here');
+                img.fadeIn();
+            });
+        }, interval_time);
+    }
+
+    /**
+     * Validates the search input given by the user
+     */
+    function validateSearchInput() {
+        var query = $('.form-control').val().toLowerCase();
+        if (query == '') {
+            alert('empty string') // error check for now (testing)
+            return false;
+        }
+        // will also need to check against XSS
+        return true;
+    }
+
 })
 
