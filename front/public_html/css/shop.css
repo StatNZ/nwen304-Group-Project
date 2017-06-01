@@ -1,6 +1,53 @@
 
 /* This CSS file is for the pages with items to display */
 
+.breadcrumb-bar{
+    padding-left: 2%;
+    position: absolute;
+    margin-top: -3%;
+    margin-left: 2%;
+    width: 20%;
+    height: 5%;
+}
+
+.breadcrumb-bar a{
+    color: black;
+    font-weight: bold;
+
+}
+
+.breadcrumb-bar a:hover{
+    color: gray;
+    text-decoration: none;
+}
+
+.filter{
+    padding-left: 2%;
+    margin-left: 2%;
+    position: absolute;
+    width:20%;
+    background: ;
+    height: 60%;
+
+}
+
+.filter a {
+    color: black;
+}
+
+.filter a:hover{
+    color: gray;
+    text-decoration: none;
+}
+
+.filter-title {
+    font-weight: bold;
+}
+
+.filter li{
+    list-style: circle;
+}
+
 .item1{
     width: 20%;
     height: 50%;
