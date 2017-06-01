@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/css/header.css" afterPath="$PROJECT_DIR$/front/public_html/css/header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/css/login-register.css" afterPath="$PROJECT_DIR$/front/public_html/css/login-register.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/index.html" afterPath="$PROJECT_DIR$/front/public_html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/js/header.js" afterPath="$PROJECT_DIR$/front/public_html/js/header.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -296,6 +292,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="fonts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nwen304-Group-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nwen304-Group-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -433,7 +451,7 @@
       <workItem from="1495965609740" duration="1176000" />
       <workItem from="1496204088014" duration="13128000" />
       <workItem from="1496270039672" duration="2578000" />
-      <workItem from="1496293742453" duration="2481000" />
+      <workItem from="1496293742453" duration="2535000" />
     </task>
     <task id="LOCAL-00001" summary="Added appropriate css files and split .js files into appropriate sections">
       <created>1495506828138</created>
@@ -491,11 +509,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496231256201</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="modifications to the login dialog and header.js files">
+      <created>1496304970143</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1496304970143</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44443000" />
+    <option name="totallyTimeSpent" value="44497000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -546,7 +571,8 @@
     <MESSAGE value="pushing header" />
     <MESSAGE value="just checking" />
     <MESSAGE value="Created Login dialog, added new css files for glyphicons, we are now&#10;using font-awesome" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Login dialog, added new css files for glyphicons, we are now&#10;using font-awesome" />
+    <MESSAGE value="modifications to the login dialog and header.js files" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifications to the login dialog and header.js files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
