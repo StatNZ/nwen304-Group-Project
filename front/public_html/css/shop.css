@@ -55,6 +55,15 @@
     margin-top: -10%;
 }
 
+.item1 a, .item2 a, .item3 a{
+    color: black;
+}
+
+.item1 a:hover, .item2 a:hover, .item3 a:hover{
+    color: gray;
+    text-decoration: none;
+}
+
 .item2{
     width:20%;
     height:50%;
@@ -75,7 +84,33 @@
     width: 100%;
 }
 
+.shirta{
+    width: 100%;
+    margin-top: -158.3%;
+}
+
 .shirt:hover{
     opacity: 0.5;
+}
+
+.shirta:hover{
+    opacity:0;
+
+}
+
+.men-shirt1{
+    width: 30%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: -10%;
+}
+
+.men-shirt{
+    width: 100%;
+}
+
+.item-title {
+    margin-left: 57%;
+    margin-top: -28%;
 
 }
