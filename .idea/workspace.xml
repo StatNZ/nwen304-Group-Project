@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/css/shop.css" afterPath="$PROJECT_DIR$/front/public_html/css/shop.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/men-shirts.html" afterPath="$PROJECT_DIR$/front/public_html/men-shirts.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,17 +20,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="men-shirts.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="men-shirts.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/public_html/men-shirts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="265" column="12" lean-forward="false" selection-start-line="265" selection-start-column="12" selection-end-line="265" selection-end-column="12" />
+            <state relative-caret-position="321">
+              <caret line="287" column="24" lean-forward="true" selection-start-line="287" selection-start-column="24" selection-end-line="287" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shop.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shop.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/public_html/css/shop.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="474">
@@ -615,11 +613,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496313891870</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added in a filter section">
+      <created>1496315615329</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1496315615329</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38230000" />
+    <option name="totallyTimeSpent" value="38427000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -685,7 +690,8 @@
     <MESSAGE value="Added in comments of what we should add/do next" />
     <MESSAGE value="Added a men's shirt page and more content in the dropdown" />
     <MESSAGE value="created a shop.css file for pages that have items for sale" />
-    <option name="LAST_COMMIT_MESSAGE" value="created a shop.css file for pages that have items for sale" />
+    <MESSAGE value="added in a filter section" />
+    <option name="LAST_COMMIT_MESSAGE" value="added in a filter section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1104,18 +1110,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/public_html/men-shirts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="265" column="12" lean-forward="false" selection-start-line="265" selection-start-column="12" selection-end-line="265" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/public_html/css/shop.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
           <caret line="47" column="22" lean-forward="false" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/public_html/men-shirts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="287" column="24" lean-forward="true" selection-start-line="287" selection-start-column="24" selection-end-line="287" selection-end-column="24" />
           <folding />
         </state>
       </provider>
