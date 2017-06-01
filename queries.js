@@ -1,10 +1,10 @@
-var pg = require('pg').native;
+var pg = require('pg');
 
 var connectionString = 'postgres://lewiskier:nwen304databasepass@depot:5432/lewiskier_jdbc';
-client = new pg.Client(connectionString);
-client.connect();
 
 function test(req, res, next) {
+  client = new pg.Client(connectionString);
+  client.connect();
   var query = client.query("SELECT * FROM item");
   var results = [];
 
