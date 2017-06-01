@@ -20,9 +20,9 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/font-awesome.css">
 
 
-    <!-- the starting scripts needed for our site -->
-    <script src="js/jquery/jquery.min.js"></script>
-    <script src="js/jquery/jquery-ui.min.js"></script>
+        <!-- the starting scripts needed for our site -->
+        <script src="js/jquery/jquery.min.js"></script>
+        <script src="js/jquery/jquery-ui.min.js"></script>
 </head>
 
 <body>
@@ -36,7 +36,7 @@ and open the template in the editor.
                         <a href="index.html" class="nav_button dropdown-toggle" data-toggle="dropdown">Home</a>
                     </li>
                     <li class="dropdown mega-dropdown">
-                        <a href="" class="nav_button dropdown-toggle" data-toggle="dropdown">Menu</a>
+                        <a href="" class="nav_button dropdown-toggle" data-toggle="dropdown">Men</a>
                         <ul class="dropdown-menu mega-dropdown-menu row dropdown-menu-right">
                             <div class="megamenu-headline">
                                 <h2>Shop</h2>
@@ -54,6 +54,20 @@ and open the template in the editor.
                             </li>
                             <li class="col-sm-3">
                                 <ul>
+                                    <img id="dropdown_image" alt="" src="" ></img>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown mega-dropdown">
+                        <a href="" class="nav_button dropdown-toggle" data-toggle="dropdown">Women</a>
+                        <ul class="dropdown-menu mega-dropdown-menu row dropdown-menu-right">
+                            <div class="megamenu-headline">
+                                <h2>Shop</h2>
+                            </div>
+                            <li class="divider"></li>
+                            <li class="col-sm-3">
+                                <ul>
                                     <li class="dropdown-header">Women</li>
                                     <li class="women-cat-items"><a href="#">Dresses</a></li>
                                     <li class="women-cat-items"><a href="#">Churidar Suits</a></li>
@@ -65,6 +79,20 @@ and open the template in the editor.
                             </li>
                             <li class="col-sm-3">
                                 <ul>
+                                    <img id="women_dropdown-img" alt="" src="" ></img>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown mega-dropdown">
+                        <a href="" class="nav_button dropdown-toggle" data-toggle="dropdown">Kids</a>
+                        <ul class="dropdown-menu mega-dropdown-menu row dropdown-menu-right">
+                            <div class="megamenu-headline">
+                                <h2>Shop</h2>
+                            </div>
+                            <li class="divider"></li>
+                            <li class="col-sm-3">
+                                <ul>
                                     <li class="dropdown-header">Kids</li>
                                     <li class="kids-cat-items"><a href="#">Baby Apparel</a></li>
                                     <li class="kids-cat-items"><a href="#">Kids Apparel</a></li>
@@ -74,14 +102,10 @@ and open the template in the editor.
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <img id="dropdown_image" alt="" src="images/banner1.jpg" ></img>
+                                    <img id="kid_dropdown-img" alt="" src="" ></img>
                                 </ul>
                             </li>
                         </ul>
-                    </li>
-                    <li class="dropdown mega-dropdown">
-                        <a href="#" class="nav_button dropdown-toggle" data-toggle="dropdown">
-                            Orders</a>
                     </li>
                 </ul>
 
@@ -93,7 +117,7 @@ and open the template in the editor.
                         <a class="nav_button dropdown-toggle" data-toggle="dropdown">
                             <!-- Adds a search bar -->
                             <div class="inner-addon right-addon">
-                                <i class="glyphicon glyphicon-search"></i>
+                                <i href="#" class="fa fa-search"></i>
                                 <input placeholder="search..." type="text" class="form-control" />
                             </div>
                         </a>
@@ -101,8 +125,7 @@ and open the template in the editor.
 
                     <!-- The shopping cart functionality -->
                     <li class="dropdown mega-dropdown">
-                        <a href="#" class="nav_button dropdown-toggle" data-toggle="dropdown">
-                            <img id="shopping-kart-images" src="images/kart-img.png"></img>
+                        <a href="#" class="nav_button dropdown-toggle fa fa-shopping-cart" data-toggle="dropdown">
                         </a>
                         <ul class="dropdown-menu mega-dropdown-menu row dropdown-menu-left">
                             <div class="megamenu-headline">
@@ -138,77 +161,77 @@ and open the template in the editor.
         </div>
     </div>
 
+    <div class="modal fade login in" id="login-modal" aria-hidden="false">
+        <div class="modal-dialog login animated" id="login-outside-box">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Login with</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="box">
+                        <div class="content">
+                            <div class="social">
+                                <a class="circle github" href="#">
+                                    <i class="fa fa-github fa-fw"></i>
+                                </a>
+                                <a id="google_login" class="circle google" href="#">
+                                    <i class="fa fa-google-plus fa-fw"></i>
+                                </a>
+                                <a id="facebook_login" class="circle facebook" href="#">
+                                    <i class="fa fa-facebook fa-fw"></i>
+                                </a>
+                            </div>
+                            <div class="division">
+                                <div class="line l"></div>
+                                <span>or</span>
+                                <div class="line r"></div>
+                            </div>
+                            <div class="error alert alert-danger">Invalid email/password combination</div>
+                            <div class="form loginBox" style="display: block;">
+                                <form method="" action="" accept-charset="UTF-8">
+                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                    <input class="btn btn-default btn-login" type="button" value="Login">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The box is used for registration -->
+                    <div class="box">
+                        <div class="content registerBox" style="display: none;">
+                            <div class="form">
+                                <form method="" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
+                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                    <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
+                                    <input class="btn btn-default btn-register" type="button" value="Create account" name="commit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="forgot login-footer" style="display: block;">
+                            <span>Looking to
+                                 <a  id="register-btn">create an account</a>
+                            ?</span>
+                    </div>
+                    <div class="forgot register-footer" style="display: none;">
+                        <span>Already have an account?</span>
+                        <a id="login-btn" >Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 
     <div id="main-body">
 
-        <div class="modal fade login in" id="login-modal" aria-hidden="false">
-            <div class="modal-dialog login animated" id="login-outside-box">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">Login with</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="box">
-                            <div class="content">
-                                <div class="social">
-                                    <a class="circle github" href="#">
-                                        <i class="fa fa-github fa-fw"></i>
-                                    </a>
-                                    <a id="google_login" class="circle google" href="#">
-                                        <i class="fa fa-google-plus fa-fw"></i>
-                                    </a>
-                                    <a id="facebook_login" class="circle facebook" href="#">
-                                        <i class="fa fa-facebook fa-fw"></i>
-                                    </a>
-                                </div>
-                                <div class="division">
-                                    <div class="line l"></div>
-                                    <span>or</span>
-                                    <div class="line r"></div>
-                                </div>
-                                <div class="error alert alert-danger">Invalid email/password combination</div>
-                                <div class="form loginBox" style="display: block;">
-                                    <form method="" action="" accept-charset="UTF-8">
-                                        <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                        <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                        <input class="btn btn-default btn-login" type="button" value="Login">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- The box is used for registration -->
-                        <div class="box">
-                            <div class="content registerBox" style="display: none;">
-                                <div class="form">
-                                    <form method="" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
-                                        <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                        <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                        <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                        <input class="btn btn-default btn-register" type="button" value="Create account" name="commit">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <div class="forgot login-footer" style="display: block;">
-                            <span>Looking to
-                                 <a  id="register-btn">create an account</a>
-                            ?</span>
-                        </div>
-                        <div class="forgot register-footer" style="display: none;">
-                            <span>Already have an account?</span>
-                            <a id="login-btn" >Login</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
         <!-- Want to try get it looking like below -->
         <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity -->

@@ -31,7 +31,7 @@ $(document).ready(function () {
      * We will copy this for the women and kids sections, which are
      * the two functions posted below.
      */
-     $(".men-cat-items").hover(function () {
+    $(".men-cat-items").hover(function () {
         clearDropdownImage();
 
         var catItem = $(this).text().toLowerCase();
@@ -64,14 +64,14 @@ $(document).ready(function () {
         }
         img.attr('src', dir);
         img.fadeIn(300);
-        img.height($originalDropdownHeight/1.5);
+        img.height($originalDropdownHeight / 1.5);
 
     });
 
     /**
      * Controls the opening and closing of our drop-down menu,
      */
-    $(".mega-dropdown").hover(function(){
+    $(".mega-dropdown").hover(function () {
         // remove the image in the dropdown
         clearDropdownImage();
 
@@ -82,7 +82,7 @@ $(document).ready(function () {
         // now that we are inside the dropdown menu, we can
         // set the spacing of the items inside to be exact
 
-    }, function(){
+    }, function () {
         $(this).children('ul').hide();
     });
 
@@ -102,6 +102,9 @@ $(document).ready(function () {
         // validate the form. pass the correct information
         // to the server. If the server invalidates
         // display the error
+
+        $('.login-register').addClass('fa fa-user');
+        $('.login-register').text('');
 
         // we also would like to change the login/register button to a logged in image
         $('.error').show();
@@ -124,7 +127,7 @@ $(document).ready(function () {
         $('#login-modal').dialog('open');
 
         // this sets the email field as the focus
-        $('.form-control').focus();
+        $('#email').focus();
     });
 
     /**
@@ -153,8 +156,8 @@ $(document).ready(function () {
      * Query the search when the user presses the enter button.
      * This is an alternative to onClick
      */
-    $('.form-control').keypress(function(e){
-        if (e.which == 13 && validateSearchInput()){
+    $('.form-control').keypress(function (e) {
+        if (e.which == 13 && validateSearchInput()) {
             // process the information
             var query = $(this).val().toLowerCase();
             // call the appropriate function
@@ -166,7 +169,7 @@ $(document).ready(function () {
      * Query the search when the user clicks the icon.
      * This is an alternative to 'enter' keypress
      */
-    $('.glyphicon').on('click', function () {
+    $('.fa-search').on('click', function () {
         // instantly return if the search bar is empty
         validateSearchInput();
 
@@ -187,7 +190,7 @@ $(document).ready(function () {
      * a specific size, we will also use this function
      * when the window changes its size
      */
-    function dropdownMenuInitialSize () {
+    function dropdownMenuInitialSize() {
 
         var dropDownHeight = $('.row').height();
         var newHeight = $('#header').height() - $('.navbar').height();
@@ -202,7 +205,7 @@ $(document).ready(function () {
      * the drop-down menu. Places our items in a nice
      * manner
      */
-    function dropdownMenuInsideSpacing () {
+    function dropdownMenuInsideSpacing() {
         var classesLength = $('.col-sm-3').length;
         var colsWidth = $('.col-sm-3').width();
         var colsHeight = $('.mega-dropdown-menu').height();
@@ -220,7 +223,7 @@ $(document).ready(function () {
      * Removes the dropdown image that is displayed in the dropdown
      * menu.
      */
-    function clearDropdownImage () {
+    function clearDropdownImage() {
         clearInterval(dropdownMenuImageInterval);
         $('#dropdown_image').attr('src', '');
         $('#dropdown_image').attr('alt', '');
@@ -231,7 +234,7 @@ $(document).ready(function () {
      * Used for setting a picture to change at a given
      * time interval
      */
-    function displayDropdownImages (img, dir, $this) {
+    function displayDropdownImages(img, dir, $this) {
         // we give it an image first
         img.attr('src', dir + '1.jpg');
         img.attr('alt', $this.text() + ' goes here');
@@ -252,14 +255,15 @@ $(document).ready(function () {
     /**
      * Validates the search input given by the user
      */
-    function validateSearchInput () {
+    function validateSearchInput() {
         var query = $('.form-control').val().toLowerCase();
         if (query == '') {
-            alert ('empty string') // error check for now (testing)
+            alert('empty string') // error check for now (testing)
             return false;
         }
         // will also need to check against XSS
         return true;
     }
+
 })
 

@@ -114,6 +114,10 @@
     overflow: scroll;
 }
 
+.collapse {
+    background: inherit;
+}
+
 /*
  * All below controls our search bar functionality
  */
@@ -127,10 +131,6 @@
     background: inherit;
 }
 
-.collapse {
-    background: inherit;
-}
-
 /* enable absolute positioning */
 .inner-addon {
     position: relative;
@@ -139,17 +139,17 @@
 }
 
 /* style icon */
-.inner-addon .glyphicon {
+.inner-addon .fa-search {
     position: absolute;
     padding: 2px 8px;
 }
 
 /* align icon */
-.left-addon .glyphicon  {
+.left-addon .fa-search  {
     left:  0px;
 }
 
-.right-addon .glyphicon {
+.right-addon .fa-search {
     right: 0px;
 }
 

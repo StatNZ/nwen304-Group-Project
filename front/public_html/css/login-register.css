@@ -158,9 +158,7 @@
     width: 100%;
 }
 .login .btn-login, .registerBox .btn-register{
-    background-color: #00BBFF;
-    border-color: #00BBFF;
-    border-width: 0;
+    background-color: rgba(51, 51, 51, 0.67);
     color: #FFFFFF;
     display: block;
     margin: 0 auto;
@@ -221,11 +219,13 @@
     background-color: #00A4E4;
     color: #FFFFFF;
 }
+
 .big-register{
     background-color: rgba(0,0,0,.0);
     color: #00bbff;
     border-color: #00bbff;
 }
+
 .big-register:hover{
     border-color: #00A4E4;
     color:  #00A4E4;
