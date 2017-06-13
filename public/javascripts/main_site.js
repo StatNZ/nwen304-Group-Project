@@ -61,7 +61,7 @@ $(document).ready( function (e) {
     window.setInterval(function() {
         $img.fadeOut(speed, function() {
             //$img.attr("src", images[(++i % images.length)]);
-            $img.attr('src', 'banner_images/ban' + (++i % bannerImagesLength) +'.jpg');
+            $img.attr('src', 'bannerImages/ban' + (++i % bannerImagesLength) +'.jpg');
             $img.fadeIn(speed);
         });
     }, 1000);
