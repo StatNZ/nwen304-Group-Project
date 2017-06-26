@@ -124,13 +124,13 @@
     margin-top: -28%;
 
 }*/
-
-div.gallery {
-    border: 1px solid #ccc;
+.men-cas, .men-form{
+    margin-left: 300px;
+    margin-top: -300px;
 }
 
 div.gallery:hover {
-    border: 1px solid #777;
+    opacity: 0.7;
 }
 
 div.gallery img {
@@ -170,4 +170,12 @@ div.desc {
     content: "";
     display: table;
     clear: both;
+}
+
+#men-casual {
+    display: none;
+}
+
+#men-formal {
+    display: none;
 }
