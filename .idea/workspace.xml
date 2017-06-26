@@ -2,82 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/banner_images/ban1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/banner_images/ban2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/banner_images/ban3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/banner_images/ban4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/banner_images/ban5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/banner_images/ban6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/banner_images/ban7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/banner_images/ban8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/banner_images/ban9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/cs1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/cs2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/cs3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/cs4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/cs5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/cs6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/cs7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoe2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoe3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoe4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoe5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoe6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoes1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoes2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoes3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoes4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoes5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoes6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/dropdown_images/shoes7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/ad1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/ad2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/ad3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/banner1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/banner2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/banner4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/facebook-icon.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/insta-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/kart-img.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/main_banner1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/main_banner2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/main_banner3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/men-shirt1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/men-shirt1a.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/men-shirt2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/men-shirt3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/search-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/snapchat-logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/twitter-logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/footer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/header.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/login-register.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/main_site.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/shop.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/header.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery/jquery-3.2.1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery/jquery-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/jquery/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/main_site.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/categories.handlebars" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/index.handlebars" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/layouts/main.handlebars" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/men-shirts.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/error.jade" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/layout.jade" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/banner_images/ban1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/banner_images/ban2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/banner_images/ban3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/banner_images/ban4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/banner_images/ban5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/banner_images/ban6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/banner_images/ban7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/banner_images/ban8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/banner_images/ban9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/css/font-awesome.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/css/footer.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/css/header.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/css/login-register.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/css/main_site.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/css/shop.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/cs1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/cs2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/cs3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/cs4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/cs5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/cs6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/cs7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoe2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoe3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoe4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoe5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoe6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoes1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoes2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoes3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoes4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoes5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoes6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/dropdown_images/shoes7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/fonts/FontAwesome.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/ad1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/ad2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/ad3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/banner1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/banner2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/banner4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/facebook-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/insta-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/kart-img.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/main_banner1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/main_banner2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/main_banner3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/men-shirt1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/men-shirt1a.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/men-shirt2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/men-shirt3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/search-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/snapchat-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/images/twitter-logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/js/header.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/js/jquery/jquery-3.2.1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/js/jquery/jquery-ui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/js/jquery/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/js/main_site.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/front/public_html/men-shirts.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/front/public_html/men-shirt1.html" afterPath="$PROJECT_DIR$/views/men-shirt1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/public_html/index.html" afterPath="$PROJECT_DIR$/front/public_html/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -152,10 +145,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="categories.handlebars" pinned="false" current-in-tab="true">
+      <file leaf-file-name="categories.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/categories.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="272">
+              <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="men-shirts.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/men-shirts.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4134">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -163,25 +166,10 @@
         </entry>
       </file>
       <file leaf-file-name="men-shirt1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/public_html/men-shirt1.html">
+        <entry file="file://$PROJECT_DIR$/views/men-shirt1.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="449">
               <caret line="302" column="7" lean-forward="false" selection-start-line="302" selection-start-column="7" selection-end-line="302" selection-end-column="7" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="men-shirts.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/front/public_html/men-shirts.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="259" column="8" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
               <folding>
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -388,56 +376,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nwen304-Group-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nwen304-Group-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nwen304-Group-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nwen304-Group-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nwen304-Group-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nwen304-Group-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -7579,11 +7517,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498384784212</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added handlebars and moved all front to backend code. COMPLETED MERGE">
+      <created>1498447460675</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1498447460675</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48655000" />
+    <option name="totallyTimeSpent" value="48954000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -7596,14 +7541,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2453125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2453125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.503125" order="16" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.496875" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32802126" sideWeight="0.496875" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -7652,7 +7596,8 @@
     <MESSAGE value="added in a filter section" />
     <MESSAGE value="Modified excessive files, getting ready for merge, reformat to create live" />
     <MESSAGE value="merged master with google branch, all files should be up to date" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged master with google branch, all files should be up to date" />
+    <MESSAGE value="Added handlebars and moved all front to backend code. COMPLETED MERGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added handlebars and moved all front to backend code. COMPLETED MERGE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -7661,13 +7606,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front/public_html/css/header.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/public_html/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5840">
@@ -7690,6 +7628,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -7886,9 +7825,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="219" column="34" lean-forward="false" selection-start-line="219" selection-start-column="34" selection-end-line="219" selection-end-column="34" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -7963,7 +7900,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/public_html/men-shirt1.html">
+    <entry file="file://$PROJECT_DIR$/views/men-shirt1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
           <caret line="302" column="7" lean-forward="false" selection-start-line="302" selection-start-column="7" selection-end-line="302" selection-end-column="7" />
@@ -7980,18 +7917,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
           <caret line="259" column="8" lean-forward="false" selection-start-line="259" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/categories.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="272">
+          <caret line="17" column="6" lean-forward="false" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/men-shirts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4134">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
