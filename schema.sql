@@ -1,4 +1,4 @@
-CREATE TABLE category (
+/*CREATE TABLE category (
 	CategoryID integer(12) NOT NULL,
 	Name varchar(255) NOT NULL UNIQUE,
 	PRIMARY KEY (CategoryID)
@@ -41,4 +41,58 @@ CREATE TABLE order_item (
 	PRIMARY KEY (OrderItemsID),
 	FOREIGN KEY OrderID References order(OrderID),
 	FOREIGN KEY ItemID References item(ItemID)
+);*/
+
+CREATE TABLE category (
+	CategoryID SERIAL PRIMARY KEY,
+	Name varchar(55) NOT NULL,
+	Gender char NOT NULL
 );
+
+CREATE TABLE subcategory ( 
+	SubCategoryID SERIAL PRIMARY KEY,
+	Name varchar(255) NOT NULL,
+	CategoryID integer NOT NULL REFERENCES category
+);
+
+CREATE TABLE item (
+	ItemID SERIAL PRIMARY KEY,
+	Name varchar(255) NOT NULL,
+	Description varchar(1000),
+	Price money NOT NULL,
+	ImageSource varchar(255),
+	CategoryID integer NOT NULL REFERENCES category,
+);	
+
+CREATE TABLE order (
+	OrderID SERIAL PRIMARY KEY,
+	Date date NOT NULL,
+	Email varchar(255),
+);
+
+CREATE TABLE orderdetails (
+	OrderDetailsID SERIAL PRIMARY KEY,
+	OrderID integer NOT NULL REFERENCES order,
+	ItemID integer NOT NULL REFERENCES item,
+	Quantity integer NOT NULL 
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
