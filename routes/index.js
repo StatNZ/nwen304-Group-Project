@@ -20,18 +20,46 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-passport.use(new FacebookStrategy({
+var fbOpts = {
     clientID: 238120290008806,
     clientSecret: 'b5291cbe9d73872bed7743f39d2f3fe1',
     callbackURL: "http://localhost:3000/auth/facebook/callback",
-    passReqToCallback   : true
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-      return cb(err, user);
+};
+
+var fbCallback = function (accessToken, refreshToken, profile, done) {
+    //console.log(accessToken, refreshToken, profile, cb);
+
+    // the user must be added to the database here
+    process.nextTick(function () {
+        return done (null); /* Returns an error, redirects to categories page */
     });
-  }
-));
+
+    // wait for the next tick before processing the information below
+    // process.nextTick(function () {
+    //     User.findOrCreate({'facebook:id': profile.id}, function (err, user) {
+    //         if (err)
+    //             return done(err);
+    //         if (user)
+    //             return done(null, user);
+    //         else {
+    //             // we need to add them into our database
+    //         }
+    //     })
+    // })
+};
+
+passport.use (new FacebookStrategy (fbOpts, fbCallback));
+
+router.get('/auth/facebook',
+    passport.authenticate ('facebook'));
+
+router.get ('/auth/facebook/callback',
+    passport.authenticate ('facebook', {
+        successRedirect: '/',
+        failureRedirect: '/categories'
+    })
+);
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -55,15 +83,12 @@ router.get('/auth/google/callback',
         failureRedirect: '/'
 }));
 
-router.get('/auth/facebook',
-  passport.authenticate('facebook'));
-
-router.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-  });
+// router.get('/auth/facebook/callback',
+  // passport.authenticate('facebook', { failureRedirect: '/' }),
+  // function(req, res) {
+  //   // Successful authentication, redirect home.
+  //   res.redirect('/');
+  // });
 
 router.get('/categories', function (req, res) {
     res.render ('categories');

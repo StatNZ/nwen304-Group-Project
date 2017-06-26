@@ -11,7 +11,7 @@ $(document).ready(function () {
     // Main Globals
     var $windowWidth = $(window).width();
     var $windowHeight = $(window).height();
-    var $originalDropdownHeight = dropdownMenuInitialSize();
+    //var $originalDropdownHeight = dropdownMenuInitialSize();
 
     var dropdownMenuImageInterval = 0, i = 1, speed = 300, interval_time = 2000;
 
@@ -22,7 +22,7 @@ $(document).ready(function () {
     $(window).resize(function () {
         $windowWidth = $(window).width();
         $windowHeight = $(window).height();
-        $originalDropdownHeight = dropdownMenuInitialSize();
+        //$originalDropdownHeight = dropdownMenuInitialSize();
     });
 
     /**
@@ -35,15 +35,15 @@ $(document).ready(function () {
         clearDropdownImage();
 
         var catItem = $(this).text().toLowerCase();
-        var dir = 'dropdown_images/';
+        var dir = 'images/';
         var img = $('#dropdown_image');
 
         switch (catItem) {
-            case 'footwear':
-                dir += 'shoes';
+            case 'shoes':
+                dir += 'mens-shoes/shoes';
                 break;
-            case 'casual shirts':
-                dir += 'cs';
+            case 'shirts':
+                dir += 'mens-shirts/cs';
                 break;
         }
 
@@ -64,7 +64,7 @@ $(document).ready(function () {
         }
         img.attr('src', dir);
         img.fadeIn(300);
-        img.height($originalDropdownHeight / 1.5);
+        // img.height($originalDropdownHeight / 1.5);
 
     });
 
