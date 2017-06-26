@@ -65,4 +65,8 @@ router.get('/auth/facebook/callback',
     res.redirect('/');
   });
 
+router.get('/categories', function (req, res) {
+    res.render ('categories');
+});
+
 module.exports = router;

@@ -1,5 +1,9 @@
-
 /* This CSS file is for the pages with items to display */
+
+body, html {
+    height: auto;
+    width: 100%;
+}
 
 .breadcrumb-bar{
     padding-left: 2%;
@@ -26,7 +30,6 @@
     margin-left: 2%;
     position: absolute;
     width:20%;
-    background: ;
     height: 60%;
 
 }
