@@ -12,8 +12,6 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'html');
-
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -58,5 +56,8 @@ app.use('/', routes);
 //     error: {}
 //   });
 // });
+
+app.listen(3000);
+console.log ('listening on localhost:3000');
 
 module.exports = app;

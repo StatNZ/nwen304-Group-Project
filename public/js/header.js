@@ -156,7 +156,7 @@ $(document).ready(function () {
      * Query the search when the user presses the enter button.
      * This is an alternative to onClick
      */
-    $('.form-control').keypress(function (e) {
+    $('.search-form-control').keypress(function (e) {
         if (e.which == 13 && validateSearchInput()) {
             // process the information
             var query = $(this).val().toLowerCase();
@@ -164,6 +164,14 @@ $(document).ready(function () {
             getSearch(query);
             alert ('posted search query');
         }
+    });
+
+    /**
+     * When the user clicks on the search bar area, all the text will
+     * clear from the input
+     */
+    $('.search-form-control').on('click', function (){
+       $(this).val('');
     });
 
     /**
@@ -259,7 +267,7 @@ $(document).ready(function () {
      * Validates the search input given by the user
      */
     function validateSearchInput() {
-        var query = $('.form-control').val().toLowerCase();
+        var query = $('.search-form-control').val().toLowerCase();
         if (query == '') {
             alert('empty string') // error check for now (testing)
             return false;

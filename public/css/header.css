@@ -126,7 +126,7 @@
 /*
  * All below controls our search bar functionality
  */
-.form-control {
+.search-form-control {
     height: 20px;
     border-top: 0;
     border-left: 0;
