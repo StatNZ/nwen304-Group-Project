@@ -1,14 +1,10 @@
 /* This CSS file is for the pages with items to display */
 
-body, html {
-    height: auto;
-    width: 100%;
-}
+
 
 .breadcrumb-bar{
     padding-left: 2%;
-    position: absolute;
-    margin-top: -3%;
+    position: relative;
     margin-left: 2%;
     width: 20%;
     height: 5%;
@@ -28,7 +24,7 @@ body, html {
 .filter{
     padding-left: 2%;
     margin-left: 2%;
-    position: absolute;
+    position: relative;
     width:20%;
     height: 60%;
 
