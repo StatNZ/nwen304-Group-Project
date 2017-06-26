@@ -15,6 +15,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/main_site.css">
         <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/shop.css">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
         <link rel="stylesheet" href="css/login-register.css" >
         <link rel="stylesheet" href="css/font-awesome.css">
@@ -33,7 +34,7 @@ and open the template in the editor.
                 <!-- Below is the left-hand side of our navbar -->
                 <ul class="nav navbar-nav navbar-left">
                     <li class="dropdown mega-dropdown">
-                        <a href="index.html" class="nav_button dropdown-toggle" data-toggle="dropdown">Urban Apparel</a>
+                        <a href="index.handlebars" class="nav_button dropdown-toggle" data-toggle="dropdown">Urban Apparel</a>
                     </li>
                     <li class="dropdown mega-dropdown">
                         <a href="" class="nav_button dropdown-toggle" data-toggle="dropdown">Men</a>
@@ -45,7 +46,7 @@ and open the template in the editor.
                             <li class="col-sm-3">
                                 <ul>
                                     <li class="dropdown-header">Tops</li>
-                                    <li class="men-cat-items"><a href="men-shirts.html">Shirts</a></li>
+                                    <li class="men-cat-items"><a href="#">Shirts</a></li>
                                     <li class="men-cat-items"><a href="#">T-Shirts</a></li>
                                     <li class="men-cat-items"><a href="#">Jackets</a></li>
                                 </ul>
@@ -185,9 +186,6 @@ and open the template in the editor.
         </div>
         <!-- Possibly consider adding in a big chuck of "advertisement" for the "sales" similar to nastygal.com etc -->
 
-        <div id="header-flash-image">
-            <img id="top-banner-images" src="images/banner1.jpg">
-        </div>
     </div>
 
     <div class="modal fade login in" id="login-modal" aria-hidden="false">
@@ -204,10 +202,10 @@ and open the template in the editor.
                                 <a class="circle github" href="#">
                                     <i class="fa fa-github fa-fw"></i>
                                 </a>
-                                <a id="google_login" class="circle google" href="/auth/google">
+                                <a id="google_login" class="circle google" href="#">
                                     <i class="fa fa-google-plus fa-fw"></i>
                                 </a>
-                                <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                <a id="facebook_login" class="circle facebook" href="#">
                                     <i class="fa fa-facebook fa-fw"></i>
                                 </a>
                             </div>
@@ -260,24 +258,56 @@ and open the template in the editor.
 
 
     <div id="main-body">
+        <div class="breadcrumb-bar">
+            <a href="index.handlebars">HOME</a> / <a href="#">MEN</a> / SHIRTS
+        </div>
+        <div class="filter">
+            <a href="#" class="filter-title">SHOP BY STYLE</a>
+            <ul>
+                <li><a href="#" class="filter-content">Casual</a></li>
+                <li><a href="#" class="filter-content">Formal</a></li>
+                <li><a href="#" class="filter-content">Work</a></li>
+            </ul>
+            <a href="#" class="filter-title">SHOP BY BRAND</a>
+            <ul>
+                <li><a href="#" class="filter-content">Calvin Klein</a></li>
+                <li><a href="#" class="filter-content">Tommy Hilfiger</a></li>
+                <li><a href="#" class="filter-content">Country Road</a></li>
+                <li><a href="#" class="filter-content">Lacoste</a></li>
+                <li><a href="#" class="filter-content">More brands</a></li>
+            </ul>
+            <a href="#" class="filter-title">SHOP BY PRICE</a>
+            <ul>
+                <li><a href="#" class="filter-content">$5-$50</a></li>
+                <li><a href="#" class="filter-content">$50-$100</a></li>
+                <li><a href="#" class="filter-content">$100-$500</a></li>
+                <li><a href="#" class="filter-content">$500-$1000</a></li>
+            </ul>
 
-
-        <!-- Want to try get it looking like below -->
-        <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_opacity -->
-        <div class="category">
-            <a href="#" class="women">WOMEN</a>
-            <a href="#" class="men">MEN</a>
-            <!-- Should add in a kids category, and maybe a fourth category
-                 The images might also change? Not sure if necessary though -->
         </div>
 
-        <div class="ad">
-
-            <a href="#">
-                <img class="ad1" src="images/ad1.jpg">
+        <div class="item1">
+            <a href="categories.handlebars">
+                <img class="shirt" src="images/men-shirt1.jpg">
+                <img class="shirta" src="images/men-shirt1a.jpg">
+                <h4>BABYBLUE CLASSIC CREW</h4>
+                $150
             </a>
+        </div>
+        <div class="item2">
             <a href="#">
-                <img class="ad2" src="images/ad2.jpg">
+                <img class="shirt" src="images/men-shirt2.jpg">
+                <img class="shirta" src="images/men-shirt2.jpg">
+                <h4>WHITE CLASSIC POLO</h4>
+                $120
+            </a>
+        </div>
+        <div class="item3">
+            <a href="#">
+                <img class="shirt" src="images/men-shirt3.jpg">
+                <img class="shirta" src="images/men-shirt3.jpg">
+                <h4>BLUE CLASSIC DENIM</h4>
+                $170
             </a>
         </div>
     </div>
