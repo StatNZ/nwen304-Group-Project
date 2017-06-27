@@ -1,20 +1,4 @@
-/*CREATE TABLE category (
-	CategoryID integer(12) NOT NULL,
-	Name varchar(255) NOT NULL UNIQUE,
-	PRIMARY KEY (CategoryID)
-);
-
-CREATE TABLE item (
-	ItemID integer(12) NOT NULL,
-	Name varchar(255) NOT NULL,
-	Description varchar(1000),
-	Price integer NOT NULL,
-	ImageSource varchar(255),
-	Category integer(12) NOT NULL,
-	PRIMARY KEY (ItemID),
-	FOREIGN KEY (Category) References category(Name)
-);
-
+/*
 CREATE TABLE customer (
 	CustomerID integer(12) NOT NULL,
 	Name varchar(255) NOT NULL,
@@ -23,25 +7,7 @@ CREATE TABLE customer (
 	Password varchar(255) NOT NULL,
 	PRIMARY KEY (CustomerID)
 );
-
-CREATE TABLE order (
-	OrderID integer(12) NOT NULL,
-	OrderDate date NOT NULL,
-	CustomerID integer(12) NOT NULL,
-	TotalPrice integer NOT NULL,
-	PRIMARY KEY (OrderID),
-	FOREIGN KEY (CustomerID) References customer(CustomerID)
-);
-
-CREATE TABLE order_item (
-	OrderItemsID integer(12) NOT NULL
-	OrderID integer(12) NOT NULL,
-	ItemID integer(12) NOT NULL,
-	Quantity integer NOT NULL,
-	PRIMARY KEY (OrderItemsID),
-	FOREIGN KEY OrderID References order(OrderID),
-	FOREIGN KEY ItemID References item(ItemID)
-);*/
+*/
 
 CREATE TABLE category (
 	CategoryID SERIAL PRIMARY KEY,
@@ -61,38 +27,64 @@ CREATE TABLE item (
 	Description varchar(1000),
 	Price money NOT NULL,
 	ImageSource varchar(255),
-	CategoryID integer NOT NULL REFERENCES category,
+	SubCategoryID integer NOT NULL REFERENCES subcategory
 );	
 
-CREATE TABLE order (
-	OrderID SERIAL PRIMARY KEY,
+CREATE TABLE purchase (
+	PurchaseID SERIAL PRIMARY KEY,
 	Date date NOT NULL,
-	Email varchar(255),
+	Email varchar(255)
 );
 
-CREATE TABLE orderdetails (
-	OrderDetailsID SERIAL PRIMARY KEY,
-	OrderID integer NOT NULL REFERENCES order,
+CREATE TABLE purchasedetails (
+	PurchaseDetailsID SERIAL PRIMARY KEY,
+	PurchaseID integer NOT NULL REFERENCES purchase,
 	ItemID integer NOT NULL REFERENCES item,
 	Quantity integer NOT NULL 
 );
 
+INSERT INTO category (Name, Gender) VALUES ('Tops', 'M');
+INSERT INTO category (Name, Gender) VALUES ('Bottoms', 'M');
+INSERT INTO category (Name, Gender) VALUES ('Tops', 'F');
+INSERT INTO category (Name, Gender) VALUES ('Bottoms', 'F');
+INSERT INTO category (Name, Gender) VALUES ('Dresses', 'F');
 
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Shirts', 1);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('T-Shirts', 1);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Jackets', 1);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Jeans', 2);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Shorts', 2);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Socks', 2);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Shoes', 2);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Sleepwear', 2);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Shirts', 3);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Long Sleeve', 3);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Jumper', 3);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Jackets', 3);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Intimates', 3);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Jeans', 4);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Shorts', 4);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Skirts', 4);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Shoes', 4);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Socks', 4);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Sleepwear', 4);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Midi', 5);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Mini', 5);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Maxi', 5);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Sandals', 5);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Office Wear', 5);
+INSERT INTO subcategory(Name, CategoryID) VALUES ('Artificial Jewllery', 5);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Polo Shirt', 'Volcom Polo Shirt\nSize: Medium\n Color:White', 39.99, 1);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Polo Shirt', 'Volcom Polo Shirt\nSize: Large\n Color:White', 39.99, 1);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Polo Shirt', 'Volcom Polo Shirt\nSize: Large\n Color:Blue', 39.99, 1);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Short Sleeve Shirt', 'Federation Short Sleeve Shirt\nSize: Large\n Color:Black', 59.99, 1);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Short Sleeve Shirt', 'Federation Short Sleeve Shirt\nSize: Small\n Color:Black', 59.99, 1);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Quicksilver T-Shirt', 'Quicksilver T-Shirt\nSize: Large\n Color:Black', 34.99, 2);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Stussy T-Shirt', 'Stussy T-Shirt\nSize: Large\n Color:Black', 34.99, 2);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('DC Jacket', 'DC Jacket\nSize: Medium\n Color:Blue', 94.99, 3);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('DC Jacket', 'DC Jacket\nSize: Small\n Color:Black', 94.99, 3);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Puffer Vest', 'Volcom Puffer Vest\nSize: Small\n Color:Black', 104.99, 3);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 32\n Color:White', 129.99, 4);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 30\n Color:White', 129.99, 4);
+INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('ABrand Slim Fit Jeans', 'ABrand Slim Fit Jeans\nSize: 32\n Color:Black', 139.99, 4);

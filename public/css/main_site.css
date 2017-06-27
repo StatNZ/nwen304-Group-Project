@@ -73,20 +73,20 @@ body, html {
     width: 100%;
     background-color: white;
 }
-.ad1, .ad2{
+.woman_ad1, .men_ad1{
     padding: 10px 20px 30px;
     width: 40%;
 }
 
-.ad1 {
+.woman_ad1 {
     margin-left: 5%;
 }
 
-.ad2 {
+.men_ad1 {
     margin-left: 10%;
 }
 
-.ad1:hover, .ad2:hover {
+.woman_ad1:hover, .men_ad1:hover {
     opacity: 0.5;
 }
 

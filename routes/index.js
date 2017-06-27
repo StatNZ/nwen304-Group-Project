@@ -20,6 +20,18 @@ passport.use(new GoogleStrategy({
   }
 ));
 
+/* Passport JS Routes for Google */
+router.get('/auth/google',
+    passport.authenticate('google', { scope:
+        [ 'https://www.googleapis.com/auth/plus.login' ] }
+    ));
+
+router.get('/auth/google/callback',
+    passport.authenticate( 'google', {
+        successRedirect: '/',
+        failureRedirect: '/'
+    }));
+
 var fbOpts = {
     clientID: 238120290008806,
     clientSecret: 'b5291cbe9d73872bed7743f39d2f3fe1',
@@ -60,28 +72,12 @@ router.get ('/auth/facebook/callback',
     })
 );
 
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
-
 /* Database Query Routes */
 router.get('/items/:categoryid', db.getItemsByCategory);
 router.get('/item/:itemid', db.getItemByItemID);
 router.get('/test', db.test);
 
-/* Passport JS Routes */
-router.get('/auth/google',
-  passport.authenticate('google', { scope: 
-  	[ 'https://www.googleapis.com/auth/plus.login' ] }
-));
- 
-router.get('/auth/google/callback', 
-    passport.authenticate( 'google', { 
-        successRedirect: '/',
-        failureRedirect: '/'
-}));
+
 
 // router.get('/auth/facebook/callback',
   // passport.authenticate('facebook', { failureRedirect: '/' }),
@@ -90,8 +86,25 @@ router.get('/auth/google/callback',
   //   res.redirect('/');
   // });
 
-router.get('/categories', function (req, res) {
+
+/* Get categories page. */
+router.get('/categories_men', function (req, res) {
     res.render ('categories');
+
+});
+
+router.get('/categories_women', function (req, res) {
+    res.render ('categories');
+});
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+    res.render('index');
+});
+
+/* Search Query */
+router.get('/search', function (req, res) {
+    console.log('searching for: ' + req.body.item);
 });
 
 module.exports = router;
