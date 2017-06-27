@@ -172,10 +172,6 @@ div.desc {
     clear: both;
 }
 
-#men-casual {
-    display: none;
-}
-
-#men-formal {
+#men-casual, #men-formal, #men-casual-top1 {
     display: none;
 }
