@@ -162,7 +162,6 @@ $(document).ready(function () {
             var query = $(this).val().toLowerCase();
             // call the appropriate function
             getSearch(query);
-            alert ('posted search query');
         }
     });
 
@@ -277,17 +276,18 @@ $(document).ready(function () {
     }
 
     function getSearch(query) {
+        alert (query);
         $.ajax ({
-            url: 'http://localhost:8080/search',
+            url: 'http://localhost:3000/search',
             type: 'GET',
             data: JSON.stringify({
-                searchQuery: query
+                item: query
             }),
             contentType: "application/json",
-            dataType: "json",
+            dataType: "json"
 
         });
     }
 
-})
+});
 
