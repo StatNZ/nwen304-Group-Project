@@ -177,9 +177,21 @@ div.desc {
 }
 
 .men-img1{
-
+    margin-left: 400px;
+    margin-top: -325px;
 }
 
 .men-img1-description{
+    width: 400px;
+    height: 450px;
+    background-color: yellow;
+    margin-left: 900px;
+}
 
+.add-to-cart{
+    height: 200px;
+    width: 400px;
+    background-color: #eea236;
+    margin-left: 900px;
+    margin-top: -600px;
 }
