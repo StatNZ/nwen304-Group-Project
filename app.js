@@ -58,7 +58,7 @@ app.use('/', routes);
 //   });
 // });
 
-app.listen(8080);
+app.listen(3000);
 console.log ('listening on localhost:3000');
 
 module.exports = app;
