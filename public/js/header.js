@@ -161,7 +161,7 @@ $(document).ready(function () {
             // process the information
             var query = $(this).val().toLowerCase();
             // call the appropriate function
-            getSearch(query);
+            postSearchQuery(query);
         }
     });
 
@@ -275,7 +275,7 @@ $(document).ready(function () {
         return true;
     }
 
-    function getSearch(query) {
+    function postSearchQuery(query) {
         alert (query);
         $.ajax ({
             url: 'http://localhost:3000/search',
@@ -286,6 +286,13 @@ $(document).ready(function () {
             contentType: "application/json",
             dataType: "json"
 
+        });
+    }
+
+    function getUserKartItems() {
+        $.ajax ({
+            url: 'http://localhost:3000/search',
+            type: 'GET'
         });
     }
 

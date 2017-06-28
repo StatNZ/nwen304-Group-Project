@@ -23,7 +23,10 @@ function getItemsByGender(req, res, next) {
   client = new pg.Client(connectionString);
   client.connect();
   
-  var query = client.query("SELECT * FROM item WHERE subcategoryid IN (SELECT s.SubCategoryID FROM subcategory s INNER JOIN category c ON s.CategoryID = c.CategoryID WHERE c.gender = '" + gender + "')");
+  var query = client.query("SELECT * FROM item WHERE subcategoryid IN " +
+      "(SELECT s.SubCategoryID FROM subcategory s " +
+      "INNER JOIN category c ON s.CategoryID = c.CategoryID " +
+      "WHERE c.gender = '" + gender + "')");
   var results = [];
 
   query.on('row', function(row) {
@@ -136,11 +139,12 @@ function getItemByItemID(req, res, next) {
 }
 
 module.exports = {
-  test: test,
-  getItemsByGender: getItemsByGender,
-  getItemsByCategory: getItemsByCategory,
-  getItemsBySubcategory: getItemsBySubcategory,
-  getItemsByDescription: getItemsByDescription,
-  getItemsByPrice: getItemsByPrice,
-  getItemByItemID: getItemByItemID
+    connectionString: connectionString,
+    test: test,
+    getItemsByGender: getItemsByGender,
+    getItemsByCategory: getItemsByCategory,
+    getItemsBySubcategory: getItemsBySubcategory,
+    getItemsByDescription: getItemsByDescription,
+    getItemsByPrice: getItemsByPrice,
+    getItemByItemID: getItemByItemID
 };
