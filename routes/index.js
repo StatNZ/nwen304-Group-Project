@@ -74,9 +74,10 @@ router.get ('/auth/facebook/callback',
 
 /* Database Query Routes */
 //router.get('/items/:category', db.getItemsByCategory);
-router.get('/:gender/items', db.getItemsByGender);
-router.get('/:gender/:category/items', db.getItemsByCategory);
-router.get('/:gender/:category/:subcategory/items', db.getItemsBySubcategory);
+router.get('/categories/:gender', db.getItemsByGender);
+router.get('/categories/:gender/:category', db.getItemsByCategory);
+router.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
+router.get('/search/:desc', db.getItemsByDescription);
 router.get('/item/:itemid', db.getItemByItemID);
 router.get('/test', db.test);
 
