@@ -73,7 +73,10 @@ router.get ('/auth/facebook/callback',
 );
 
 /* Database Query Routes */
-router.get('/items/:categoryid', db.getItemsByCategory);
+//router.get('/items/:category', db.getItemsByCategory);
+router.get('/:gender/items', db.getItemsByGender);
+router.get('/:gender/:category/items', db.getItemsByCategory);
+router.get('/:gender/:category/:subcategory/items', db.getItemsBySubcategory);
 router.get('/item/:itemid', db.getItemByItemID);
 router.get('/test', db.test);
 
