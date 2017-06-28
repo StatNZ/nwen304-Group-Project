@@ -78,6 +78,7 @@ router.get('/categories/:gender', db.getItemsByGender);
 router.get('/categories/:gender/:category', db.getItemsByCategory);
 router.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
 router.get('/search/:desc', db.getItemsByDescription);
+router.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
 router.get('/item/:itemid', db.getItemByItemID);
 router.get('/test', db.test);
 

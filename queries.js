@@ -96,6 +96,26 @@ function getItemsByDescription(req, res, next){
   });
 }
 
+function getItemsByPrice(req, res, next) {
+  var minPrice = req.params.minPrice;
+  var maxPrice = req.params.maxPrice;	
+	
+  client = new pg.Client(connectionString);
+  client.connect();
+  
+  var query = client.query("SELECT * FROM item WHERE price BETWEEN " + minPrice + " AND " + maxPrice); 
+  var results = [];
+
+  query.on('row', function(row) {
+    results.push(row);
+  });
+
+  query.on('end', function() {
+    client.end();
+    res.json(results);
+  });
+}
+
 function getItemByItemID(req, res, next) {
   var itemID = parseInt(req.params.itemid);	
 	
@@ -121,5 +141,6 @@ module.exports = {
   getItemsByCategory: getItemsByCategory,
   getItemsBySubcategory: getItemsBySubcategory,
   getItemsByDescription: getItemsByDescription,
+  getItemsByPrice: getItemsByPrice,
   getItemByItemID: getItemByItemID
 };
