@@ -25,7 +25,7 @@ CREATE TABLE item (
 	ItemID SERIAL PRIMARY KEY,
 	Name varchar(255) NOT NULL,
 	Description varchar(1000),
-	Price money NOT NULL,
+	Price Numeric(12,2) NOT NULL,
 	ImageSource varchar(255),
 	SubCategoryID integer NOT NULL REFERENCES subcategory
 );	
