@@ -88,3 +88,17 @@ INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Puffer
 INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 32\n Color:White', 129.99, 4);
 INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 30\n Color:White', 129.99, 4);
 INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('ABrand Slim Fit Jeans', 'ABrand Slim Fit Jeans\nSize: 32\n Color:Black', 139.99, 4);
+
+INSERT INTO purchase(Date, Email) VALUES (now(), 'test@gmail.com');
+INSERT INTO purchase(Date, Email) VALUES (now(), 'guest@gmail.com');
+
+INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 1, 2);
+INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 11, 1); 
+INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 13, 1);
+INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (2, 5, 1);
+
+
+
+
+
+

@@ -86,7 +86,7 @@ function getItemsByDescription(req, res, next){
   client = new pg.Client(connectionString);
   client.connect();
   
-  var query = client.query("SELECT * FROM item WHERE description LIKE '%" + desc + "%'"); 
+  var query = client.query("SELECT * FROM item WHERE LOWER(description) LIKE LOWER('%" + desc + "%')"); 
   var results = [];
 
   query.on('row', function(row) {
