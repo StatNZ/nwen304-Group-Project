@@ -63,7 +63,7 @@ var fbOpts = {
     clientID: 238120290008806,
     clientSecret: 'b5291cbe9d73872bed7743f39d2f3fe1',
     callbackURL: "http://localhost:3000/auth/facebook/callback",
-    profileFields: ['id', 'emails', 'name', 'displayName']
+    profileFields: ['id', 'emails', 'name', 'displayName', 'gender']
 };
 
 var fbCallback = function (accessToken, refreshToken, profile, done) {
@@ -78,7 +78,7 @@ var fbCallback = function (accessToken, refreshToken, profile, done) {
             }
 
             if (user) {
-                console.log('log in the user: ' + user.user_name);
+                console.log('User is now logged in as: ' + user.user_name);
                 return done(null, user);
             }
 
@@ -113,13 +113,9 @@ router.get('/auth/facebook',
 router.get('/auth/facebook/callback',
     passport.authenticate('facebook', {
         successRedirect : '/',
-        failureRedirect : '/categories_men'
+        failureRedirect : '/login'
     })
 );
-
-router.get('/logout', function (req, res) {
-   // implement logout functionality
-});
 
 /* Database Query Routes */
 //router.get('/items/:category', db.getItemsByCategory);
@@ -136,7 +132,7 @@ router.get('/test', db.test);
  *
  * CHANGE TEST TO THE APPROPRIATE DB CALL WHEN LIVE
  */
-router.get('/kart_items', isLoggedIn, db.test);
+router.get('/kart_items', isLoggedInSpecialCase, db.test);
 
 router.get('/sub_category', function (req, res) {
     res.render('sub_category');
@@ -163,19 +159,61 @@ router.get('/search', function (req, res, next) {
 
 });
 
-router.get('/login', function (req, res, next) {
+/**
+ * Returns the current logged in user to the caller
+ */
+router.get('/user_info', isLoggedIn, function (req, res, next) {
+    res.send(req.user);
+});
 
+router.get('/profile', isLoggedIn, function (req, res, next) {
+    res.render('profile');
+})
+
+router.get('/login', function (req, res, next) {
     if (req.isAuthenticated()) {
-        return res.render('profile');
+        return res.redirect('/profile');
     }
+    res.render('login');
+});
+
+/**
+ * Logs current user out of the session
+ */
+router.get('/logout', isLoggedIn, function (req, res) {
+    // implement logout functionality
+    req.logout();
     res.render('login');
 });
 
 /** for testing purposes */
 router.get('/test', db.test);
 
+/**
+ * Checks whether the user is currently logged in via a session
+ *
+ * @param req
+ * @param res
+ * @param next
+ * @returns {*}
+ */
 function isLoggedIn(req, res, next) {
-    console.log(req.user);
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // user is not logged in, raise error for user
+    console.log ('user not logged in');
+    //res.sendStatus(404);
+    res.redirect('/');
+}
+
+/**
+ * Used for if interacting with an ajax call for database
+ * information. Stops the client from freezing by sending
+ * back a 404 error
+ */
+function isLoggedInSpecialCase (req, res, next) {
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated())
         return next();

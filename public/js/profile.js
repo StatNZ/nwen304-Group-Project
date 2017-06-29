@@ -7,7 +7,28 @@ $(document).ready(function () {
 
     window.onload = function () {
         getKartItems();
+        getUserInfo();
     };
+
+    function getUserInfo () {
+        $.ajax ({
+            url: 'http://localhost:3000/user_info',
+            type: 'GET',
+
+            error: function (xhr) {
+                // User must sign in to access kart
+                alert ('retrieving user info error occured');
+                return;
+            }
+        }).then(displayUserInfo);
+    }
+
+    function displayUserInfo (user) {
+        // need to display all the relevant user info
+        // to the current user
+        $('.profile-user-name').text(user.user_name);
+        $('.profile-user-email').text(user.email);
+    }
 
     function getKartItems () {
         $.ajax ({
@@ -36,16 +57,15 @@ $(document).ready(function () {
             var desc = rows[i].description;
             var price = rows[i].price;
             var image = rows[i].imagesource;
-            var subTotal = price * 1 // price * quantity
-            totalPrice += subTotal;
-
 
             // need a quantity, set to 1 for now
+            var subTotal = price * 1 // price * quantity
+            totalPrice += subTotal;
 
             var kartHTML = '' +
                 '<tr>' +
                 '   <td data-th="Product">' +
-                '       <div class="row">' +
+                '       <div class="row kart-item-info-row">' +
                 '           <div class="col-sm-2 hidden-xs"><img src="" alt="..." class="img-responsive"/></div>' +
                 '           <div class="col-sm-10">' +
                 '               <h4 class="nomargin"></h4>' +
@@ -59,7 +79,6 @@ $(document).ready(function () {
                 '   </td>' +
                 '   <td data-th="Subtotal" class="text-center item-subtotal">'+ subTotal +'</td>' +
                 '   <td class="actions" data-th="">' +
-                '       <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>' +
                 '       <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>' +
                 '   </td>' +
                 '</tr>';
@@ -76,7 +95,12 @@ $(document).ready(function () {
             newItem.show('clip',250).effect('highlight',1000);
         }
 
-        //update total price
+        //update total price, to be precise
+        var temp = totalPrice + '';
+        if (temp.length > 4)
+            totalPrice = totalPrice.toPrecision(5);
+        else
+            totalPrice = totalPrice.toPrecision(4);
         $('.kart-total-price').text(totalPrice);
     }
 

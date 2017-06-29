@@ -1,29 +1,77 @@
-<div class="container">
-    <table id="cart" class="table table-hover table-condensed">
-        <thead>
-            <tr>
-                <th style="width:50%">Product</th>
-                <th style="width:10%">Price</th>
-                <th style="width:8%">Quantity</th>
-                <th style="width:22%" class="text-center">Subtotal</th>
-                <th style="width:10%"></th>
-            </tr>
-        </thead>
-        <tbody id="profile-kart-display">
+<div id="profile-container-page" style="width: 100%; display: table;">
+    <div style="display: table-row">
+        <div id="profile-body" style="width: 30%; display: table-cell;">
+            <!-- Build the user profile here, with a log out button -->
 
-        </tbody>
-        <tfoot>
-            <tr class="visible-xs">
-                <td class="text-center"><strong>Total 1.99</strong></td>
-            </tr>
-            <tr>
-                <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-                <td colspan="2" class="hidden-xs"></td>
-                <td class="hidden-xs text-center kart-total-price"><strong>Total $1.99</strong></td>
-                <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
-            </tr>
-        </tfoot>
-    </table>
+            <div class="profile-lhs-container">
+                <div class="row profile-row">
+                    <div class="col-xs-5 col-sm-12">
+                        <img class="profile-image" src="">
+                    </div>
+                    <div class="col-xs-5 col-sm-12">
+                        <h3 class="profile-user-name"></h3>
+
+                        <ul class="profile-details">
+                            <li>
+                                <div></div>
+                            </li>
+                            <li>
+                                <div> </div>
+                            </li>
+                        </ul>
+
+                        <h3>Contact Information</h3>
+
+                        <ul class="profile-details">
+                            <li>
+                                <div><i class="fa fa-envelope"></i> e-mail</div>
+                                <h4 class="profile-user-email"></h4>
+                            </li>
+                            <li>
+                                <div><i class="fa fa-map-marker"></i> address</div>
+                                <h4 class="profile-user-address"></h4>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-2 col-sm-12">
+                        <a href="/logout" class="btn btn-success btn-block">Logout</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="profile-container" style="display: table-cell;">
+            <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="width:50%">Product</th>
+                    <th style="width:10%">Price</th>
+                    <th style="width:8%">Quantity</th>
+                    <th style="width:22%" class="text-center">Subtotal</th>
+                    <th style="width:10%"></th>
+                </tr>
+            </thead>
+            <tbody id="profile-kart-display">
+                <!-- Add items in here via jscript -->
+            </tbody>
+            <tfoot>
+                <tr class="visible-xs">
+                    <td class="text-center kart-total-price"><strong></strong></td>
+                </tr>
+                <tr>
+                    <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                    <td colspan="2" class="hidden-xs"></td>
+                    <td class="hidden-xs text-center kart-total-price"><strong></strong></td>
+                    <td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    </div>
 </div>
 
 <script src="js/profile.js"></script>

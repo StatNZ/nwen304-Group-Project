@@ -19,7 +19,7 @@ function User() {
 
     this.save = function (callback) {
         connectDB();
-
+        console.log('Saving new user into database');
         client.query('INSERT INTO customer(CustomerID, AccessToken, Name, Email) VALUES($1, $2, $3, $4)',
             [this.userId, this.accessToken, this.user_name, this.email], function (err, result) {
                 if (err)
@@ -39,7 +39,7 @@ function User() {
 User.findOne = function (id, callback) {
     // connect to the db
     // search for the user with the id
-    console.log('findone called');
+    console.log('Accessed findone function');
 
     connectDB();
     client.query("SELECT * FROM customer WHERE CustomerID=$1", [id], function (err, result) {
@@ -53,7 +53,6 @@ User.findOne = function (id, callback) {
             newUser.accessToken = result.rows[0].acesstoken;
             newUser.userId = result.rows[0].customerid;
             newUser.email = result.rows[0].email;
-            console.log('finishing find one\n'+result.rows[0]);
             return callback(null, newUser);
         }
 

@@ -26,9 +26,26 @@
         display: inline-block; width: 8rem;
     }
 
-
-
     table#cart tfoot td{display:block; }
     table#cart tfoot td .btn{display:block;}
+}
 
+.profile-container {
+
+}
+
+.kart-item-info-row {
+    overflow: hidden;
+}
+
+.profile-row {
+    overflow: hidden;
+}
+
+.profile-lhs-container {
+    margin: 10px;
+}
+
+.profile-details > li {
+    list-style: none;
 }

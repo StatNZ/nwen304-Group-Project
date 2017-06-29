@@ -278,7 +278,7 @@ $(document).ready(function () {
             url: 'http://localhost:3000/kart_items',
             type: 'GET',
 
-            error: function (xhr) {
+            error: function (err) {
                 // User must sign in to access kart
                 return;
             }
@@ -317,7 +317,7 @@ $(document).ready(function () {
                 '          </span>' +
                 '      </span>' +
                 '      <span class="item-right">' +
-                '          <button class="btn btn-xs btn-danger pull-right">x</button>' +
+                '          <button class="btn btn-xs btn-danger pull-right"><i class="fa fa-trash-o"></i> </button>' +
                 '      </span>' +
                 '   </span>' +
                 '</li>';
