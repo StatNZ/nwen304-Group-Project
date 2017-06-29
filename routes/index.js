@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var router = express.Router();
 var db = require('../queries');
 var passport = require('passport');
@@ -7,20 +8,43 @@ var GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 var User = require ('../routes/users');
 
-/* Passport JS Authorisation */ 
+
+router.use(session({
+    secret: 'urbanApparelSecretKey',
+    resave: true,
+    saveUninitialized: true
+} ));
+
+router.use(passport.initialize());
+router.use(passport.session());
+
+passport.serializeUser(function(user, done) {
+    console.log('serializeUser: ' + user.userId)
+    done(null, user.userId);
+});
+
+passport.deserializeUser(function(id, done) {
+    console.log('deserializeUser: ' + id);
+    User.findOne(id, function(err, user){
+        done(err, user);
+    })
+});
+
+/* Passport JS Authorisation */
 passport.use(new GoogleStrategy({
-    clientID:     "1060806220702-7k0jve0rtn7nmff3mc44fjsfbotp2vpt.apps.googleusercontent.com",
-    clientSecret: "KrpEmRGvTGXHx_TZEodl-6bk",
-    callbackURL: "http://localhost:3000/auth/google/callback",
-    passReqToCallback   : true
-  },
-  function(request, accessToken, refreshToken, profile, done) {
-    process.nextTick(function () {
-      console.log("Access Token: " + accessToken); 
-      return done(null, profile);
-    });
-  }
+        clientID:     "1060806220702-7k0jve0rtn7nmff3mc44fjsfbotp2vpt.apps.googleusercontent.com",
+        clientSecret: "KrpEmRGvTGXHx_TZEodl-6bk",
+        callbackURL: "http://localhost:3000/auth/google/callback",
+        passReqToCallback   : true
+    },
+    function(request, accessToken, refreshToken, profile, done) {
+        process.nextTick(function () {
+            console.log("Access Token: " + accessToken);
+            return done(null, profile);
+        });
+    }
 ));
+
 
 /* Passport JS Routes for Google */
 router.get('/auth/google',
@@ -34,20 +58,7 @@ router.get('/auth/google/callback',
         failureRedirect: '/'
     }));
 
-router.use(passport.initialize());
-
-passport.serializeUser(function(user, done) {
-    console.log('serializeUser: ' + user.userId)
-    done(null, user.userId);
-});
-
-passport.deserializeUser(function(id, done) {
-    console.log('deserializeUser: ' + id);
-    User.findById(id, function(err, user){
-        done(err, user);
-    })
-});
-
+/** FACEBOOK ROUTES AND STRATEGY **/
 var fbOpts = {
     clientID: 238120290008806,
     clientSecret: 'b5291cbe9d73872bed7743f39d2f3fe1',
@@ -106,6 +117,10 @@ router.get('/auth/facebook/callback',
     })
 );
 
+router.get('/logout', function (req, res) {
+   // implement logout functionality
+});
+
 /* Database Query Routes */
 //router.get('/items/:category', db.getItemsByCategory);
 router.get('/categories/:gender', db.getItemsByGender);
@@ -117,13 +132,13 @@ router.get('/item/:itemid', db.getItemByItemID);
 router.get('/test', db.test);
 
 /**
- * In order for the below code to work, we need to be able to
- * have access to the current users id, then search for all
- * the items belonging to that user that have not been processed.
- * If the user cannot be found, then we must use the guest access account
- * not to sure how this will work.
+ * Accesses all our cart items regarding our specific user
+ *
+ * CHANGE TEST TO THE APPROPRIATE DB CALL WHEN LIVE
  */
-// router.get('/kart_items', db.getUserKartItems);
+router.get('/kart_items', isLoggedIn, function (req, res, next) {
+    return db.test(req, res, next);
+});
 
 router.get('/sub_category', function (req, res) {
     res.render('sub_category');
@@ -147,9 +162,16 @@ router.get('/', function(req, res, next) {
 
 router.get('/test', db.test);
 
-// /* Search Query */
-// router.get('/search', function (req, res) {
-//     console.log('searching for: ' + req.body.item);
-// });
+function isLoggedIn(req, res, next) {
+    console.log(req.user);
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // user is not logged in, raise error for user
+    console.log ('user not logged in');
+    res.sendStatus(404);
+}
+
 
 module.exports = router;

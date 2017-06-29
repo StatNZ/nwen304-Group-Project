@@ -187,8 +187,10 @@ $(document).ready(function () {
         // call the appropriate function
     });
 
-
-
+    $('.fa-shopping-cart').hover( function () {
+        // call function to retrieve kart items
+        getUserKartItems();
+    });
 
     /************************************************
      *********** SPECIAL FUNCTION CALLS *************
@@ -289,11 +291,80 @@ $(document).ready(function () {
         });
     }
 
+    /**
+     * Ajax call to retrieve all the information regarding the users kart,
+     * possibly need to send them the user...
+     */
     function getUserKartItems() {
         $.ajax ({
-            url: 'http://localhost:3000/search',
-            type: 'GET'
-        });
+            url: 'http://localhost:3000/kart_items',
+            type: 'GET',
+            
+            error: function (xhr) {
+                // User must sign in to access kart
+                return;
+            }
+        }).then(displayKartItems);
+    }
+
+    /**
+     * Displays the list within our kart items dropdown menu.
+     * @param rows
+     */
+    function displayKartItems (rows) {
+        // access items by name, description, etc
+        if (rows.length <= 0)
+            return;
+
+        // needs to be more accurately defined
+        if ($('#kart-user-items').children().length > 0)
+            return;
+
+        var totalPrice = 0;
+
+        var i;
+        for (i=0; i<rows.length; i++) {
+
+            // combine total price
+            totalPrice += rows[i].price;
+
+            var kartHTML = '' +
+                '<li>' +
+                '   <span class="item">' +
+                '      <span class="item-left">' +
+                '          <img id="kart-item-img" src="' + rows[i].imagesource + '" alt="" />' +
+                '          <span class="item-info">' +
+                '              <span class="item-name"></span>' +
+                '              <span class="item-price"></span>' +
+                '          </span>' +
+                '      </span>' +
+                '      <span class="item-right">' +
+                '          <button class="btn btn-xs btn-danger pull-right">x</button>' +
+                '      </span>' +
+                '   </span>' +
+                '</li>';
+
+            var newItem = $(kartHTML);
+            newItem.find('.item-name').text(rows[i].name);
+            newItem.find('.item-price').text(rows[i].price);
+
+            newItem.hide();
+            $('#kart-user-items').prepend(newItem);
+            newItem.show('clip',250).effect('highlight',1000);
+        }
+
+        // append 'view cart' to the back
+        var endKartHTML = '' +
+            '<li class="divider"></li>' +
+            '<li><a class="text-center" href="/view_cart">View Cart</a></li>';
+        $('#kart-user-items').append(endKartHTML);
+    }
+
+    /**
+     * Checks whether the current user is logged in
+     */
+    function isLoggedIn () {
+
     }
 
 });

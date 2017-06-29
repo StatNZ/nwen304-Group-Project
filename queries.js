@@ -1,6 +1,7 @@
 var pg = require('pg');
 
-var connectionString = 'postgres://lewiskier:nwen304databasepass@depot:5432/lewiskier_jdbc';
+//var connectionString = 'postgres://lewiskier:nwen304databasepass@depot:5432/lewiskier_jdbc';
+var connectionString = 'postgres://jackmac:urban@localhost:5432/urban_apparell';
 
 function test(req, res, next) {
   client = new pg.Client(connectionString);

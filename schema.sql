@@ -1,6 +1,6 @@
 /*
 CREATE TABLE customer (
-	CustomerID varchar(255) NOT NULL,
+	CustomerID  NOT NULL,
 	Name varchar(255) NOT NULL,
 	AccessToken varchar(255) NOT NULL,
 	Address varchar(255),

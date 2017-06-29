@@ -39,6 +39,7 @@ function User() {
 User.findOne = function (id, callback) {
     // connect to the db
     // search for the user with the id
+    console.log('findone called');
 
     connectDB();
     client.query("SELECT * FROM customer WHERE CustomerID=$1", [id], function (err, result) {
