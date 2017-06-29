@@ -1,10 +1,11 @@
 /*
 CREATE TABLE customer (
-	CustomerID integer(12) NOT NULL,
+	CustomerID varchar(255) NOT NULL,
 	Name varchar(255) NOT NULL,
-	Address varchar(255) NOT NULL,
+	AccessToken varchar(255) NOT NULL,
+	Address varchar(255),
 	Email varchar(255) NOT NULL,
-	Password varchar(255) NOT NULL,
+	Password varchar(255),
 	PRIMARY KEY (CustomerID)
 );
 */
