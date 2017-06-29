@@ -11,19 +11,7 @@ $(document).ready(function () {
     // Main Globals
     var $windowWidth = $(window).width();
     var $windowHeight = $(window).height();
-    //var $originalDropdownHeight = dropdownMenuInitialSize();
-
     var dropdownMenuImageInterval = 0, i = 1, speed = 300, interval_time = 2000;
-
-    /**
-     * This is called when the window is resized. Controls the settings
-     * of all our headers upon resize.
-     */
-    $(window).resize(function () {
-        $windowWidth = $(window).width();
-        $windowHeight = $(window).height();
-        //$originalDropdownHeight = dropdownMenuInitialSize();
-    });
 
     /**
      * Use this funciton to change and display the image within the
@@ -95,7 +83,7 @@ $(document).ready(function () {
      * Stops modal from auto opening, and opens the modal
      */
     $('#login-modal').dialog({
-        autoOpen: false
+        autoOpen: true
     });
 
     $('.btn-login').on('click', function () {
@@ -121,16 +109,6 @@ $(document).ready(function () {
     });
 
     /**
-     * Entry point into our login-register dialog box
-     */
-    $('.login-register').on('click', function () {
-        $('#login-modal').dialog('open');
-
-        // this sets the email field as the focus
-        $('#email').focus();
-    });
-
-    /**
      * Display the register input fields, remove the
      * login input fields
      */
@@ -146,7 +124,7 @@ $(document).ready(function () {
         $('.loginBox').show();
         $('.register-footer').hide();
         $('.login-footer').show();
-    })
+    });
 
     /************************************************
      ************* SEARCH BAR FUNCTIONS *************
@@ -185,6 +163,7 @@ $(document).ready(function () {
         var query = $(this).val().toLowerCase();
 
         // call the appropriate function
+        postSearchQuery(query);
     });
 
     $('.fa-shopping-cart').hover( function () {
@@ -287,7 +266,6 @@ $(document).ready(function () {
             }),
             contentType: "application/json",
             dataType: "json"
-
         });
     }
 
@@ -299,7 +277,7 @@ $(document).ready(function () {
         $.ajax ({
             url: 'http://localhost:3000/kart_items',
             type: 'GET',
-            
+
             error: function (xhr) {
                 // User must sign in to access kart
                 return;
@@ -356,16 +334,8 @@ $(document).ready(function () {
         // append 'view cart' to the back
         var endKartHTML = '' +
             '<li class="divider"></li>' +
-            '<li><a class="text-center" href="/view_cart">View Cart</a></li>';
+            '<li><a class="text-center" href="/login">View Cart</a></li>';
         $('#kart-user-items').append(endKartHTML);
     }
-
-    /**
-     * Checks whether the current user is logged in
-     */
-    function isLoggedIn () {
-
-    }
-
 });
 

@@ -136,9 +136,7 @@ router.get('/test', db.test);
  *
  * CHANGE TEST TO THE APPROPRIATE DB CALL WHEN LIVE
  */
-router.get('/kart_items', isLoggedIn, function (req, res, next) {
-    return db.test(req, res, next);
-});
+router.get('/kart_items', isLoggedIn, db.test);
 
 router.get('/sub_category', function (req, res) {
     res.render('sub_category');
@@ -160,6 +158,20 @@ router.get('/', function(req, res, next) {
     res.render('index');
 });
 
+/* SEARCH route */
+router.get('/search', function (req, res, next) {
+
+});
+
+router.get('/login', function (req, res, next) {
+
+    if (req.isAuthenticated()) {
+        return res.render('profile');
+    }
+    res.render('login');
+});
+
+/** for testing purposes */
 router.get('/test', db.test);
 
 function isLoggedIn(req, res, next) {
