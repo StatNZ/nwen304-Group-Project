@@ -2,12 +2,15 @@ var express = require('express');
 var session = require('express-session');
 var router = express.Router();
 var db = require('../queries');
+var bodyParser = require('body-parser');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 var User = require ('../routes/users');
 
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.json());
 
 router.use(session({
     secret: 'urbanApparelSecretKey',
@@ -156,7 +159,8 @@ router.get('/', function(req, res, next) {
 
 /* SEARCH route */
 router.get('/search', function (req, res, next) {
-
+    var item = req.body.item;
+    console.log(req.body);
 });
 
 /**
@@ -166,14 +170,20 @@ router.get('/user_info', isLoggedIn, function (req, res, next) {
     res.send(req.user);
 });
 
+/**
+ * Displays profile page
+ */
 router.get('/profile', isLoggedIn, function (req, res, next) {
     res.render('profile');
-})
+});
 
+/**
+ * Displays the login page
+ */
 router.get('/login', function (req, res, next) {
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated())
         return res.redirect('/profile');
-    }
+
     res.render('login');
 });
 
@@ -185,9 +195,6 @@ router.get('/logout', isLoggedIn, function (req, res) {
     req.logout();
     res.render('login');
 });
-
-/** for testing purposes */
-router.get('/test', db.test);
 
 /**
  * Checks whether the user is currently logged in via a session

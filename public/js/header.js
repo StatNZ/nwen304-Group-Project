@@ -257,7 +257,6 @@ $(document).ready(function () {
     }
 
     function postSearchQuery(query) {
-        alert (query);
         $.ajax ({
             url: 'http://localhost:3000/search',
             type: 'GET',
