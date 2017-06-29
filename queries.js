@@ -138,6 +138,45 @@ function getItemByItemID(req, res, next) {
   });
 }
 
+function getKart(req, res, next) {
+  var email = req.params.email;
+  
+  client = new pg.Client(connectionString);
+  client.connect();
+  
+  var query = client.query("SELECT itemid, quantity FROM purchasedetails pd INNER JOIN purchase p ON p.purchaseid = pd.purchaseid WHERE email = '" + email + "'");
+  var results = [];
+
+  query.on('row', function(row) {
+    results.push(row);
+  });
+
+  query.on('end', function() {
+    client.end();
+    res.json(results);
+  });
+}
+
+function removeItemFromKart(req, res, next) {
+  var itemID = parseInt(req.params.itemid);
+  var email = req.params.email;
+
+  client = new pg.Client(connectionString);
+  client.connect();
+  
+  var query = client.query("");
+  var results = [];
+
+  query.on('row', function(row) {
+    results.push(row);
+  });
+
+  query.on('end', function() {
+    client.end();
+    res.json(results);
+  });
+}
+
 module.exports = {
     connectionString: connectionString,
     test: test,
@@ -146,5 +185,12 @@ module.exports = {
     getItemsBySubcategory: getItemsBySubcategory,
     getItemsByDescription: getItemsByDescription,
     getItemsByPrice: getItemsByPrice,
-    getItemByItemID: getItemByItemID
+    getItemByItemID: getItemByItemID,
+    getKart: getKart
 };
+  	 
+/*
+DELETE FROM purchasedetails AS pd
+USING purchase AS p
+WHERE pd.itemid = 1 AND email = email;
+*/
