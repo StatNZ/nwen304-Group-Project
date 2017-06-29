@@ -5,7 +5,7 @@ var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth2').Strategy;
 
-//var User = require ('users');
+var User = require ('../routes/users');
 
 /* Passport JS Authorisation */ 
 passport.use(new GoogleStrategy({
@@ -34,61 +34,77 @@ router.get('/auth/google/callback',
         failureRedirect: '/'
     }));
 
+router.use(passport.initialize());
+
+passport.serializeUser(function(user, done) {
+    console.log('serializeUser: ' + user.userId)
+    done(null, user.userId);
+});
+
+passport.deserializeUser(function(id, done) {
+    console.log('deserializeUser: ' + id);
+    User.findById(id, function(err, user){
+        done(err, user);
+    })
+});
+
 var fbOpts = {
     clientID: 238120290008806,
     clientSecret: 'b5291cbe9d73872bed7743f39d2f3fe1',
     callbackURL: "http://localhost:3000/auth/facebook/callback",
-    passReqToCallback: true
+    profileFields: ['id', 'emails', 'name', 'displayName']
 };
 
 var fbCallback = function (accessToken, refreshToken, profile, done) {
     // asynchronous
-    // process.nextTick(function() {
-    //
-    //     // find the user in the database based on their facebook id
-    //     User.findOne({'facebook.id': profile.id}, function (err, user) {
-    //
-    //         // if there is an error, stop everything and return that
-    //         // ie an error connecting to the database
-    //         if (err)
-    //             return done(err);
-    //
-    //         // if the user is found, then log them in
-    //         if (user) {
-    //             return done(null, user); // user found, return that user
-    //         } else {
-    //             // if there is no user found with that facebook id, create them
-    //             var newUser = new User();
-    //
-    //             // set all of the facebook information in our user model
-    //             newUser.facebook.id = profile.id; // set the users facebook id
-    //             newUser.facebook.token = token; // we will save the token that facebook provides to the user
-    //             newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
-    //             newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
-    //
-    //             // save our user to the database
-    //             newUser.save(function (err) {
-    //                 if (err)
-    //                     throw err;
-    //
-    //                 // if successful, return the new user
-    //                 return done(null, newUser);
-    //             });
-    //         }
-    //     });
-    // });
+    process.nextTick (function () {
+
+        // find the user in the database based on their facebook id
+        User.findOne (profile.id, function (err, user) {
+
+            if (err) {
+                return done(err);
+            }
+
+            if (user) {
+                console.log('log in the user: ' + user.user_name);
+                return done(null, user);
+            }
+
+            else {
+                // create a new user
+
+                var newUser = new User();
+                newUser.userId = profile.id;
+                newUser.user_name = profile.displayName;
+                newUser.accessToken = accessToken;
+                newUser.email = profile.emails[0].value;
+
+                //insert into the database
+                newUser.save(function (err) {
+                    if (err) {
+                        console.log(err);
+                        return done(null, null); // should redirect us to the login page
+                    }
+
+                    return done(null, newUser);
+                })
+            }
+        });
+    });
 };
 
 passport.use (new FacebookStrategy (fbOpts, fbCallback));
 
 router.get('/auth/facebook',
-    passport.authenticate ('facebook'));
+    passport.authenticate ('facebook', { scope : ['email'] }));
 
-router.get ('/auth/facebook/callback',
-    passport.authenticate('facebook', { failureRedirect: '/categories' }),
-    function (req, res) {
-        res.redirect('/');
-    });
+router.get('/auth/facebook/callback',
+    passport.authenticate('facebook', {
+        successRedirect : '/',
+        failureRedirect : '/categories_men'
+    })
+);
 
 /* Database Query Routes */
 //router.get('/items/:category', db.getItemsByCategory);
@@ -129,9 +145,11 @@ router.get('/', function(req, res, next) {
     res.render('index');
 });
 
-/* Search Query */
-router.get('/search', function (req, res) {
-    console.log('searching for: ' + req.body.item);
-});
+router.get('/test', db.test);
+
+// /* Search Query */
+// router.get('/search', function (req, res) {
+//     console.log('searching for: ' + req.body.item);
+// });
 
 module.exports = router;
