@@ -115,5 +115,12 @@ $(document).ready(function () {
         $('#profile-address').val($User.address);
     })
 
+    $('.profile-checkout-button').on('click', function () {
+        if ($User.address == '') {
+            alert ('You must enter an address');
+            $('.profile-main-edit-view').show('clip',250).effect('highlight',1000);
+        }
+    })
+
 
 });

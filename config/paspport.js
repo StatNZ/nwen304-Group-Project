@@ -38,11 +38,41 @@ module.exports = function (passport) {
     passport.use('local-signup', new LocalStrategy({
         usernameField : 'email',
         passwordField : 'password',
+        firstNameField : 'first_name',
+        lastNameField : 'last_name',
+        passwordField2 : 'password_confirmation',
         passReqToCallback : true
     },
         function (req, email, password, done) {
 
+            if (!validateEmail(email))
+                return done(null, false, req.flash('error_msg', 'The email is not valid'));
+
+            // the first check to sign up, check passwords
+            if (password != req.body.password_confirmation)
+                return done(null, false, req.flash('error_msg', 'The passwords do not match'));
+
+
+
             process.nextTick(function () {
+
+                // var first_name = req.body.first_name;
+                //
+                // req.checkBody('email', 'Email is required').notEmpty();
+                // req.checkBody('email', 'Email is not valid').isEmail();
+                // req.checkBody('first_name', 'First name is required').notEmpty();
+                // req.checkBody('last_name', 'Last name is required').notEmpty();
+                // req.checkBody('password', 'Password is required').notEmpty();
+                // req.checkBody('password_confirmation', 'Passwords do not match').equals(req.body.password);
+                //
+                // var error = req.validationErrors();
+                //
+                // if (error) {
+                //     console.log('errors are recorded here');
+                //     return done(null, false, {
+                //         error: error
+                //     });
+                // }
 
                 User.findByEmail(email, function (err, user) {
 
@@ -59,6 +89,9 @@ module.exports = function (passport) {
                         var newUser = new User();
                         newUser.userId = uuidv1();
                         newUser.email = email;
+                        newUser.user_name = req.body.first_name + ' ' + req.body.last_name;
+                        newUser.first_name = req.body.first_name;
+                        newUser.last_name = req.body.last_name;
                         newUser.password = bcrypt.hashSync(password, null, null); // encrypt password
 
                         newUser.save(function (err) {
@@ -79,6 +112,9 @@ module.exports = function (passport) {
         passReqToCallback: true
     },
         function (req, email, password, done) {
+
+            if (!validateEmail(email))
+                return done(null, false, req.flash('error_msg', 'The email is not valid'));
             process.nextTick(function () {
 
                 User.findByEmail(email, function (err, user) {
@@ -97,8 +133,12 @@ module.exports = function (passport) {
                 });
             })
         }
-
     ));
+
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
 
     // =========================================================================
     // GOOGLE STRATEGY =========================================================

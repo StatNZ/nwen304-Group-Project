@@ -93,7 +93,7 @@ module.exports = function (app, passport) {
     // =========================================================================
     /** Displays the login page */
     app.get('/login', function (req, res, next) {
-        if (req.isAuthenticated())
+        if (req.user)
             return res.render('profile');
 
         res.render('login');
@@ -120,6 +120,7 @@ module.exports = function (app, passport) {
     app.get('/item/:itemid', db.getItemByItemID);
     app.delete('/kart/removeItem/:email/:itemID', db.removeItemFromKart);
     app.get('/test', db.test);
+
 };
 
 

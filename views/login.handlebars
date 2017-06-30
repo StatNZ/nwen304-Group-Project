@@ -1,64 +1,85 @@
-<div class="container">
-    <div class="col-sm-6 col-sm-offset-3">
+<div class="container" style="width: 100%; display: table;">
+    <div class="sub-container" style="display: table-row">
+        <div class=" fade login in lhs" id="login-modal" aria-hidden="false" style="width: 40%; display: table-cell;">
+            <div class="modal-dialog login animated" id="login-outside-box">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Login with</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="box">
+                            <div class="content">
+                                <div class="social">
+                                    <a id="google_login" class="circle google" href="/auth/google">
+                                        <i class="fa fa-google-plus fa-fw"></i>
+                                    </a>
+                                    <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                        <i class="fa fa-facebook fa-fw"></i>
+                                    </a>
+                                </div>
+                                <div class="division">
+                                    <div class="line l"></div>
+                                    <span>or</span>
+                                    <div class="line r"></div>
+                                </div>
 
-        <h1><span class="fa fa-sign-in"></span> Login</h1>
-
-        <!-- show any messages that come back with authentication -->
-
-        <div hidden="true" class="alert alert-danger">Incorrect Email/Password</div>
-
-
-        <!-- LOGIN FORM -->
-        <form action="/signin" method="post">
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" class="form-control" name="email">
+                                <div class="form loginBox" style="display: block;">
+                                    <form method="post" action="/signin" accept-charset="UTF-8">
+                                        <input id="email" autofocus class="search-form-control" type="text" placeholder="Email" name="email">
+                                        <input id="password" class="search-form-control" type="password" placeholder="Password" name="password">
+                                        <input class="btn btn-default btn-login" type="submit" value="Login">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password">
+        </div>
+
+        <div class="flash-messages-positioning" style="width: 20%; display: table-cell;">
+            {{#if success_msg}}
+                <div class="alert alert-success">{{success_msg}}</div>
+            {{/if}}
+            {{#if error_msg}}
+                <div class=" alert alert-danger">{{error_msg}}</div>
+            {{/if}}
+            {{#if error}}
+                <div class=" alert alert-danger">{{error}}</div>
+            {{/if}}
+        </div>
+
+        <div class=" fade login in rhs" id="login-modal" aria-hidden="false" style="display: table-cell;">
+        <div class="modal-dialog login animated" id="login-outside-box">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign Up</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="box">
+                        <div class="content">
+                            <!--<div class="error alert alert-danger">Invalid email/password combination</div>-->
+                            <!--Error messages-->
+
+                            <div class="content registerBox" style="display: block;">
+                                <div class="form">
+                                    <form method="post" action="/signup" accept-charset="UTF-8">
+                                        <input id="email" autofocus class="search-form-control" type="text" placeholder="Email" name="email">
+                                        <input id="first-name"  class="search-form-control" type="text" placeholder="First Name" name="first_name">
+                                        <input id="last-name"  class="search-form-control" type="text" placeholder="Last Name" name="last_name">
+                                        <input id="password" class="search-form-control" type="password" placeholder="Password" name="password">
+                                        <input id="password_confirmation" class="search-form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
+                                        <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <button type="submit" class="btn btn-warning btn-lg">Login</button>
-        </form>
-
-        <hr>
-
-        <p>Need an account? <a href="/signup">Signup</a></p>
-        <p>Or go <a href="/">home</a>.</p>
-
+        </div>
+    </div>
     </div>
 
-</div>
-
-<div class="container">
-
-    <div class="col-sm-6 col-sm-offset-3">
-
-        <h1><span class="fa fa-sign-in"></span> Signup</h1>
-
-        <!-- show any messages that come back with authentication -->
-
-
-        <!-- LOGIN FORM -->
-        <form action="/signup" method="post">
-            <div class="form-group">
-                <label>Email</label>
-                <input type="text" class="form-control" name="email">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password">
-            </div>
-
-            <button type="submit" class="btn btn-warning btn-lg">Signup</button>
-        </form>
-
-        <hr>
-
-        <p>Already have an account? <a href="/login">Login</a></p>
-        <p>Or go <a href="/">home</a>.</p>
-
-    </div>
-
+    <script src="js/main_site.js"></script>
 </div>

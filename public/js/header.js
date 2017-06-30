@@ -79,12 +79,12 @@ $(document).ready(function () {
      ************************************************/
     $('.error').hide();
 
-    /**
-     * Stops modal from auto opening, and opens the modal
-     */
-    $('#login-modal').dialog({
-        autoOpen: true
-    });
+    // /**
+    //  * Stops modal from auto opening, and opens the modal
+    //  */
+    // $('#login-modal').dialog({
+    //     autoOpen: true
+    // });
 
     $('.btn-login').on('click', function () {
         // validate the form. pass the correct information
@@ -166,10 +166,36 @@ $(document).ready(function () {
         postSearchQuery(query);
     });
 
-    $('.fa-shopping-cart').hover( function () {
-        // call function to retrieve kart items
-        getUserKartItems();
-    });
+    /**
+     * Validates the search input given by the user
+     */
+    function validateSearchInput() {
+        var query = $('.search-form-control').val().toLowerCase();
+        if (query == '') {
+            alert('empty string') // error check for now (testing)
+            return false;
+        }
+        // will also need to check against XSS
+        return true;
+    }
+
+    function postSearchQuery(query) {
+        $.ajax ({
+            url: $searchURL +'/'+query,
+            type: 'GET',
+
+            error: function (err) {
+                // best to display something
+                return;
+            }
+
+        }).then(displaySearchResults);
+    }
+
+    function displaySearchResults (rows) {
+        alert(rows);
+    }
+
 
     /************************************************
      *********** SPECIAL FUNCTION CALLS *************
@@ -243,31 +269,7 @@ $(document).ready(function () {
         }, interval_time);
     }
 
-    /**
-     * Validates the search input given by the user
-     */
-    function validateSearchInput() {
-        var query = $('.search-form-control').val().toLowerCase();
-        if (query == '') {
-            alert('empty string') // error check for now (testing)
-            return false;
-        }
-        // will also need to check against XSS
-        return true;
-    }
 
-    function postSearchQuery(query) {
-
-        var item = {
-            item: query
-        }
-
-        $.ajax ({
-            url: $searchURL,
-            type: 'GET',
-            data: item
-        });
-    }
 
     /**
      * Ajax call to retrieve all the information regarding the users kart,
@@ -295,7 +297,7 @@ $(document).ready(function () {
             return;
 
         // needs to be more accurately defined
-        if ($('#kart-user-items').children().length > 0)
+        if ($('#kart-user-items').children().length == rows.length)
             return;
 
         var totalPrice = 0;
@@ -337,5 +339,10 @@ $(document).ready(function () {
             '<li><a class="text-center" href="/login">View Cart</a></li>';
         $('#kart-view-cart-header').append(endKartHTML);
     }
+
+    $('.fa-shopping-cart').hover( function () {
+        // call function to retrieve kart items
+        getUserKartItems();
+    });
 });
 
