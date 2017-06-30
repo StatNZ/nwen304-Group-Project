@@ -5,7 +5,7 @@ var exphbs = require('express-handlebars');
 var path = require('path');
 
 var passport = require('passport');
-var flash    = require('connect-flash');
+//var flash    = require('connect-flash');
 
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
