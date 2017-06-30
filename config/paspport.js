@@ -6,6 +6,10 @@
 
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
+
+var bcrypt = require('bcrypt-nodejs');  // use for encryption
+var uuidv1 = require('uuid/v1');        // use to generate a unique id
 
 // need user model
 var User = require('../app/users');
@@ -28,7 +32,52 @@ module.exports = function (passport) {
     });
 
     // =========================================================================
-    // GOOGLE ==================================================================
+    // LOCAL STRATEGY ==========================================================
+    // =========================================================================
+
+    passport.use('local-signup', new LocalStrategy({
+        usernameField : 'email',
+        passwordField : 'password',
+        passReqToCallback : true
+    },
+        function (req, email, password, done) {
+
+            process.nextTick(function () {
+
+                User.findByEmail(email, function (err, user) {
+
+                    if (err)
+                        return done(err);
+
+                    if (user) {
+                        console.log('user already in db');
+                        return done(null, false, req.flash('error_msg', 'That email is already taken.'));
+                    }
+
+                    else {
+
+                        // first we are going to check for errors
+
+
+                        // create the user
+                        var newUser = new User();
+                        newUser.userId = uuidv1();
+                        newUser.email = email;
+                        newUser.password = bcrypt.hashSync(password, null, null); // encrypt password
+
+                        newUser.save(function (err) {
+                            if (err)
+                                throw err;
+                            return done(null, newUser);
+                        })
+                    }
+                });
+            })
+        }
+    ));
+
+    // =========================================================================
+    // GOOGLE STRATEGY =========================================================
     // =========================================================================
 
     passport.use(new GoogleStrategy({
@@ -78,7 +127,7 @@ module.exports = function (passport) {
     ));
 
     // =========================================================================
-    // FACEBOOK ================================================================
+    // FACEBOOK STRATEGY =======================================================
     // =========================================================================
 
     passport.use(new FacebookStrategy({

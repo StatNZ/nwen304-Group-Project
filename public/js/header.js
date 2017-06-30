@@ -263,7 +263,7 @@ $(document).ready(function () {
         }
 
         $.ajax ({
-            url: 'http://localhost:3000/search',
+            url: $searchURL,
             type: 'GET',
             data: item
         });
@@ -275,7 +275,7 @@ $(document).ready(function () {
      */
     function getUserKartItems() {
         $.ajax ({
-            url: 'http://localhost:3000/kart_items',
+            url: $userKartURL,
             type: 'GET',
 
             error: function (err) {

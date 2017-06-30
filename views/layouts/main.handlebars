@@ -25,6 +25,7 @@ and open the template in the editor.
     <!-- the starting scripts needed for our site -->
     <script src="js/jquery/jquery.min.js"></script>
     <script src="js/jquery/jquery-ui.min.js"></script>
+    <script src="js/globalVars.js"></script>
 </head>
 
 <body>
@@ -38,7 +39,7 @@ and open the template in the editor.
                     <a href="/" class="nav_button dropdown-toggle" data-toggle="dropdown">Urban Apparel</a>
                 </li>
                 <li class="dropdown mega-dropdown">
-                    <a href="/categories_men" class="nav_button dropdown-toggle" data-toggle="dropdown">Men</a>
+                    <a href="/category_men" class="nav_button dropdown-toggle" data-toggle="dropdown">Men</a>
                     <ul class="dropdown-menu mega-dropdown-menu row dropdown-menu-right">
                         <div class="megamenu-headline">
                             <h2>Men's Apparel</h2>
@@ -47,7 +48,7 @@ and open the template in the editor.
                         <li class="col-sm-4">
                             <ul>
                                 <li class="dropdown-header">Tops</li>
-                                <li class="men-cat-items"><a href="/sub_category">Shirts</a></li>
+                                <li class="men-cat-items"><a href="/subCategory">Shirts</a></li>
                                 <li class="men-cat-items"><a href="#">T-Shirts</a></li>
                                 <li class="men-cat-items"><a href="#">Jackets</a></li>
                             </ul>
@@ -70,7 +71,7 @@ and open the template in the editor.
                     </ul>
                 </li>
                 <li class="dropdown mega-dropdown">
-                    <a href="/categories_women" class="nav_button dropdown-toggle" data-toggle="dropdown">Women</a>
+                    <a href="/category_women" class="nav_button dropdown-toggle" data-toggle="dropdown">Women</a>
                     <ul class="dropdown-menu mega-dropdown-menu row dropdown-menu-right">
                         <div class="megamenu-headline">
                             <h2>Women's Apparel</h2>
@@ -125,7 +126,7 @@ and open the template in the editor.
                     <a class="nav_button dropdown-toggle" data-toggle="dropdown">
                         <!-- Adds a search bar -->
                         <div class="inner-addon right-addon">
-                            <i href="#" class="fa fa-search"></i>
+                            <i href="/search" class="fa fa-search"></i>
                             <input placeholder="search..." type="text" class="search-form-control" />
                         </div>
                     </a>
@@ -164,13 +165,25 @@ and open the template in the editor.
         <li class="promo">
             <ul>
                 <li class="sale">
-                    <a href="#">50% off store wide!!!*</a>
+                    <a >50% off store wide!!!*</a>
                 </li>
                 <li class="coupon">
-                    <a href="#">Use code: SHOPTILYOUDROP</a>
+                    <a >Use code: SHOPTILYOUDROP</a>
                 </li>
             </ul>
         </li>
+    </div>
+
+    <div class="flash-messages-positioning">
+        {{#if success_msg}}
+                <div class="alert alert-success">{{success_msg}}</div>
+        {{/if}}
+        {{#if error_msg}}
+                <div class="alert alert-danger">{{error_msg}}</div>
+        {{/if}}
+        {{#if error}}
+                <div class="alert alert-danger">{{error}}</div>
+        {{/if}}
     </div>
 </div>
 

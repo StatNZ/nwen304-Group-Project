@@ -4,8 +4,6 @@
 
 $(document).ready(function () {
 
-    var userInfo;
-
     window.onload = function () {
         getKartItems();
         getUserInfo();
@@ -13,13 +11,12 @@ $(document).ready(function () {
 
     function getUserInfo () {
         $.ajax ({
-            url: 'http://localhost:3000/user_info',
+            url: $userInfoURL,
             type: 'GET',
 
-            error: function (xhr) {
+            error: function (err) {
                 // User must sign in to access kart
-                alert ('retrieving user info error occured');
-                return;
+                throw err;
             }
         }).then(displayUserInfo);
     }
@@ -27,20 +24,20 @@ $(document).ready(function () {
     function displayUserInfo (user) {
         // need to display all the relevant user info
         // to the current user
-        userInfo = user;
+        $User = user;
         $('.profile-user-name').text(user.user_name);
         $('.profile-user-email').text(user.email);
+        $('.profile-user-address').text(user.address);
     }
 
     function getKartItems () {
         $.ajax ({
-            url: 'http://localhost:3000/kart_items',
+            url: $userKartURL,
             type: 'GET',
 
-            error: function (xhr) {
+            error: function (err) {
                 // User must sign in to access kart
-                alert ('profile error occured');
-                return;
+                throw err;
             }
         }).then(displayProfileKartItems);
     }
@@ -113,9 +110,9 @@ $(document).ready(function () {
 
         // we now fill in all the information that we have on the current user
         // into the form, from here they can change and edit as they see fit
-        $('#profile-first-name').val(userInfo.first_name);
-        $('#profile-last-name').val(userInfo.last_name);
-        $('#profile-address').val(userInfo.address);
+        $('#profile-first-name').val($User.first_name);
+        $('#profile-last-name').val($User.last_name);
+        $('#profile-address').val($User.address);
     })
 
 

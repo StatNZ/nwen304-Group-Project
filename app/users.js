@@ -16,6 +16,7 @@ function User() {
     this.email = '';
     this.accessToken = '';
     this.address = '';
+    this.password = '';
 
     this.save = function (callback) {
         connectDB();
@@ -33,6 +34,22 @@ function User() {
     }
 }
 
+User.findByEmail = function (email, callback) {
+    connectDB();
+    console.log('find by email function');
+
+    client.query("SELECT * FROM customer WHERE Email=$1", [email], function (err, result) {
+        if (err)
+            return callback(err, null);
+
+        if (result.rows.length > 0) {
+            return callback(err, buildUser(result));
+        }
+
+        return callback(null, null);
+    })
+};
+
 /**
  * Finds the current user in the database by their id.
  * @param id
@@ -49,20 +66,23 @@ User.findOne = function (id, callback) {
             return callback(err, null);
 
         if (result.rows.length > 0) {
-            // we have found our person
-            var newUser = new User();
-            newUser.user_name = result.rows[0].name;
-            newUser.first_name = result.rows[0].firstname;
-            newUser.last_name = result.rows[0].lastname;
-            newUser.accessToken = result.rows[0].acesstoken;
-            newUser.userId = result.rows[0].customerid;
-            newUser.email = result.rows[0].email;
-            newUser.address = result.rows[0].address;
-            return callback(err, newUser);
+            return callback(err, buildUser(result));
         }
 
         return callback(null, null);
     })
 };
+
+function buildUser (result) {
+    var newUser = new User();
+    newUser.user_name = result.rows[0].name;
+    newUser.first_name = result.rows[0].firstname;
+    newUser.last_name = result.rows[0].lastname;
+    newUser.accessToken = result.rows[0].acesstoken;
+    newUser.userId = result.rows[0].customerid;
+    newUser.email = result.rows[0].email;
+    newUser.address = result.rows[0].address;
+    return newUser
+}
 
 module.exports = User;

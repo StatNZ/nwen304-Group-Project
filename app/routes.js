@@ -2,6 +2,21 @@ var db = require('../queries');
 
 module.exports = function (app, passport) {
 
+    /** GET home page. */
+    app.get('/', function(req, res, next) {
+        res.render('index');
+    });
+
+    // =========================================================================
+    // LOCAL ROUTES ============================================================
+    // =========================================================================
+
+    app.post('/signup', passport.authenticate('local-signup', {
+        successRedirect : '/profile',
+        failureRedirect : '/login',
+        failureFlash : true
+    }));
+
     // =========================================================================
     // GOOGLE ROUTES ===========================================================
     // =========================================================================
@@ -32,57 +47,45 @@ module.exports = function (app, passport) {
         })
     );
 
-    /**
-     * Accesses all our cart items regarding our specific user
-     *
-     * CHANGE TEST TO THE APPROPRIATE DB CALL WHEN LIVE
-     */
-    app.get('/kart_items', isLoggedInSpecialCase, db.test);
+    // =========================================================================
+    // CATEGORY ROUTES =========================================================
+    // =========================================================================
 
-    app.get('/sub_category', function (req, res) {
+    app.get('/subCategory', function (req, res) {
         res.render('sub_category');
-    })
+    });
 
     /* Get categories page. */
-    app.get('/categories_men', function (req, res) {
+    app.get('/category_men', function (req, res) {
         res.render ('categories');
 
     });
 
     /* Get categories page. */
-    app.get('/categories_women', function (req, res) {
+    app.get('/category_women', function (req, res) {
         res.render ('categories');
     });
 
-    /* GET home page. */
-    app.get('/', function(req, res, next) {
-        res.render('index');
-    });
+    // =========================================================================
+    // USER ROUTES =============================================================
+    // =========================================================================
 
-    /* SEARCH route */
-    app.get('/search', function (req, res, next) {
-        var item = req.body.item;
-        console.log(req.body);
-        res.sendStatus(200);
-    });
+    app.get('/user/kart', isLoggedInSpecialCase, db.test);
 
-    /**
-     * Returns the current logged in user to the caller
-     */
-    app.get('/user_info', isLoggedIn, function (req, res, next) {
+    /** Returns the current logged in user to the caller */
+    app.get('/user/info', isLoggedIn, function (req, res, next) {
         res.send(req.user);
     });
 
-    /**
-     * Displays profile page
-     */
+    /** Displays profile page */
     app.get('/profile', function (req, res, next) {
         res.redirect('/login');
     });
 
-    /**
-     * Displays the login page
-     */
+    // =========================================================================
+    // LOGIN/OUT ROUTES ========================================================
+    // =========================================================================
+    /** Displays the login page */
     app.get('/login', function (req, res, next) {
         if (req.isAuthenticated())
             return res.render('profile');
@@ -90,14 +93,16 @@ module.exports = function (app, passport) {
         res.render('login');
     });
 
-    /**
-     * Logs current user out of the session
-     */
+    /** Logs current user out of the session */
     app.get('/logout', isLoggedIn, function (req, res) {
         // implement logout functionality
         req.logout();
         res.render('login');
     });
+
+    // =========================================================================
+    // DATABASE ROUTES =========================================================
+    // =========================================================================
 
     /* Database Query Routes */
     //app.get('/items/:category', db.getItemsByCategory);

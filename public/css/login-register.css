@@ -167,7 +167,7 @@
     width: 100%;
 }
 .login .btn-login:hover, .registerBox .btn-register:hover{
-    background-color: #00A4E4;
+    background-color: #008a03;
     color: #FFFFFF;
 }
 .login .search-form-control{
@@ -204,8 +204,8 @@
 }
 
 .big-login, .big-register{
-    background-color: #00bbff;
-    color: #FFFFFF;
+    background-color: #008a03;
+    color: #008a03;
     border-radius: 7px;
     border-width: 2px;
     font-size: 14px;
@@ -216,8 +216,8 @@
     transition: all 0.3s ease 0s;
 }
 .big-login:hover{
-    background-color: #00A4E4;
-    color: #FFFFFF;
+    background-color: #008a03;
+    color: #008a03;
 }
 
 .big-register{
@@ -229,4 +229,14 @@
 .big-register:hover{
     border-color: #00A4E4;
     color:  #00A4E4;
+}
+
+.loginBox {
+
+}
+
+.loginDialogBox {
+    width: 100%;
+    display: table;
+    margin: 10%;
 }
