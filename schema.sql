@@ -89,8 +89,8 @@ INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Sk
 INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 30\n Color:White', 129.99, 4);
 INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('ABrand Slim Fit Jeans', 'ABrand Slim Fit Jeans\nSize: 32\n Color:Black', 139.99, 4);
 
-INSERT INTO purchase(Date, Email) VALUES (now(), 'test@gmail.com');
-INSERT INTO purchase(Date, Email) VALUES (now(), 'guest@gmail.com');
+INSERT INTO purchase(Date, Email) VALUES (now(), 'test');
+INSERT INTO purchase(Date, Email) VALUES (now(), 'guest');
 
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 1, 2);
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 11, 1); 

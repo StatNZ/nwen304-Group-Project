@@ -99,6 +99,7 @@ router.get('/search/:desc', db.getItemsByDescription);
 router.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
 router.get('/item/:itemid', db.getItemByItemID);
 router.get('/kart/:email', db.getKart);
+router.delete('/kart/removeItem/:email/:itemID', db.removeItemFromKart);
 router.get('/test', db.test);
 
 /**

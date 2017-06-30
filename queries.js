@@ -158,22 +158,20 @@ function getKart(req, res, next) {
 }
 
 function removeItemFromKart(req, res, next) {
-  var itemID = parseInt(req.params.itemid);
+  var itemID = parseInt(req.params.itemID);
   var email = req.params.email;
 
   client = new pg.Client(connectionString);
   client.connect();
   
-  var query = client.query("");
-  var results = [];
-
-  query.on('row', function(row) {
-    results.push(row);
-  });
+  var query = client.query("DELETE FROM purchasedetails pd WHERE itemid = " + itemID + " AND purchaseid IN (SELECT purchaseid FROM purchase WHERE email = '" + email + "')");
 
   query.on('end', function() {
     client.end();
-    res.json(results);
+    res.json({
+    	status: "success",
+    	message: "Removed item " + itemID + " from " + email +  "'s kart" 
+    });
   });
 }
 
@@ -186,11 +184,6 @@ module.exports = {
     getItemsByDescription: getItemsByDescription,
     getItemsByPrice: getItemsByPrice,
     getItemByItemID: getItemByItemID,
-    getKart: getKart
+    getKart: getKart,
+    removeItemFromKart: removeItemFromKart
 };
-  	 
-/*
-DELETE FROM purchasedetails AS pd
-USING purchase AS p
-WHERE pd.itemid = 1 AND email = email;
-*/
