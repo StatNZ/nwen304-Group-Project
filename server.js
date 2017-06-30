@@ -12,6 +12,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+var port = process.env.PORT || 3000;
+
 require('./config/paspport')(passport);
 
 // forces us to become https
@@ -53,5 +55,5 @@ app.use(passport.session());
 /** ROUTES pass appropriate variables to functions **/
 require('./app/routes')(app, passport);
 
-app.listen(3000);
-console.log ('listening on localhost:3000');
+app.listen(port);
+console.log ('Urban Apparel listening on localhost:3000');
