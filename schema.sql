@@ -12,13 +12,17 @@ CREATE TABLE customer (
 );
 */
 
+CREATE TABLE kart {
+
+}
+
 CREATE TABLE category (
 	CategoryID SERIAL PRIMARY KEY,
 	Name varchar(55) NOT NULL,
 	Gender char NOT NULL
 );
 
-CREATE TABLE subcategory ( 
+CREATE TABLE subcategory (
 	SubCategoryID SERIAL PRIMARY KEY,
 	Name varchar(255) NOT NULL,
 	CategoryID integer NOT NULL REFERENCES category
@@ -31,7 +35,7 @@ CREATE TABLE item (
 	Price Numeric(12,2) NOT NULL,
 	ImageSource varchar(255),
 	SubCategoryID integer NOT NULL REFERENCES subcategory
-);	
+);
 
 CREATE TABLE purchase (
 	PurchaseID SERIAL PRIMARY KEY,
@@ -43,7 +47,7 @@ CREATE TABLE purchasedetails (
 	PurchaseDetailsID SERIAL PRIMARY KEY,
 	PurchaseID integer NOT NULL REFERENCES purchase,
 	ItemID integer NOT NULL REFERENCES item,
-	Quantity integer NOT NULL 
+	Quantity integer NOT NULL
 );
 
 INSERT INTO category (Name, Gender) VALUES ('Tops', 'M');
@@ -91,3 +95,11 @@ INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Puffer
 INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 32\n Color:White', 129.99, 4);
 INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 30\n Color:White', 129.99, 4);
 INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('ABrand Slim Fit Jeans', 'ABrand Slim Fit Jeans\nSize: 32\n Color:Black', 139.99, 4);
+
+INSERT INTO purchase(Date, Email) VALUES (now(), 'test');
+INSERT INTO purchase(Date, Email) VALUES (now(), 'guest');
+
+INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 1, 2);
+INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 11, 1);
+INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 13, 1);
+INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (2, 5, 1);

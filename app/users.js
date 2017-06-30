@@ -21,10 +21,10 @@ function User() {
     this.save = function (callback) {
         connectDB();
         console.log('Saving new user into database');
-        client.query('INSERT INTO customer(CustomerID, FirstName, LastName, AccessToken, Name, Email, Address) ' +
-            'VALUES($1, $2, $3, $4, $5, $6, $7)',
+        client.query('INSERT INTO customer(CustomerID, FirstName, LastName, AccessToken, Name, Email, Address, Password) ' +
+            'VALUES($1, $2, $3, $4, $5, $6, $7, $8)',
             [this.userId, this.first_name, this.last_name, this.accessToken, this.user_name,
-                this.email, this.address], function (err, result) {
+                this.email, this.address, this.password], function (err, result) {
                 if (err)
                     return callback(err, null) // error inserting into db
             });
@@ -82,6 +82,7 @@ function buildUser (result) {
     newUser.userId = result.rows[0].customerid;
     newUser.email = result.rows[0].email;
     newUser.address = result.rows[0].address;
+    newUser.password = result.rows[0].password;
     return newUser
 }
 

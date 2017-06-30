@@ -55,10 +55,6 @@ module.exports = function (passport) {
                     }
 
                     else {
-
-                        // first we are going to check for errors
-
-
                         // create the user
                         var newUser = new User();
                         newUser.userId = uuidv1();
@@ -68,12 +64,40 @@ module.exports = function (passport) {
                         newUser.save(function (err) {
                             if (err)
                                 throw err;
+
                             return done(null, newUser);
                         })
                     }
                 });
             })
         }
+    ));
+
+    passport.use('local-login', new LocalStrategy({
+        usernameField: 'email',
+        passwordField: 'password',
+        passReqToCallback: true
+    },
+        function (req, email, password, done) {
+            process.nextTick(function () {
+
+                User.findByEmail(email, function (err, user) {
+                   if (err)
+                       return done(err);
+
+                   if (user) {
+                       // need to check the password is correct
+                       console.log(user.email, user.password);
+                       if (user.password != '' && bcrypt.compareSync(password, user.password))
+                           return done(null, user);
+                   }
+
+                   // otherwise we need to throw an error
+                    return done(null, false, req.flash('error_msg', 'Invalid email/password'));
+                });
+            })
+        }
+
     ));
 
     // =========================================================================

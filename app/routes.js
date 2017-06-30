@@ -17,6 +17,12 @@ module.exports = function (app, passport) {
         failureFlash : true
     }));
 
+    app.post('/signin', passport.authenticate('local-login', {
+        successRedirect : '/profile',
+        failureRedirect : '/login',
+        failureFlash : true
+    }));
+
     // =========================================================================
     // GOOGLE ROUTES ===========================================================
     // =========================================================================
@@ -42,7 +48,7 @@ module.exports = function (app, passport) {
 
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
-            successRedirect: '/',
+            successRedirect: '/profile',
             failureRedirect: '/login'
         })
     );
@@ -112,6 +118,7 @@ module.exports = function (app, passport) {
     app.get('/search/:desc', db.getItemsByDescription);
     app.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
     app.get('/item/:itemid', db.getItemByItemID);
+    app.delete('/kart/removeItem/:email/:itemID', db.removeItemFromKart);
     app.get('/test', db.test);
 };
 
