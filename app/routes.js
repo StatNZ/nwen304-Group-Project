@@ -2,18 +2,26 @@ var db = require('../queries');
 
 module.exports = function (app, passport) {
 
-    app.get('/auth/google',
-        passport.authenticate('google', {scope: ['profile', 'email']}));
+    // =========================================================================
+    // GOOGLE ROUTES ===========================================================
+    // =========================================================================
 
+    app.get('/auth/google',
+        passport.authenticate('google', { scope:
+            [ 'https://www.googleapis.com/auth/plus.login',
+                'https://www.googleapis.com/auth/plus.profile.emails.read' ] }
+        ));
 
     app.get('/auth/google/callback',
-        passport.authenticate('google', {
-            successRedirect: '/profile',
-            failureRedirect: '/login'
-        })
-    );
+        passport.authenticate('google', { failureRedirect: '/login' }),
+        function(req, res) {
+            // Successful authentication, redirect home.
+            res.redirect('/profile');
+        });
 
-
+    // =========================================================================
+    // FACEBOOK ROUTES =========================================================
+    // =========================================================================
     app.get('/auth/facebook',
         passport.authenticate('facebook', {scope: ['email']}));
 
@@ -92,7 +100,7 @@ module.exports = function (app, passport) {
     });
 
     /* Database Query Routes */
-//router.get('/items/:category', db.getItemsByCategory);
+    //app.get('/items/:category', db.getItemsByCategory);
     app.get('/categories/:gender', db.getItemsByGender);
     app.get('/categories/:gender/:category', db.getItemsByCategory);
     app.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);

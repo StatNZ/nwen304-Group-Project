@@ -257,14 +257,15 @@ $(document).ready(function () {
     }
 
     function postSearchQuery(query) {
+
+        var item = {
+            item: query
+        }
+
         $.ajax ({
             url: 'http://localhost:3000/search',
             type: 'GET',
-            data: JSON.stringify({
-                item: query
-            }),
-            contentType: "application/json",
-            dataType: "json"
+            data: item
         });
     }
 

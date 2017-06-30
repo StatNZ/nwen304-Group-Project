@@ -1,5 +1,6 @@
 {
   "name": "nwen304-Group-Project",
+  "main": "server.js",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,12 +12,14 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "express-handlebars": "^3.0.0",
-    "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth2": "^0.1.6",
+    "passport-google-oauth20": "^1.0.0",
+    "connect-flash": "^0.1.1",
     "pg": "^6.4.0",
+    "express-session": "^1.15.3",
     "serve-favicon": "~2.3.0"
   }
 }

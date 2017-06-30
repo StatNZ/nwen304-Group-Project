@@ -1,6 +1,3 @@
-var express = require('express');
-var router = express.Router();
-
 var db = require ('../queries');
 var pg = require ('pg');
 
@@ -61,7 +58,7 @@ User.findOne = function (id, callback) {
             newUser.userId = result.rows[0].customerid;
             newUser.email = result.rows[0].email;
             newUser.address = result.rows[0].address;
-            return callback(null, newUser);
+            return callback(err, newUser);
         }
 
         return callback(null, null);

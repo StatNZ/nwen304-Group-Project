@@ -5,7 +5,7 @@
 // config/passport.js
 
 var FacebookStrategy = require('passport-facebook').Strategy;
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 // need user model
 var User = require('../app/users');
@@ -57,8 +57,8 @@ module.exports = function (passport) {
                         var newUser = new User();
                         newUser.userId = profile.id;
                         newUser.user_name = profile.displayName;
-                        newUser.first_name = profile.name.givenName;
-                        newUser.last_name = profile.name.familyName;
+                        //newUser.first_name = profile.name.givenName;
+                        //newUser.last_name = profile.name.familyName;
                         newUser.accessToken = accessToken;
                         newUser.email = profile.emails[0].value;
 
@@ -81,53 +81,52 @@ module.exports = function (passport) {
     // FACEBOOK ================================================================
     // =========================================================================
 
-    var fbOpts = {
-        clientID: 238120290008806,
-        clientSecret: 'b5291cbe9d73872bed7743f39d2f3fe1',
-        callbackURL: "http://localhost:3000/auth/facebook/callback",
+    passport.use(new FacebookStrategy({
+        clientID: configAuth.facebookAuth.clientID,
+        clientSecret: configAuth.facebookAuth.clientSecret,
+        callbackURL: configAuth.facebookAuth.callbackURL,
         profileFields: ['id', 'emails', 'name', 'displayName', 'gender']
-    };
+    },
+        function (accessToken, refreshToken, profile, done) {
+            // asynchronous
+            process.nextTick (function () {
 
-    var fbCallback = function (accessToken, refreshToken, profile, done) {
-        // asynchronous
-        process.nextTick (function () {
+                // find the user in the database based on their facebook id
+                User.findOne (profile.id, function (err, user) {
 
-            // find the user in the database based on their facebook id
-            User.findOne (profile.id, function (err, user) {
+                    if (err) {
+                        return done(err);
+                    }
 
-                if (err) {
-                    return done(err);
-                }
+                    if (user) {
+                        console.log('User is now logged in with facebook as: ' + user.user_name);
+                        return done(null, user);
+                    }
 
-                if (user) {
-                    console.log('User is now logged in with facebook as: ' + user.user_name);
-                    return done(null, user);
-                }
+                    else {
+                        // create a new user
+                        var newUser = new User();
+                        newUser.userId = profile.id;
+                        newUser.user_name = profile.displayName;
+                        newUser.first_name = profile.name.givenName;
+                        newUser.last_name = profile.name.familyName;
+                        newUser.accessToken = accessToken;
+                        newUser.email = profile.emails[0].value;
 
-                else {
-                    // create a new user
-                    var newUser = new User();
-                    newUser.userId = profile.id;
-                    newUser.user_name = profile.displayName;
-                    newUser.first_name = profile.name.givenName;
-                    newUser.last_name = profile.name.familyName;
-                    newUser.accessToken = accessToken;
-                    newUser.email = profile.emails[0].value;
+                        //insert into the database
+                        newUser.save(function (err) {
+                            if (err) {
+                                console.log(err);
+                                return done(null, null); // should redirect us to the login page
+                            }
 
-                    //insert into the database
-                    newUser.save(function (err) {
-                        if (err) {
-                            console.log(err);
-                            return done(null, null); // should redirect us to the login page
-                        }
-
-                        return done(null, newUser);
-                    })
-                }
+                            return done(null, newUser);
+                        })
+                    }
+                });
             });
-        });
-    };
+        }
+    ));
 
-    passport.use (new FacebookStrategy (fbOpts, fbCallback));
 
 };

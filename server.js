@@ -14,19 +14,33 @@ var session = require('express-session');
 
 require('./config/paspport')(passport);
 
+// forces us to become https
+// must go live on heroku
+// app.use(function (req, res, next) {
+//     if (req.headers['x-forwarded-proto'] !== 'https') {
+//         res.redirect(['https://localhost:3000', req.url].join(''));
+//     }
+//     next();
+// });
+
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev')); // log every request to the console
 app.use(cookieParser());
-app.use( bodyParser.urlencoded({
+app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use( bodyParser.json());
+app.use(bodyParser.json());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+// static path setup, must be above session vars, otherwise, session
+// will be logged for each static request
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
     secret: 'urbanApparelSecretKey',
@@ -35,9 +49,6 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use(express.static(path.join(__dirname, 'public')));
-
 
 /** ROUTES pass appropriate variables to functions **/
 require('./app/routes')(app, passport);
