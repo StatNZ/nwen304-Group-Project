@@ -34,7 +34,7 @@ module.exports = function (passport) {
     passport.use(new GoogleStrategy({
             clientID : configAuth.googleAuth.clientID,
             clientSecret : configAuth.googleAuth.clientSecret,
-            callbackURL : configAuth.googleAuthHeroku.callbackURL
+            callbackURL : configAuth.googleAuth.callbackURL
         },
         function(accessToken, refreshToken, profile, done) {
             console.log('made it to function');
@@ -84,7 +84,7 @@ module.exports = function (passport) {
     passport.use(new FacebookStrategy({
         clientID: configAuth.facebookAuth.clientID,
         clientSecret: configAuth.facebookAuth.clientSecret,
-        callbackURL: configAuth.facebookAuthHeroku.callbackURL,
+        callbackURL: configAuth.facebookAuth.callbackURL,
         profileFields: ['id', 'emails', 'name', 'displayName', 'gender']
     },
         function (accessToken, refreshToken, profile, done) {
