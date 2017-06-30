@@ -20,7 +20,7 @@ require('./config/paspport')(passport);
 // must go live on heroku
 app.use(function (req, res, next) {
     if (req.headers['x-forwarded-proto'] !== 'https') {
-        res.redirect(['https://localhost:3000', req.url].join(''));
+        res.redirect(['https://urbanapparel.herokuapp.com', req.url].join(''));
     }
     next();
 });
