@@ -334,7 +334,7 @@ $(document).ready(function () {
         var endKartHTML = '' +
             '<li class="divider"></li>' +
             '<li><a class="text-center" href="/login">View Cart</a></li>';
-        $('#kart-user-items').append(endKartHTML);
+        $('#kart-view-cart-header').append(endKartHTML);
     }
 });
 

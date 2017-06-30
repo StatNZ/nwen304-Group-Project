@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    var userInfo;
 
     window.onload = function () {
         getKartItems();
@@ -26,6 +27,7 @@ $(document).ready(function () {
     function displayUserInfo (user) {
         // need to display all the relevant user info
         // to the current user
+        userInfo = user;
         $('.profile-user-name').text(user.user_name);
         $('.profile-user-email').text(user.email);
     }
@@ -103,5 +105,18 @@ $(document).ready(function () {
             totalPrice = totalPrice.toPrecision(4);
         $('.kart-total-price').text(totalPrice);
     }
+
+    $('.profile-edit-info').on('click', function () {
+        // hide our current information
+        $('.profile-main-view').hide();
+        $('.profile-main-edit-view').show('clip',250).effect('highlight',1000);
+
+        // we now fill in all the information that we have on the current user
+        // into the form, from here they can change and edit as they see fit
+        $('#profile-first-name').val(userInfo.first_name);
+        $('#profile-last-name').val(userInfo.last_name);
+        $('#profile-address').val(userInfo.address);
+    })
+
 
 });

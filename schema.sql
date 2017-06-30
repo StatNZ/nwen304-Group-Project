@@ -1,7 +1,9 @@
 /*
 CREATE TABLE customer (
-	CustomerID  NOT NULL,
+	CustomerID varchar(255) NOT NULL,
 	Name varchar(255) NOT NULL,
+	FirstName varchar(255) NOT NULL,
+	LastName varchar(255) NOT NULL,
 	AccessToken varchar(255) NOT NULL,
 	Address varchar(255),
 	Email varchar(255) NOT NULL,

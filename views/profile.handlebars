@@ -4,7 +4,7 @@
             <!-- Build the user profile here, with a log out button -->
 
             <div class="profile-lhs-container">
-                <div class="row profile-row">
+                <div class="row profile-row profile-main-view">
                     <div class="col-xs-5 col-sm-12">
                         <img class="profile-image" src="">
                     </div>
@@ -20,7 +20,7 @@
                             </li>
                         </ul>
 
-                        <h3>Contact Information</h3>
+                        <h3>Contact Information<a href="#" class="profile-edit-info" style="font-size: 11px; float: right">edit</a></h3>
 
                         <ul class="profile-details">
                             <li>
@@ -38,6 +38,60 @@
                     </div>
                 </div>
 
+                <div hidden="true" class=" profile-row profile-main-edit-view">
+                    <div class=" profile-row profile-main-edit-view">
+                        <form class="form-horizontal">
+                            <fieldset class="fieldset-box">
+                                <!-- Address form -->
+
+                                <h2>Edit Profile</h2>
+
+                                <!-- first-name input-->
+                                <div class="control-group">
+                                    <label class="control-label">First Name</label>
+                                    <div class="controls">
+                                        <input id="profile-first-name" name="first-name" type="text" placeholder="first name"
+                                               class="input-xlarge" />
+                                        <p class="help-block"></p>
+                                    </div>
+                                </div>
+
+                                <!-- last-name input-->
+                                <div class="control-group">
+                                    <label class="control-label">Last Name</label>
+                                    <div class="controls">
+                                        <input id="profile-last-name" name="last-name" type="text" placeholder="last name"
+                                               class="input-xlarge" />
+                                        <p class="help-block"></p>
+                                    </div>
+                                </div>
+
+                                <!-- city input-->
+                                <div class="control-group">
+                                    <label class="control-label">Mobile No.</label>
+                                    <div class="controls">
+                                        <input id="profile-mobile" name="mobile" type="text" placeholder="mobile no."
+                                               class="input-xlarge" />
+                                        <p class="help-block"></p>
+                                    </div>
+                                </div>
+
+                                <!-- city input-->
+                                <div class="control-group">
+                                    <label class="control-label">Address</label>
+                                    <div class="controls">
+                                        <textarea id="profile-address" name="address" placeholder="Address" type="text"
+                                                  class="input-xlarge"></textarea>
+                                        <p class="help-block"></p>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div>
+                            <a href="/profile/submit" class="btn btn-success btn-block">Update Info</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>

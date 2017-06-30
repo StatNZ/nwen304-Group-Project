@@ -92,6 +92,7 @@
     border: 0px;
     box-shadow: none;
     -webkit-box-shadow: none;
+    max-height: 400px;
 }
 
 .nav_button {

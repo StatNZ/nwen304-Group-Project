@@ -87,10 +87,11 @@ var fbCallback = function (accessToken, refreshToken, profile, done) {
 
             else {
                 // create a new user
-
                 var newUser = new User();
                 newUser.userId = profile.id;
                 newUser.user_name = profile.displayName;
+                newUser.first_name = profile.name.givenName;
+                newUser.last_name = profile.name.familyName;
                 newUser.accessToken = accessToken;
                 newUser.email = profile.emails[0].value;
 
@@ -173,8 +174,8 @@ router.get('/user_info', isLoggedIn, function (req, res, next) {
 /**
  * Displays profile page
  */
-router.get('/profile', isLoggedIn, function (req, res, next) {
-    res.render('profile');
+router.get('/profile', function (req, res, next) {
+    res.redirect('/login');
 });
 
 /**
@@ -182,7 +183,7 @@ router.get('/profile', isLoggedIn, function (req, res, next) {
  */
 router.get('/login', function (req, res, next) {
     if (req.isAuthenticated())
-        return res.redirect('/profile');
+        return res.render('profile');
 
     res.render('login');
 });
@@ -221,6 +222,7 @@ function isLoggedIn(req, res, next) {
  * back a 404 error
  */
 function isLoggedInSpecialCase (req, res, next) {
+    console.log(req.user);
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated())
         return next();

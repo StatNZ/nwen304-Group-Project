@@ -49,3 +49,31 @@
 .profile-details > li {
     list-style: none;
 }
+
+.control-group {
+    width: 100%;
+    display: table;
+}
+
+.control-label {
+    width: 30%;
+    display: table-cell;
+}
+
+.controls {
+    display: table-cell;
+}
+
+.controls > input,
+.controls > textarea {
+    width: 100%;
+}
+
+.control-label {
+    padding: 10px;
+    margin: 0;
+}
+
+.fieldset-box {
+    border: none;
+}
