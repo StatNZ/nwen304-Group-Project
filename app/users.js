@@ -53,7 +53,6 @@ User.findOne = function (id, callback) {
 
         if (result.rows.length > 0) {
             // we have found our person
-            console.log(result);
             var newUser = new User();
             newUser.user_name = result.rows[0].name;
             newUser.first_name = result.rows[0].firstname;
