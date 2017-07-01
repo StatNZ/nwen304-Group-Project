@@ -8,9 +8,6 @@
 
 $(document).ready(function () {
 
-    // Main Globals
-    var $windowWidth = $(window).width();
-    var $windowHeight = $(window).height();
     var dropdownMenuImageInterval = 0, i = 1, speed = 300, interval_time = 2000;
 
     /**
@@ -172,7 +169,6 @@ $(document).ready(function () {
     function validateSearchInput() {
         var query = $('.search-form-control').val().toLowerCase();
         if (query == '') {
-            alert('empty string') // error check for now (testing)
             return false;
         }
         // will also need to check against XSS
@@ -201,40 +197,6 @@ $(document).ready(function () {
      *********** SPECIAL FUNCTION CALLS *************
      ***********   AND HELPER METHODS   *************
      ************************************************/
-
-    /**
-     * This function sets our drop down menu to be
-     * a specific size, we will also use this function
-     * when the window changes its size
-     */
-    function dropdownMenuInitialSize() {
-
-        var dropDownHeight = $('.row').height();
-        var newHeight = $('#header-flash-image').height() - $('.navbar').height();
-
-        $('.mega-dropdown-menu').height(newHeight);
-        $('.mega-dropdown-menu').width($windowWidth);
-        return dropDownHeight;
-    }
-
-    /**
-     * Controls the positioning of the columns inside
-     * the drop-down menu. Places our items in a nice
-     * manner
-     */
-    function dropdownMenuInsideSpacing() {
-        var classesLength = $('.col-sm-3').length;
-        var colsWidth = $('.col-sm-3').width();
-        var colsHeight = $('.mega-dropdown-menu').height();
-        var width = ($windowWidth - (colsWidth * classesLength)) / 2;
-        var height = (colsHeight - $originalDropdownHeight) / 2;
-
-        $('.mega-dropdown-menu').children('li').children('ul').css({
-            'padding-right': width + 'px',
-            'padding-top': height + 'px',
-            'padding-bottom': height + 'px'
-        });
-    }
 
     /**
      * Removes the dropdown image that is displayed in the dropdown
@@ -269,80 +231,5 @@ $(document).ready(function () {
         }, interval_time);
     }
 
-
-
-    /**
-     * Ajax call to retrieve all the information regarding the users kart,
-     * possibly need to send them the user...
-     */
-    function getUserKartItems() {
-        $.ajax ({
-            url: $userKartURL,
-            type: 'GET',
-
-            error: function (err) {
-                // User must sign in to access kart
-                return;
-            }
-        }).then(displayKartItems);
-    }
-
-    /**
-     * Displays the list within our kart items dropdown menu.
-     * @param rows
-     */
-    function displayKartItems (rows) {
-        // access items by name, description, etc
-        if (rows.length <= 0)
-            return;
-
-        // needs to be more accurately defined
-        if ($('#kart-user-items').children().length == rows.length)
-            return;
-
-        var totalPrice = 0;
-
-        var i;
-        for (i=0; i<rows.length; i++) {
-
-            // combine total price
-            totalPrice += rows[i].price;
-
-            var kartHTML = '' +
-                '<li>' +
-                '   <span class="item">' +
-                '      <span class="item-left">' +
-                '          <img id="kart-item-img" src="' + rows[i].imagesource + '" alt="" />' +
-                '          <span class="item-info">' +
-                '              <span class="item-name"></span>' +
-                '              <span class="item-price"></span>' +
-                '          </span>' +
-                '      </span>' +
-                '      <span class="item-right">' +
-                '          <button class="btn btn-xs btn-danger pull-right"><i class="fa fa-trash-o"></i> </button>' +
-                '      </span>' +
-                '   </span>' +
-                '</li>';
-
-            var newItem = $(kartHTML);
-            newItem.find('.item-name').text(rows[i].name);
-            newItem.find('.item-price').text(rows[i].price);
-
-            newItem.hide();
-            $('#kart-user-items').prepend(newItem);
-            newItem.show('clip',250).effect('highlight',1000);
-        }
-
-        // append 'view cart' to the back
-        var endKartHTML = '' +
-            '<li class="divider"></li>' +
-            '<li><a class="text-center" href="/login">View Cart</a></li>';
-        $('#kart-view-cart-header').append(endKartHTML);
-    }
-
-    $('.fa-shopping-cart').hover( function () {
-        // call function to retrieve kart items
-        getUserKartItems();
-    });
 });
 

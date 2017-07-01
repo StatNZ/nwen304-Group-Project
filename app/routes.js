@@ -1,5 +1,14 @@
 var db = require('../queries');
 
+// for validation
+var emailEmpty = 'Email is required';
+var emailInvalid = 'Email is not valid';
+var passwordEmpty = 'Password is required';
+var passwordInvalid = 'Passwords do not match';
+var firstNameEmpty = 'First name is required';
+var lastNameEmpty = 'Last name is required';
+var addressEmpty = 'Address is required';
+
 module.exports = function (app, passport) {
 
     /** GET home page. */
@@ -11,17 +20,41 @@ module.exports = function (app, passport) {
     // LOCAL ROUTES ============================================================
     // =========================================================================
 
-    app.post('/signup', passport.authenticate('local-signup', {
+    app.post('/auth/signup', passport.authenticate('local-signup', {
         successRedirect : '/profile',
         failureRedirect : '/login',
         failureFlash : true
     }));
 
-    app.post('/signin', passport.authenticate('local-login', {
+    app.post('/signup', function (req, res, next) {
+
+        var email = req.body.email;
+        var first_name = req.body.first_name;
+        var last_name = req.body.last_name;
+        var password = req.body.password;
+
+        req.checkBody('email', emailEmpty).notEmpty();
+        req.checkBody('email', emailInvalid).isEmail();
+        req.checkBody('first_name', firstNameEmpty).notEmpty();
+        req.checkBody('last_name', lastNameEmpty).notEmpty();
+        req.checkBody('password', passwordEmpty).notEmpty();
+        req.checkBody('password_confirmation', passwordInvalid).equals(req.body.password);
+
+        return validateUsersPost(req, res, '/auth/signup');
+    });
+
+    app.post('/auth/signin', passport.authenticate('local-login', {
         successRedirect : '/profile',
         failureRedirect : '/login',
         failureFlash : true
     }));
+
+    app.post('/signin', function (req, res, next) {
+        req.checkBody('email', emailEmpty).notEmpty();
+        req.checkBody('password', passwordEmpty).notEmpty();
+
+        return validateUsersPost(req, res, '/auth/signin');
+    });
 
     // =========================================================================
     // GOOGLE ROUTES ===========================================================
@@ -84,8 +117,28 @@ module.exports = function (app, passport) {
     });
 
     /** Displays profile page */
-    app.get('/profile', function (req, res, next) {
-        res.redirect('/login');
+    app.get('/profile', isLoggedIn, function (req, res, next) {
+        res.render('profile');
+    });
+
+    /** Updates the profile */
+    app.post('/profile', isLoggedIn, function (req, res, next) {
+        // error checking first
+        console.log('profile/update is called');
+
+        standardUserChecks(req);
+        req.checkBody('address', addressEmpty).notEmpty();
+
+        var errors = req.validationErrors();
+        if (errors) {
+            console.log('ERRORS RETURNED');
+            return res.render('profile', {
+                error: errors
+            });
+        }
+
+        console.log('NO ERRORS');
+        res.render('index');
     });
 
     // =========================================================================
@@ -93,7 +146,7 @@ module.exports = function (app, passport) {
     // =========================================================================
     /** Displays the login page */
     app.get('/login', function (req, res, next) {
-        if (req.user)
+        if (req.isAuthenticated())
             return res.render('profile');
 
         res.render('login');
@@ -157,4 +210,23 @@ function isLoggedInSpecialCase (req, res, next) {
     // user is not logged in, raise error for user
     console.log ('user not logged in');
     res.sendStatus(404);
+}
+
+function standardUserChecks (req) {
+    req.checkBody('email', emailEmpty).notEmpty();
+    req.checkBody('email', emailInvalid).isEmail();
+    req.checkBody('first_name', firstNameEmpty).notEmpty();
+    req.checkBody('last_name', lastNameEmpty).notEmpty();
+}
+
+function validateUsersPost (req, res, route) {
+    var errors = req.validationErrors();
+
+    if (errors) {
+        return res.render('login', {
+            error: errors
+        });
+    }
+
+    res.redirect(307, route);
 }

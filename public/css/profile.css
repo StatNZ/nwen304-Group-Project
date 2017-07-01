@@ -30,10 +30,6 @@
     table#cart tfoot td .btn{display:block;}
 }
 
-.profile-container {
-
-}
-
 .kart-item-info-row {
     overflow: hidden;
 }
@@ -76,4 +72,15 @@
 
 .fieldset-box {
     border: none;
+}
+
+.profile-buttons-container {
+    width: 30%;
+    float: right;
+}
+
+#profile-back-btn,
+#profile-edit-btn {
+    width: 30%;
+    float: right;
 }

@@ -1,13 +1,20 @@
 <div id="profile-container-page" style="width: 100%; display: table;">
     <div style="display: table-row">
-        <div id="profile-body" style="width: 30%; display: table-cell;">
+
+        <div id="profile-body" style="width: 33%; display: table-cell;">
             <!-- Build the user profile here, with a log out button -->
 
             <div class="profile-lhs-container">
+
                 <div class="row profile-row profile-main-view">
-                    <div class="col-xs-5 col-sm-12">
-                        <img class="profile-image" src="">
+                    <div class="form-inline col-xs-5 col-sm-12">
+                        <img class="profile-image" src="images/mens-shirts/cs1.jpg">
+                        <!--<i class="fa fa-user"></i>-->
+                        <div class="profile-buttons-container">
+                            <button type="button" class="btn btn-info btn-block">History</button>
+                        </div>
                     </div>
+
                     <div class="col-xs-5 col-sm-12">
                         <h3 class="profile-user-name"></h3>
 
@@ -20,7 +27,10 @@
                             </li>
                         </ul>
 
-                        <h3>Contact Information<a href="#" class="profile-edit-info" style="font-size: 11px; float: right">edit</a></h3>
+                        <div class="form-inline">
+                            <button id="profile-edit-btn" class="btn btn-block" type="button">edit</button>
+                            <h3>Contact Information</h3>
+                        </div>
 
                         <ul class="profile-details">
                             <li>
@@ -34,97 +44,124 @@
                         </ul>
                     </div>
                     <div class="col-xs-2 col-sm-12">
-                        <a href="/logout" class="btn btn-success btn-block">Logout</a>
+                        <a href="/logout" class="btn btn-danger btn-block">Logout</a>
                     </div>
                 </div>
 
-                <div hidden="true" class=" profile-row profile-main-edit-view">
-                    <div class=" profile-row profile-main-edit-view">
-                        <form class="form-horizontal">
-                            <fieldset class="fieldset-box">
-                                <!-- Address form -->
+                <div hidden="true" class="profile-row profile-main-edit-view">
 
-                                <h2>Edit Profile</h2>
+                    <div class="form-inline">
+                        <button id="profile-back-btn" class="btn btn-block btn-danger" type="button">Back</button>
+                    <img class="profile-image" src="">
+                    </div>
 
-                                <!-- first-name input-->
-                                <div class="control-group">
-                                    <label class="control-label">First Name</label>
-                                    <div class="controls">
-                                        <input id="profile-first-name" name="first-name" type="text" placeholder="first name"
-                                               class="input-xlarge" />
-                                        <p class="help-block"></p>
-                                    </div>
+                    <form id="user-info-update-form" method="post" action="/profile" class="form-horizontal">
+                        <fieldset form="user-info-update-form" class="fieldset-box">
+                            <!-- Address form -->
+                            <h2>Edit Profile</h2>
+
+                            <!-- first-name input-->
+                            <div class="control-group">
+                                <label class="control-label">First Name</label>
+                                <div class="controls">
+                                    <input id="profile-first-name" name="first_name" type="text" placeholder="first name"
+                                           class="input-xlarge" />
+                                    <p class="help-block"></p>
                                 </div>
+                            </div>
 
-                                <!-- last-name input-->
-                                <div class="control-group">
-                                    <label class="control-label">Last Name</label>
-                                    <div class="controls">
-                                        <input id="profile-last-name" name="last-name" type="text" placeholder="last name"
-                                               class="input-xlarge" />
-                                        <p class="help-block"></p>
-                                    </div>
+                            <!-- last-name input-->
+                            <div class="control-group">
+                                <label class="control-label">Last Name</label>
+                                <div class="controls">
+                                    <input id="profile-last-name" name="last_name" type="text" placeholder="last name"
+                                           class="input-xlarge" />
+                                    <p class="help-block"></p>
                                 </div>
+                            </div>
 
-                                <!-- city input-->
-                                <div class="control-group">
-                                    <label class="control-label">Mobile No.</label>
-                                    <div class="controls">
-                                        <input id="profile-mobile" name="mobile" type="text" placeholder="mobile no."
-                                               class="input-xlarge" />
-                                        <p class="help-block"></p>
-                                    </div>
+                            <div class="control-group">
+                                <label class="control-label">Mobile No.</label>
+                                <div class="controls">
+                                    <input id="profile-mobile" name="mobile" type="text" placeholder="mobile no."
+                                           class="input-xlarge" />
+                                    <p class="help-block"></p>
                                 </div>
+                            </div>
 
-                                <!-- city input-->
-                                <div class="control-group">
-                                    <label class="control-label">Address</label>
-                                    <div class="controls">
-                                        <textarea id="profile-address" name="address" placeholder="Address" type="text"
-                                                  class="input-xlarge"></textarea>
-                                        <p class="help-block"></p>
-                                    </div>
+                            <!-- address input-->
+                            <div class="control-group">
+                                <label class="control-label">Address</label>
+                                <div class="controls">
+                                    <textarea id="profile-address" name="address" placeholder="Address" type="text"
+                                              class="input-xlarge"></textarea>
+                                    <p class="help-block"></p>
                                 </div>
-                            </fieldset>
-                        </form>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Email</label>
+                                <div class="controls">
+                                    <input id="profile-email" name="email" placeholder="Email" type="text"
+                                              class="input-xlarge" />
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+
+                        </fieldset>
                         <div>
-                            <a href="/profile/submit" class="btn btn-success btn-block">Update Info</a>
+                            <button type="submit" class="btn btn-success btn-block">Update Info</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </div>
 
+            </div>
+            <div class="flash-messages-positioning">
+                {{#if success_msg}}
+                    {{link sum}}
+                    <div class="alert alert-success">{{success_msg}}</div>
+                {{/if}}
+                {{#if error_msg}}
+                    <div class=" alert alert-danger">{{error_msg}}</div>
+                {{/if}}
+                {{#if error}}
+                    {{#each error}}
+                        <div class=" alert alert-danger">{{msg}}</div>
+                    {{/each}}
+                {{/if}}
+            </div>
         </div>
 
+        <div style="width: 2%; display: table-cell;"></div>
 
-
-        <div class="profile-container" style="display: table-cell;">
+        <div class="profile-rhs-container" style="display: table-cell;">
             <table id="cart" class="table table-hover table-condensed">
-            <thead>
-                <tr>
-                    <th style="width:50%">Product</th>
-                    <th style="width:10%">Price</th>
-                    <th style="width:8%">Quantity</th>
-                    <th style="width:22%" class="text-center">Subtotal</th>
-                    <th style="width:10%"></th>
-                </tr>
-            </thead>
-            <tbody id="profile-kart-display">
-                <!-- Add items in here via jscript -->
-            </tbody>
-            <tfoot>
-                <tr class="visible-xs">
-                    <td class="text-center kart-total-price"><strong></strong></td>
-                </tr>
-                <tr>
-                    <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-                    <td colspan="2" class="hidden-xs"></td>
-                    <td class="hidden-xs text-center kart-total-price"><strong></strong></td>
-                    <td><a href="#" class="btn btn-success btn-block profile-checkout-button">Checkout <i class="fa fa-angle-right"></i></a></td>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
+                <thead>
+                    <tr>
+                        <th style="width:50%">Product</th>
+                        <th style="width:10%">Price</th>
+                        <th style="width:8%">Quantity</th>
+                        <th style="width:22%" class="text-center">Subtotal</th>
+                        <th style="width:10%"></th>
+                    </tr>
+                </thead>
+                <tbody id="profile-kart-display">
+                    <!-- Add items in here via jscript -->
+                </tbody>
+                <tfoot>
+                    <tr class="visible-xs">
+                        <td class="text-center kart-total-price"><strong></strong></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                        <td colspan="2" class="hidden-xs"></td>
+                        <td class="hidden-xs text-center kart-total-price"><strong></strong></td>
+                        <td><a href="#" class="btn btn-success btn-block profile-checkout-button">Checkout <i class="fa fa-angle-right"></i></a></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
     </div>
 </div>
 

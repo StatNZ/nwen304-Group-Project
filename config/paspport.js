@@ -11,6 +11,8 @@ var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcrypt-nodejs');  // use for encryption
 var uuidv1 = require('uuid/v1');        // use to generate a unique id
 
+
+
 // need user model
 var User = require('../app/users');
 
@@ -36,44 +38,22 @@ module.exports = function (passport) {
     // =========================================================================
 
     passport.use('local-signup', new LocalStrategy({
-        usernameField : 'email',
-        passwordField : 'password',
-        firstNameField : 'first_name',
-        lastNameField : 'last_name',
-        passwordField2 : 'password_confirmation',
-        passReqToCallback : true
-    },
+            usernameField : 'email',
+            firstNameField : 'first_name',
+            lastNameField : 'last_name',
+            passwordField : 'password',
+            passReqToCallback : true
+        },
         function (req, email, password, done) {
 
-            if (!validateEmail(email))
-                return done(null, false, req.flash('error_msg', 'The email is not valid'));
-
-            // the first check to sign up, check passwords
-            if (password != req.body.password_confirmation)
-                return done(null, false, req.flash('error_msg', 'The passwords do not match'));
-
-
+            // if (!validateEmail(email))
+            //     return done(null, false, req.flash('error_msg', 'The email is not valid'));
+            //
+            // // the first check to sign up, check passwords
+            // if (password != req.body.password_confirmation)
+            //     return done(null, false, req.flash('error_msg', 'The passwords do not match'));
 
             process.nextTick(function () {
-
-                // var first_name = req.body.first_name;
-                //
-                // req.checkBody('email', 'Email is required').notEmpty();
-                // req.checkBody('email', 'Email is not valid').isEmail();
-                // req.checkBody('first_name', 'First name is required').notEmpty();
-                // req.checkBody('last_name', 'Last name is required').notEmpty();
-                // req.checkBody('password', 'Password is required').notEmpty();
-                // req.checkBody('password_confirmation', 'Passwords do not match').equals(req.body.password);
-                //
-                // var error = req.validationErrors();
-                //
-                // if (error) {
-                //     console.log('errors are recorded here');
-                //     return done(null, false, {
-                //         error: error
-                //     });
-                // }
-
                 User.findByEmail(email, function (err, user) {
 
                     if (err)
@@ -81,7 +61,7 @@ module.exports = function (passport) {
 
                     if (user) {
                         console.log('user already in db');
-                        return done(null, false, req.flash('error_msg', 'That email is already taken.'));
+                        return done(null, false, req.flash('error_msg', 'That email is already taken'));
                     }
 
                     else {
@@ -98,7 +78,7 @@ module.exports = function (passport) {
                             if (err)
                                 throw err;
 
-                            return done(null, newUser);
+                            return done(err, newUser);
                         })
                     }
                 });
@@ -128,7 +108,7 @@ module.exports = function (passport) {
                            return done(null, user);
                    }
 
-                   // otherwise we need to throw an error
+                    // otherwise we need to throw an error
                     return done(null, false, req.flash('error_msg', 'Invalid email/password'));
                 });
             })

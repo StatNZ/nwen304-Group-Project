@@ -15,7 +15,7 @@ function User() {
     this.last_name = '';
     this.email = '';
     this.accessToken = '';
-    this.address = '';
+    this.address = '77A Frobisher St';
     this.password = '';
 
     this.save = function (callback) {
@@ -29,11 +29,17 @@ function User() {
                     return callback(err, null) // error inserting into db
             });
 
-        return callback(null, null); // user should be created on next screen
+        // Here we must fetch the user, otherwise, they will never be logged in
+        return User.findOne(this.userId, callback); // user should be created on next screen
 
     }
 }
 
+/**
+ * Finds the user in the database by their email address
+ * @param email
+ * @param callback
+ */
 User.findByEmail = function (email, callback) {
     connectDB();
     console.log('find by email function');
