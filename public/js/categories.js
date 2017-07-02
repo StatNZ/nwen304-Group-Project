@@ -21,12 +21,17 @@ $(document).ready(function () {
         }).then(displayCategoryItems);
     }
 
-    $('#cat-men').text(newHrf.replace('http://localhost:3000/category/', ' ').toUpperCase());
+    $('#cat-gender').text(newHrf.replace('http://localhost:3000/category/', ' ').toUpperCase());
 
     function displayCategoryItems (rows) {
-        // var i;
-        // for (i = 0; i < rows.length; i++){
-        //     alert(rows[i].name);
-        // }
+         var i;
+         for (i = 0; i < rows.length; i++){
+             alert(rows[i].name);
+             $('#category-img').image(rows[i].imagesource);
+             $('#item-name').text(rows[i].Name);
+             $('#item-price').text(rows[i].Price)
+         }
+
+
     }
 });

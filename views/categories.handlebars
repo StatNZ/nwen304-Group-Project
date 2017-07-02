@@ -1,16 +1,54 @@
 
-<div class="men-top-selling">
-    <p> Men's top selling items</p>
-
-</div>
 
 <div id="lhs-info-bar" class="men-sec-shirt">
     <div class="breadcrumb-bar">
-        <a href="/">HOME</a> / <a style="color: #9d9d9d" id="cat-men"></a>
+        <a href="/">HOME</a> / <a style="color: #9d9d9d" id="cat-gender"></a>
+    </div>
+    <div class="filter">
+        <a href="#" class="filter-title">SHOP BY TYPE</a>
+        <ul id="display-men-shirts">
+            <li><a href="#" class="filter-content" onclick="dispMenCas()">Pants</a></li>
+            <li><a href="#" class="filter-content" onclick="dispMenForm()">Top</a></li>
+            <li><a href="#" class="filter-content">Shoes</a></li>
+        </ul>
+        <a href="#" class="filter-title">SHOP BY BRAND</a>
+        <ul id="display-men-shirts">
+            <li><a href="#" class="filter-content">Calvin Klein</a></li>
+            <li><a href="#" class="filter-content">Tommy Hilfiger</a></li>
+            <li><a href="#" class="filter-content">Country Road</a></li>
+            <li><a href="#" class="filter-content">Lacoste</a></li>
+            <li><a href="#" class="filter-content">More brands</a></li>
+        </ul>
+        <a href="#" class="filter-title">SHOP BY PRICE</a>
+        <ul id="display-men-shirts">
+            <li><a href="#" class="filter-content">$5-$50</a></li>
+            <li><a href="#" class="filter-content">$50-$100</a></li>
+            <li><a href="#" class="filter-content">$100-$500</a></li>
+            <li><a href="#" class="filter-content">$500-$1000</a></li>
+        </ul>
     </div>
 </div>
 
 <div id="category-item-display">
+    <!--<img id="category-img" src="' + rows[i]. + '" alt="" />
+    <a id="item-desc">name</a>-->
+    <div id="gender-cat" class="gender-cas">
+        <div class="responsive">
+            <div class="gallery">
+                <a href="#" onclick="dispMenCas1()">
+                    <img id="category-img" src="' + rows[i]. + '" alt="" width="300" height="200" >
+                </a>
+                <div class="desc">
+                    <a id="item-name"></a>
+                </div>
+                <div>
+                    <a id="item-price"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
 
 </div>
 
