@@ -45,14 +45,6 @@ module.exports = function (passport) {
             passReqToCallback : true
         },
         function (req, email, password, done) {
-
-            // if (!validateEmail(email))
-            //     return done(null, false, req.flash('error_msg', 'The email is not valid'));
-            //
-            // // the first check to sign up, check passwords
-            // if (password != req.body.password_confirmation)
-            //     return done(null, false, req.flash('error_msg', 'The passwords do not match'));
-
             process.nextTick(function () {
                 User.findByEmail(email, function (err, user) {
 
