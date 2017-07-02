@@ -466,14 +466,7 @@
       <workItem from="1498816791647" duration="37482000" />
       <workItem from="1498888635761" duration="28692000" />
       <workItem from="1498957236337" duration="5183000" />
-      <workItem from="1498993560296" duration="4473000" />
-    </task>
-    <task id="LOCAL-00003" summary="Multiple updates to header">
-      <created>1495515391630</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1495515391630</updated>
+      <workItem from="1498993560296" duration="4492000" />
     </task>
     <task id="LOCAL-00004" summary="Added more images, updated header file as well">
       <created>1495533763886</created>
@@ -811,11 +804,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498994139573</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fixed search bar stuff">
+      <created>1499002017108</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1499002017108</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216316000" />
+    <option name="totallyTimeSpent" value="216335000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -882,7 +882,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added the node modules classes" />
     <MESSAGE value="Modifying the categories.handlebars. Issue with sizing." />
     <MESSAGE value="resizing categories.handlebars layout, near complete" />
     <MESSAGE value="adding in what needs to be pulled from database" />
@@ -907,7 +906,8 @@
     <MESSAGE value="displaying items in category page" />
     <MESSAGE value="editing display table" />
     <MESSAGE value="made some changes to monas code" />
-    <option name="LAST_COMMIT_MESSAGE" value="made some changes to monas code" />
+    <MESSAGE value="fixed search bar stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed search bar stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
