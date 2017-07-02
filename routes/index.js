@@ -91,7 +91,6 @@ router.get ('/auth/facebook/callback',
     });
 
 /* Database Query Routes */
-//router.get('/items/:category', db.getItemsByCategory);
 router.get('/categories/:gender', db.getItemsByGender);
 router.get('/categories/:gender/:category', db.getItemsByCategory);
 router.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
@@ -100,6 +99,7 @@ router.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
 router.get('/item/:itemid', db.getItemByItemID);
 router.get('/kart/:email', db.getKart);
 router.delete('/kart/removeItem/:email/:itemID', db.removeItemFromKart);
+router.post('/kart/addItem/:email/:itemID/:quantity', db.addItemToKart);
 router.get('/test', db.test);
 
 /**

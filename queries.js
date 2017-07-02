@@ -160,6 +160,7 @@ function getKart(req, res, next) {
 function removeItemFromKart(req, res, next) {
   var itemID = parseInt(req.params.itemID);
   var email = req.params.email;
+  var quantity = req.params.quantity;
 
   client = new pg.Client(connectionString);
   client.connect();
@@ -175,6 +176,25 @@ function removeItemFromKart(req, res, next) {
   });
 }
 
+function addItemToKart(req, res, next) {
+  var itemID = parseInt(req.params.itemID);
+  var email = req.params.email;
+  var quantity = req.params.quantity;
+  
+  client = new pg.Client(connectionString);
+  client.connect();
+  
+  var query = client.query("INSERT INTO purchasedetails(purchaseID, itemID, quantity) SELECT purchaseID, " + itemID + ", " + quantity + " FROM purchase WHERE email = '" + email + "'");
+
+  query.on('end', function() {
+    client.end();
+    res.json({
+    	status: "success",
+    	message: "Added item " + itemID + " from " + email +  "'s kart" 
+    });
+  });
+}
+
 module.exports = {
     connectionString: connectionString,
     test: test,
@@ -185,5 +205,17 @@ module.exports = {
     getItemsByPrice: getItemsByPrice,
     getItemByItemID: getItemByItemID,
     getKart: getKart,
-    removeItemFromKart: removeItemFromKart
+    removeItemFromKart: removeItemFromKart,
+	 addItemToKart: addItemToKart
 };
+
+/*
+INSERT INTO productdetails(purchaseid, itemid, quantity)
+SELECT purchaseid, 'itemid', quantity FROM purchase 
+WHERE email = email; 
+*/
+
+
+
+
+
