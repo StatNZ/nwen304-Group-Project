@@ -33,7 +33,7 @@ $(document).ready(function () {
 
 
          }*/
-         alert (rows[0].name);
+         //alert (rows[0].name);
 
         var i;
 
@@ -47,26 +47,24 @@ $(document).ready(function () {
 
             var product_disp = '' +
                 '<tr>' +
-                '    <td data-th="item">' +
-                '       <div id="gender-cat" class="gender-cas">' +
-                '           <div class="responsive">' +
-                '               <div class="gallery">' +
+                '    <tr data-th="item">' +
+                '       <tr id="gender-cat" class="gender-cas">' +
+                '           <tr class="responsive">' +
+                '               <td class="gallery">' +
                 '                   <a href="#" >' +
                 '                       <img class="category-img" src="" alt="" width="300" height="200" />' +
                 '                   </a>'+
-                '               <div class="desc">' +
-                '                   <a class="item-name"></a>' +
-                '               </div>' +
-                '               <div class="desc">' +
-                '                    <a class="item-price"></a>' +
-                '               </div>' +
-                '           </div>' +
-                '       </div>' +
-
-
+                '                   <div class="desc">' +
+                '                       <a class="item-name"></a>' +
+                '                   </div>' +
+                '                   <div class="desc">' +
+                '                        <a class="item-price"></a>' +
+                '                   </div>' +
+                '               </td>' +
+                '           </tr>' +
                 '       <div class="clearfix"></div>' +
-                '       </div>'+
-                '   </td>'+
+                '       </tr>'+
+                '   </tr>'+
                 '</tr>';
 
             var disp = $(product_disp);
