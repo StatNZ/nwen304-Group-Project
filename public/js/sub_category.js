@@ -42,7 +42,7 @@ function dispMenForm() {
 
 $(document).ready(function () {
     //var newHrf = location.href.replace('_', '/');
-    alert(location);
+    //alert(location);
 
     window.onload = function () {
 

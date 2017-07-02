@@ -85,6 +85,7 @@ $(document).ready(function () {
 
     $('#catpage-display-items').on('click', '.item-name', function(){
         var $this = $(this);
-        alert($this.text());
+        //alert($this.text());
+        window.location = '/subcategory';
     });
 });
