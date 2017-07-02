@@ -189,7 +189,7 @@ $(document).ready(function () {
     }
 
     function displaySearchResults (rows) {
-        alert(rows);
+        alert(rows[0].name);
     }
 
 

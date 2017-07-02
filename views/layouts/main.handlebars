@@ -122,21 +122,19 @@ and open the template in the editor.
             <ul class="nav navbar-nav navbar-right">
 
                 <!-- The search bar/button functionality -->
-                <li class="dropdown mega-dropdown">
+                <li class="col-sm-8 dropdown mega-dropdown">
                     <a class="nav_button dropdown-toggle" data-toggle="dropdown">
                         <!-- Adds a search bar -->
                         <div class="inner-addon right-addon">
                             <i class="fa fa-search"></i>
-                            <input placeholder="search..." type="text" class="search-form-control" />
+                            <input placeholder="search" type="search" class="search-form-control" />
                         </div>
                     </a>
                 </li>
 
                 <!-- The shopping cart functionality -->
-                <li class="dropdown mega-dropdown">
-                    <a id="kartNumber" class="nav_button dropdown-toggle fa fa-shopping-cart" data-toggle="dropdown">
-                        0
-                    </a>
+                <li class="col-sm-1 dropdown mega-dropdown">
+                    <a class="nav_button dropdown-toggle fa fa-shopping-cart" data-toggle="dropdown"></a>
                     <ul class="dropdown-menu mega-dropdown-menu dropdown-cart dropdown-menu-right">
                         <div class="megamenu-headline">
                             <h2>Kart Items</h2>
@@ -155,7 +153,12 @@ and open the template in the editor.
 
                     </ul>
                 </li>
-                <li class="dropdown mega-dropdown">
+
+                <li class=" dropdown mega-dropdown">
+                    <a id="kartNumber" class="nav_button dropdown-toggle"></a>
+                </li>
+
+                <li class="col-sm-1 dropdown mega-dropdown">
                     <a href="/login" class="login-register nav_button dropdown-toggle fa fa-user"></a>
                 </li>
             </ul>
