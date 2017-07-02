@@ -28,9 +28,6 @@ module.exports = function (app, passport) {
 
     app.post('/signup', function (req, res, next) {
 
-        var email = req.body.email;
-        var first_name = req.body.first_name;
-        var last_name = req.body.last_name;
         var password = req.body.password;
 
         standardUserChecks(req);
@@ -136,7 +133,6 @@ module.exports = function (app, passport) {
         console.log('profile/update is called');
 
         standardUserChecks(req);
-        req.checkBody('address', addressEmpty).notEmpty();
 
         var errors = req.validationErrors();
         if (errors) {
@@ -230,6 +226,8 @@ function standardUserChecks (req) {
     req.checkBody('email', emailInvalid).isEmail();
     req.checkBody('first_name', firstNameEmpty).notEmpty();
     req.checkBody('last_name', lastNameEmpty).notEmpty();
+    req.checkBody('address', addressEmpty).notEmpty();
+
 }
 
 function validateUsersPost (req, res, route) {

@@ -72,6 +72,7 @@ module.exports = function (passport) {
                         newUser.user_name = req.body.first_name + ' ' + req.body.last_name;
                         newUser.first_name = req.body.first_name;
                         newUser.last_name = req.body.last_name;
+                        newUser.address = req.body.address;
                         newUser.password = bcrypt.hashSync(password, null, null); // encrypt password
 
                         newUser.save(function (err) {
