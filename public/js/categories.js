@@ -46,13 +46,14 @@ $(document).ready(function () {
 
 
             var product_disp = '' +
-                '<tr>' +
-                '    <tr data-th="item">' +
-                '       <tr id="gender-cat" class="gender-cas">' +
-                '           <tr class="responsive">' +
-                '               <td class="gallery">' +
+                //'<tr>' +
+                //'    <tr data-th="item">' +
+                '       <div id="gender-cat" class="gender-cas">' +
+                '           <div class="responsive">' +
+                '               <div class="gallery">' +
                 '                   <a href="#" >' +
-                '                       <img class="category-img" src="" alt="" width="300" height="200" />' +
+                    //will need to replace static image - place holder for now, can't find from db
+                '                       <img class="category-img" src="/public/images/men-shirt1.jpg" alt="" width="300" height="200" />' +
                 '                   </a>'+
                 '                   <div class="desc">' +
                 '                       <a class="item-name"></a>' +
@@ -60,17 +61,17 @@ $(document).ready(function () {
                 '                   <div class="desc">' +
                 '                        <a class="item-price"></a>' +
                 '                   </div>' +
-                '               </td>' +
-                '           </tr>' +
-                '       <div class="clearfix"></div>' +
-                '       </tr>'+
-                '   </tr>'+
-                '</tr>';
+                '               </div>' +
+                '           </div>'+
+                //'       <div class="clearfix"></div>' +
+                '       </div>';//+
+                //'   </tr>'+
+                //'</tr>';
 
             var disp = $(product_disp);
             //disp.find('.kart-item-delete-btn').attr('name', uuid);
             disp.find('.item-name').text(name);
-            disp.find('.category-img').attr('src', image);
+            //disp.find('.category-img').attr('src', image);
             //disp.find('.item-description').text(desc);
             //disp.find('.nomargin').text(name);
             disp.find('.item-price').text(price);
