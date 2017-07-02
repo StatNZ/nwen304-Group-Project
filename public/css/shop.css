@@ -211,3 +211,12 @@ div.desc {
 
 .gender-cas {
 }
+
+#item-name, #item-price{
+    color: black;
+}
+
+#item-name:hover, #item-price:hover{
+    text-decoration: none;
+    color: gray;
+}
