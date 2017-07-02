@@ -26,6 +26,10 @@ $(document).ready(function () {
         if ($User.address == '') {
             alert ('You must enter an address');
             $('.profile-main-edit-view').show('clip',250).effect('highlight',1000);
+        } else {
+            // process our checkout
+            // call the db to notify items of being purchased
+            processCheckout();
         }
     });
 

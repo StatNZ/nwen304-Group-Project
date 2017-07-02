@@ -33,10 +33,7 @@ module.exports = function (app, passport) {
         var last_name = req.body.last_name;
         var password = req.body.password;
 
-        req.checkBody('email', emailEmpty).notEmpty();
-        req.checkBody('email', emailInvalid).isEmail();
-        req.checkBody('first_name', firstNameEmpty).notEmpty();
-        req.checkBody('last_name', lastNameEmpty).notEmpty();
+        standardUserChecks(req);
         req.checkBody('password', passwordEmpty).notEmpty();
         req.checkBody('password_confirmation', passwordInvalid).equals(req.body.password);
 
@@ -106,10 +103,22 @@ module.exports = function (app, passport) {
     });
 
     // =========================================================================
+    // KART ROUTES =============================================================
+    // =========================================================================
+
+    app.get('/kart', isLoggedInSpecialCase, db.test);
+
+    app.get('/kart/checkout', isLoggedIn, function (req, res, next) {
+
+        // call the correct function of the database,
+        // now redirect to payment processed page
+        res.sendStatus(200); // The checkout has been processed
+    });
+
+    // =========================================================================
     // USER ROUTES =============================================================
     // =========================================================================
 
-    app.get('/user/kart', isLoggedInSpecialCase, db.test);
 
     /** Returns the current logged in user to the caller */
     app.get('/user/info', isLoggedIn, function (req, res, next) {
@@ -138,7 +147,11 @@ module.exports = function (app, passport) {
         }
 
         console.log('NO ERRORS');
-        res.render('index');
+
+        // Now we must submit our results to our database for processing
+        res.render('profile', {
+            success_msg: 'Profile has been updated'
+        });
     });
 
     // =========================================================================

@@ -13,15 +13,23 @@
  */
 var $User;
 
+
+window.onload = function () {
+
+    /** Will automatically retrieve the kart and all it's items,
+     * on every load, could be costly */
+    getUserKartItems(displayDrowdownKartItems);
+};
+
 // =========================================================================
-// AJAX ROUTES =============================================================
+// AJAX ROUTES/CALLS =======================================================
 // =========================================================================
 
 /**
  * @type {string} URL to redirect to
  */
-var $siteURL = 'http://localhost:3000';
-//  var $siteURL = 'https://urbanapparel.herokuapp.com';
+// var $siteURL = 'http://localhost:3000';
+  var $siteURL = 'https://urbanapparel.herokuapp.com';
 
 var $searchURL = $siteURL + '/search';
 
@@ -31,9 +39,12 @@ var $passportGoogleURL = $siteURL + '/auth/google';
 
 /** USER ROUTES */
 var $userProfileURL = $siteURL + '/profile';
-var $userKartURL = $siteURL + '/user/kart';
-var $userDeleteItemKartURL = $siteURL + '/kart/removeItem';
 var $userInfoURL = $siteURL + '/user/info';
+
+/** KART ROUTES */
+var $kartURL = $siteURL + '/kart';
+var $deleteKartItemURL = $siteURL + '/kart/removeItem';
+var $checkoutKartURL = $siteURL + '/kart/checkout';
 
 /** CATEGORY ROUTES */
 var $subCategoryURL = $siteURL + '/subCategory';
@@ -44,15 +55,45 @@ var $categoryMenURL = $siteURL + '/category_men';
 var $logInURL = $siteURL + '/login';
 var $logOutURL = $siteURL + '/logout';
 
+/**
+ * Ajax call to the server to retrieve the kart items contained by the
+ * current user
+ * @param func
+ */
+function getUserKartItems (func) {
+    $.ajax ({
+        url: $kartURL,
+        type: 'GET',
 
-window.onload = function () {
+        error: function (err) {
+            // User must sign in to access kart
+            return;
+        }
+    }).then(func);
+}
 
-    /**
-     * Will automatically retrieve the kart and all it's items,
-     * on every load, could be costly
-     */
-    getUserKartItems(displayDrowdownKartItems);
-};
+/** Retrieves the current logged in user information */
+function getUserInfo () {
+    $.ajax ({
+        url: $userInfoURL,
+        type: 'GET',
+
+        error: function (err) {
+            // User must sign in to access kart
+            alert(err)
+            throw err;
+        }
+    }).then(displayUserInfo);
+}
+
+/** Processes our checked out items */
+function processCheckout () {
+    $.ajax ({
+        url: $checkoutKartURL,
+        type: 'GET'
+
+    });
+}
 
 
 // =========================================================================
@@ -64,23 +105,6 @@ window.onload = function () {
  */
 function updateKartCount (size) {
     $('#kartNumber').text(' ' + size);
-}
-
-/**
- * Ajax call to the server to retrieve the kart items contained by the
- * current user
- * @param func
- */
-function getUserKartItems (func) {
-    $.ajax ({
-        url: $userKartURL,
-        type: 'GET',
-
-        error: function (err) {
-            // User must sign in to access kart
-            return;
-        }
-    }).then(func);
 }
 
 /**
@@ -212,7 +236,7 @@ function deleteKartItem (element) {
 
     // ajax call to delete element
     $.ajax ({
-        url: $userDeleteItemKartURL + '/' + $User.email + '/' + uuid,
+        url: $deleteKartItemURL + '/' + $User.email + '/' + uuid,
         type: 'DELETE',
 
         error: function (err) {
@@ -223,23 +247,9 @@ function deleteKartItem (element) {
     return true;
 }
 
-
 // =========================================================================
 // USER/PROFILE FUNCTIONALITY ==============================================
 // =========================================================================
-
-function getUserInfo () {
-    $.ajax ({
-        url: $userInfoURL,
-        type: 'GET',
-
-        error: function (err) {
-            // User must sign in to access kart
-            alert(err)
-            throw err;
-        }
-    }).then(displayUserInfo);
-}
 
 function displayUserInfo (user) {
     // need to display all the relevant user info

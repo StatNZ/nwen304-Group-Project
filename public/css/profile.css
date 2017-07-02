@@ -84,3 +84,33 @@
     width: 30%;
     float: right;
 }
+
+.profile-main-edit-view .search-form-control{
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.09);
+    box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.09) inset;
+    color: #FFFFFF;
+}
+
+.profile-main-edit-view .control-group input[type="text"],
+.profile-main-edit-view .control-group input[type="password"] {
+    border-radius: 3px;
+    border: 3px;
+    color: #333333;
+    font-size: 16px;
+    height: 42px;
+    margin-bottom: 5px;
+    padding: 13px 12px;
+    width: 100%;
+}
+
+.profile-main-edit-view .control-group textarea {
+    border-radius: 3px;
+    border: 3px;
+    color: #333333;
+    font-size: 16px;
+    height: 84px;
+    margin-bottom: 5px;
+    padding: 13px 12px;
+    width: 100%;
+}
