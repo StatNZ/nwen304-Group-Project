@@ -28,8 +28,8 @@ window.onload = function () {
 /**
  * @type {string} URL to redirect to
  */
-// var $siteURL = 'http://localhost:3000';
-var $siteURL = 'https://urbanapparel.herokuapp.com';
+var $siteURL = 'http://localhost:3000';
+// var $siteURL = 'https://urbanapparel.herokuapp.com';
 
 var $searchURL = $siteURL + '/search';
 
@@ -80,8 +80,7 @@ function getUserInfo () {
 
         error: function (err) {
             // User must sign in to access kart
-            alert(err)
-            throw err;
+            return;
         }
     }).then(displayUserInfo);
 }

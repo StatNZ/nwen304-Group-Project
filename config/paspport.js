@@ -120,7 +120,7 @@ module.exports = function (passport) {
     passport.use(new GoogleStrategy({
             clientID : configAuth.googleAuth.clientID,
             clientSecret : configAuth.googleAuth.clientSecret,
-            callbackURL : configAuth.googleAuthHeroku.callbackURL
+            callbackURL : configAuth.googleAuth.callbackURL
         },
         function(accessToken, refreshToken, profile, done) {
             console.log('made it to function');
