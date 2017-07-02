@@ -97,10 +97,10 @@ router.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategor
 router.get('/search/:desc', db.getItemsByDescription);
 router.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
 router.get('/item/:itemid', db.getItemByItemID);
-router.get('/kart/:email', db.getKart);
-router.delete('/kart/removeItem/:email/:itemID', db.removeItemFromKart);
-router.post('/kart/addItem/:email/:itemID/:quantity', db.addItemToKart);
-router.get('/test', db.test);
+router.get('/kart/:customerID', db.getKart);
+router.delete('/kart/removeItem/:customerID/:itemID', db.removeItemFromKart);
+router.post('/kart/addItem/:customerID/:itemID/:quantity', db.addItemToKart);
+//router.get('/test', db.test);
 
 /**
  * In order for the below code to work, we need to be able to

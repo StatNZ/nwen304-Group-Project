@@ -139,12 +139,12 @@ function getItemByItemID(req, res, next) {
 }
 
 function getKart(req, res, next) {
-  var email = req.params.email;
+  var customerID = parseInt(req.params.customerID);
   
   client = new pg.Client(connectionString);
   client.connect();
   
-  var query = client.query("SELECT itemid, quantity FROM purchasedetails pd INNER JOIN purchase p ON p.purchaseid = pd.purchaseid WHERE email = '" + email + "'");
+  var query = client.query("SELECT itemid, quantity FROM purchasedetails pd INNER JOIN purchase p ON p.purchaseid = pd.purchaseid WHERE customerID = " + customerID);
   var results = [];
 
   query.on('row', function(row) {
@@ -159,38 +159,37 @@ function getKart(req, res, next) {
 
 function removeItemFromKart(req, res, next) {
   var itemID = parseInt(req.params.itemID);
-  var email = req.params.email;
-  var quantity = req.params.quantity;
+  var customerID = parseInt(req.params.customerID);
 
   client = new pg.Client(connectionString);
   client.connect();
   
-  var query = client.query("DELETE FROM purchasedetails pd WHERE itemid = " + itemID + " AND purchaseid IN (SELECT purchaseid FROM purchase WHERE email = '" + email + "')");
+  var query = client.query("DELETE FROM purchasedetails pd WHERE itemid = " + itemID + " AND purchaseid IN (SELECT purchaseid FROM purchase WHERE customerID = " + customerID + ")");
 
   query.on('end', function() {
     client.end();
     res.json({
     	status: "success",
-    	message: "Removed item " + itemID + " from " + email +  "'s kart" 
+    	message: "Removed item " + itemID + " from kart" 
     });
   });
 }
 
 function addItemToKart(req, res, next) {
   var itemID = parseInt(req.params.itemID);
-  var email = req.params.email;
+  var customerID = parseInt(req.params.customerID);
   var quantity = req.params.quantity;
   
   client = new pg.Client(connectionString);
   client.connect();
   
-  var query = client.query("INSERT INTO purchasedetails(purchaseID, itemID, quantity) SELECT purchaseID, " + itemID + ", " + quantity + " FROM purchase WHERE email = '" + email + "'");
+  var query = client.query("INSERT INTO purchasedetails(purchaseID, itemID, quantity) SELECT purchaseID, " + itemID + ", " + quantity + " FROM purchase WHERE customerID = " + customerID);
 
   query.on('end', function() {
     client.end();
     res.json({
     	status: "success",
-    	message: "Added item " + itemID + " from " + email +  "'s kart" 
+    	message: "Added item " + itemID + " to kart" 
     });
   });
 }
