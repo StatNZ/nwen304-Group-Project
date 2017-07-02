@@ -19,7 +19,7 @@ $(document).ready(function () {
             }
 
         }).then(displayCategoryItems);
-    }
+    };
 
     $('#cat-gender').text(newHrf.replace('http://localhost:3000/category/', ' ').toUpperCase());
 
@@ -33,6 +33,7 @@ $(document).ready(function () {
 
 
          }*/
+         alert (rows[0].name);
 
         var i;
 
@@ -51,7 +52,7 @@ $(document).ready(function () {
                 '           <div class="responsive">' +
                 '               <div class="gallery">' +
                 '                   <a href="#" >' +
-                '                       <img class="category-img" src="" alt="" width="300" height="200" >' +
+                '                       <img class="category-img" src="" alt="" width="300" height="200" />' +
                 '                   </a>'+
                 '               <div class="desc">' +
                 '                   <a class="item-name"></a>' +
@@ -75,6 +76,9 @@ $(document).ready(function () {
             //disp.find('.item-description').text(desc);
             //disp.find('.nomargin').text(name);
             disp.find('.item-price').text(price);
+
+            $('#catpage-display-items').prepend(disp);
+            disp.show('clip',250).effect('highlight',1000);
 
 
         }
