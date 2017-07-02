@@ -6,6 +6,7 @@
 // call to get information
 $(document).ready(function () {
     var newHrf = location.href.replace('_', '/');
+    var gender = newHrf.replace('http://localhost:3000/category/', ' ').trim();
 
 
     window.onload = function () {
@@ -21,7 +22,7 @@ $(document).ready(function () {
         }).then(displayCategoryItems);
     };
 
-    $('#cat-gender').text(newHrf.replace('http://localhost:3000/category/', ' ').toUpperCase());
+    $('#cat-gender').text(gender.toUpperCase());
 
     function displayCategoryItems (rows) {
          /*var i;
@@ -53,7 +54,7 @@ $(document).ready(function () {
                 '               <div class="gallery">' +
                 '                   <a href="#" >' +
                     //will need to replace static image - place holder for now, can't find from db
-                '                       <img class="category-img" src="/public/images/men-shirt1.jpg" alt="" width="300" height="200" />' +
+                '                       <img class="category-img" src="images/men-shirt1.jpg" alt="" width="300" height="200" />' +
                 '                   </a>'+
                 '                   <div class="desc">' +
                 '                       <a class="item-name" style="color: black"></a>' +
@@ -83,9 +84,7 @@ $(document).ready(function () {
         }
     }
 
-    $('#catpage-display-items').on('click', '.item-name', function(){
-        var $this = $(this);
-        //alert($this.text());
-        window.location = '/subcategory';
+    $('#catpage-display-items').on('click', '.item-name',  function(){
+
     });
 });
