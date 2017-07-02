@@ -14,7 +14,7 @@ CREATE TABLE customer (
 
 CREATE TABLE kart {
 
-}
+};
 
 CREATE TABLE category (
 	CategoryID SERIAL PRIMARY KEY,
@@ -82,19 +82,19 @@ INSERT INTO subcategory(Name, CategoryID) VALUES ('Sandals', 5);
 INSERT INTO subcategory(Name, CategoryID) VALUES ('Office Wear', 5);
 INSERT INTO subcategory(Name, CategoryID) VALUES ('Artificial Jewllery', 5);
 
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Polo Shirt', 'Volcom Polo Shirt\nSize: Medium\n Color:White', 39.99, 1);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Polo Shirt', 'Volcom Polo Shirt\nSize: Large\n Color:White', 39.99, 1);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Polo Shirt', 'Volcom Polo Shirt\nSize: Large\n Color:Blue', 39.99, 1);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Short Sleeve Shirt', 'Federation Short Sleeve Shirt\nSize: Large\n Color:Black', 59.99, 1);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Short Sleeve Shirt', 'Federation Short Sleeve Shirt\nSize: Small\n Color:Black', 59.99, 1);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Quicksilver T-Shirt', 'Quicksilver T-Shirt\nSize: Large\n Color:Black', 34.99, 2);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Stussy T-Shirt', 'Stussy T-Shirt\nSize: Large\n Color:Black', 34.99, 2);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('DC Jacket', 'DC Jacket\nSize: Medium\n Color:Blue', 94.99, 3);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('DC Jacket', 'DC Jacket\nSize: Small\n Color:Black', 94.99, 3);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Volcom Puffer Vest', 'Volcom Puffer Vest\nSize: Small\n Color:Black', 104.99, 3);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 32\n Color:White', 129.99, 4);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 30\n Color:White', 129.99, 4);
-INSERT INTO item(Name, Description, Price, SubCategoryID) VALUES ('ABrand Slim Fit Jeans', 'ABrand Slim Fit Jeans\nSize: 32\n Color:Black', 139.99, 4);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Volcom Polo Shirt', 'Volcom Polo Shirt\nSize: Medium\n Color:White', 39.99, 1);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Volcom Polo Shirt', 'Volcom Polo Shirt\nSize: Large\n Color:White', 39.99, 1);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Volcom Polo Shirt', 'Volcom Polo Shirt\nSize: Large\n Color:Blue', 39.99, 1);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation Short Sleeve Shirt', 'Federation Short Sleeve Shirt\nSize: Large\n Color:Black', 59.99, 1);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation Short Sleeve Shirt', 'Federation Short Sleeve Shirt\nSize: Small\n Color:Black', 59.99, 1);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Quicksilver T-Shirt', 'Quicksilver T-Shirt\nSize: Large\n Color:Black', 34.99, 2);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Stussy T-Shirt', 'Stussy T-Shirt\nSize: Large\n Color:Black', 34.99, 2);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('DC Jacket', 'DC Jacket\nSize: Medium\n Color:Blue', 94.99, 3);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('DC Jacket', 'DC Jacket\nSize: Small\n Color:Black', 94.99, 3);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Volcom Puffer Vest', 'Volcom Puffer Vest\nSize: Small\n Color:Black', 104.99, 3);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 32\n Color:White', 129.99, 4);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 30\n Color:White', 129.99, 4);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('ABrand Slim Fit Jeans', 'ABrand Slim Fit Jeans\nSize: 32\n Color:Black', 139.99, 4);
 
 INSERT INTO purchase(Date, Email) VALUES (now(), 'test');
 INSERT INTO purchase(Date, Email) VALUES (now(), 'guest');

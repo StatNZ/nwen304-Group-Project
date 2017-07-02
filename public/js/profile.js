@@ -27,7 +27,21 @@ $(document).ready(function () {
             alert ('You must enter an address');
             $('.profile-main-edit-view').show('clip',250).effect('highlight',1000);
         }
-    })
+    });
+
+    $('#kart-display-profile').on('click', '.kart-item-delete-btn', function () {
+        var $this = $(this);
+        // call gloabal vars function to run
+        if (deleteKartItem($this)) {
+            // remove the task from the view
+            var deleteItem = $this.parent('td').parent('tr');
+            deleteItem.effect('puff', function () {
+                deleteItem.remove();
+            });
+        }
+
+        // else error message
+    });
 
 
 });

@@ -21,7 +21,8 @@ require('./config/paspport')(passport);
 // must go live on heroku
 // app.use(function (req, res, next) {
 //     if (req.headers['x-forwarded-proto'] !== 'https') {
-//         return res.redirect(['https://urbanapparel.herokuapp.com', req.url].join(''));
+//         let https = ['https://urbanapparel.herokuapp.com', req.url].join('');
+//         return res.redirect(https);
 //     }
 //     return next();
 // });
@@ -83,4 +84,4 @@ app.use(function (req, res, next) {
 require('./app/routes')(app, passport);
 
 app.listen(port);
-console.log ('Urban Apparel listening on localhost:3000');
+console.log ('Urban Apparel listening on localhost: ' + port);

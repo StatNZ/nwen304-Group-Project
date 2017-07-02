@@ -13,7 +13,6 @@
  */
 var $User;
 
-
 // =========================================================================
 // AJAX ROUTES =============================================================
 // =========================================================================
@@ -33,6 +32,7 @@ var $passportGoogleURL = $siteURL + '/auth/google';
 /** USER ROUTES */
 var $userProfileURL = $siteURL + '/profile';
 var $userKartURL = $siteURL + '/user/kart';
+var $userDeleteItemKartURL = $siteURL + '/kart/removeItem';
 var $userInfoURL = $siteURL + '/user/info';
 
 /** CATEGORY ROUTES */
@@ -62,7 +62,7 @@ window.onload = function () {
 /**
  * Shopping cart information and updates
  */
-function updateKartItemsNumber (size) {
+function updateKartCount (size) {
     $('#kartNumber').text(' ' + size);
 }
 
@@ -94,10 +94,10 @@ function displayDrowdownKartItems (rows) {
 
     // update our number of items in kart
     // $('#kartNumber').text(' ' + rows.length);
-    updateKartItemsNumber(rows.length);
+    updateKartCount(rows.length);
 
     // needs to be more accurately defined
-    if ($('#kart-user-items').children().length == rows.length)
+    if ($('#kart-items').children().length == rows.length)
         return;
 
     var totalPrice = 0;
@@ -119,17 +119,18 @@ function displayDrowdownKartItems (rows) {
             '          </span>' +
             '      </span>' +
             '      <span class="item-right">' +
-            '          <button class="btn btn-xs btn-danger pull-right"><i class="fa fa-trash-o"></i> </button>' +
+            '          <button class="kart-item-delete-btn btn btn-xs btn-danger pull-right"><i class="fa fa-trash-o"></i> </button>' +
             '      </span>' +
             '   </span>' +
             '</li>';
 
         var newItem = $(kartHTML);
+        newItem.find('.kart-item-delete-btn').attr('name', rows[i].itemid);
         newItem.find('.item-name').text(rows[i].name);
         newItem.find('.item-price').text(rows[i].price);
 
         newItem.hide();
-        $('#kart-user-items').prepend(newItem);
+        $('#kart-display-header').prepend(newItem);
         newItem.show('clip',250).effect('highlight',1000);
     }
 
@@ -147,12 +148,13 @@ function displayDrowdownKartItems (rows) {
  */
 function displayProfileKartItems (rows) {
     // update kart number count
-    updateKartItemsNumber(rows.length);
+    updateKartCount(rows.length);
 
     var i;
     var totalPrice = 0;
 
     for (i=0; i<rows.length; i++) {
+        var uuid = rows[i].itemid;
         var name = rows[i].name;
         var desc = rows[i].description;
         var price = rows[i].price;
@@ -179,11 +181,12 @@ function displayProfileKartItems (rows) {
             '   </td>' +
             '   <td data-th="Subtotal" class="text-center item-subtotal">'+ subTotal +'</td>' +
             '   <td class="actions" data-th="">' +
-            '       <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>' +
+            '       <button class="btn btn-danger btn-sm kart-item-delete-btn"><i class="fa fa-trash-o"></i></button>' +
             '   </td>' +
             '</tr>';
 
         var newItem = $(kartHTML);
+        newItem.find('.kart-item-delete-btn').attr('name', uuid);
         newItem.find('.img-responsive').attr('src', image);
         newItem.find('.item-description').text(desc);
         newItem.find('.nomargin').text(name);
@@ -191,7 +194,7 @@ function displayProfileKartItems (rows) {
         newItem.find('.item-subtotal').text(subTotal);
 
         newItem.hide();
-        $('#profile-kart-display').prepend(newItem);
+        $('#kart-display-profile').prepend(newItem);
         newItem.show('clip',250).effect('highlight',1000);
     }
 
@@ -201,8 +204,29 @@ function displayProfileKartItems (rows) {
         totalPrice = totalPrice.toPrecision(5);
     else
         totalPrice = totalPrice.toPrecision(4);
-    $('.kart-total-price').text(totalPrice);
+    $('.kart-total-price').text('$ ' + totalPrice);
 }
+
+function deleteKartItem (element) {
+    var uuid = $(element).attr('name');
+
+    // ajax call to delete element
+    $.ajax ({
+        url: $userDeleteItemKartURL + '/' + $User.email + '/' + uuid,
+        type: 'DELETE',
+
+        error: function (err) {
+            // User must sign in to access kart
+            return false;
+        }
+    });
+    return true;
+}
+
+
+// =========================================================================
+// USER/PROFILE FUNCTIONALITY ==============================================
+// =========================================================================
 
 function getUserInfo () {
     $.ajax ({
@@ -211,6 +235,7 @@ function getUserInfo () {
 
         error: function (err) {
             // User must sign in to access kart
+            alert(err)
             throw err;
         }
     }).then(displayUserInfo);

@@ -7,16 +7,19 @@
             <div class="profile-lhs-container">
 
                 <div class="row profile-row profile-main-view">
-                    <div class="form-inline col-xs-5 col-sm-12">
-                        <img class="profile-image" src="images/mens-shirts/cs1.jpg">
-                        <!--<i class="fa fa-user"></i>-->
-                        <div class="profile-buttons-container">
-                            <button type="button" class="btn btn-info btn-block">History</button>
-                        </div>
+                    <div col-xs-3 col-sm-12">
+
+                        <!--the button is in line with the image, if there is one-->
+                        <img class="profile-image" src="">
+
                     </div>
 
-                    <div class="col-xs-5 col-sm-12">
-                        <h3 class="profile-user-name"></h3>
+                    <div class="col-xs-2 col-sm-12">
+                        <div classs="profile-buttons-container">
+                            <button id="profile-history-button" type="button" class="btn btn-info btn-block">History</button>
+
+                            <h3 class="profile-user-name"></h3>
+                        </div>
 
                         <ul class="profile-details">
                             <li>
@@ -43,29 +46,45 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div style="margin-top: 10px;" class="col-xs-5 col-sm-12 flash-messages">
+                        {{#if success_msg}}
+                            {{link sum}}
+                            <div class="alert alert-success">{{success_msg}}</div>
+                        {{/if}}
+                        {{#if error_msg}}
+                            <div class=" alert alert-danger">{{error_msg}}</div>
+                        {{/if}}
+                        {{#if error}}
+                            {{#each error}}
+                                <div class=" alert alert-danger">{{msg}}</div>
+                            {{/each}}
+                        {{/if}}
+                    </div>
+
                     <div class="col-xs-2 col-sm-12">
                         <a href="/logout" class="btn btn-danger btn-block">Logout</a>
                     </div>
+
                 </div>
 
-                <div hidden="true" class="profile-row profile-main-edit-view">
 
-                    <div class="form-inline">
-                        <button id="profile-back-btn" class="btn btn-block btn-danger" type="button">Back</button>
-                    <img class="profile-image" src="">
-                    </div>
 
+                <div hidden="true" class="row profile-row profile-main-edit-view">
                     <form id="user-info-update-form" method="post" action="/profile" class="form-horizontal">
                         <fieldset form="user-info-update-form" class="fieldset-box">
                             <!-- Address form -->
-                            <h2>Edit Profile</h2>
+                            <div class="form-inline">
+                                <button id="profile-back-btn" class="btn btn-block btn-danger" type="button">Back</button>
+                                <h2>Edit Profile</h2>
+                            </div>
 
                             <!-- first-name input-->
                             <div class="control-group">
                                 <label class="control-label">First Name</label>
                                 <div class="controls">
                                     <input id="profile-first-name" name="first_name" type="text" placeholder="first name"
-                                           class="input-xlarge" />
+                                           class="input-xlarge  " />
                                     <p class="help-block"></p>
                                 </div>
                             </div>
@@ -107,32 +126,15 @@
                                     <p class="help-block"></p>
                                 </div>
                             </div>
-
+                            <div>
+                                <button type="submit" class="btn btn-success btn-block">Update Info</button>
+                            </div>
                         </fieldset>
-                        <div>
-                            <button type="submit" class="btn btn-success btn-block">Update Info</button>
-                        </div>
+
                     </form>
                 </div>
-
-            </div>
-            <div class="flash-messages-positioning">
-                {{#if success_msg}}
-                    {{link sum}}
-                    <div class="alert alert-success">{{success_msg}}</div>
-                {{/if}}
-                {{#if error_msg}}
-                    <div class=" alert alert-danger">{{error_msg}}</div>
-                {{/if}}
-                {{#if error}}
-                    {{#each error}}
-                        <div class=" alert alert-danger">{{msg}}</div>
-                    {{/each}}
-                {{/if}}
             </div>
         </div>
-
-        <div style="width: 2%; display: table-cell;"></div>
 
         <div class="profile-rhs-container" style="display: table-cell;">
             <table id="cart" class="table table-hover table-condensed">
@@ -145,7 +147,7 @@
                         <th style="width:10%"></th>
                     </tr>
                 </thead>
-                <tbody id="profile-kart-display">
+                <tbody id="kart-display-profile">
                     <!-- Add items in here via jscript -->
                 </tbody>
                 <tfoot>

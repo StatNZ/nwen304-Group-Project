@@ -231,5 +231,20 @@ $(document).ready(function () {
         }, interval_time);
     }
 
+
+    $('#kart-display-header').on('click', '.kart-item-delete-btn', function () {
+        // call gloabal vars function to run
+        if (deleteKartItem($(this))) {
+            var deleteItem = $(this).parent('span').parent('li');
+            deleteItem.effect('puff', function () {
+                deleteItem.remove();
+            });
+            alert ('deleted');
+            return;
+        }
+        alert ('no delete');
+        // else error display module
+    });
+
 });
 
