@@ -19,10 +19,6 @@ $(document).ready(function () {
             }
 
         }).then(displayCategoryItems);
-
-        $('#item-name').on(click, function(e){
-            itemdetails();
-        });
     };
 
     $('#cat-gender').text(newHrf.replace('http://localhost:3000/category/', ' ').toUpperCase());
@@ -85,11 +81,10 @@ $(document).ready(function () {
 
 
         }
-
-
     }
 
-    function itemdetails(){
-        alert('hi');
-    }
+    $('#catpage-display-items').on('click', '.item-name', function(){
+        var $this = $(this);
+        alert($this.text());
+    });
 });
