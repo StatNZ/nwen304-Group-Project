@@ -26,10 +26,10 @@ module.exports = function (passport) {
         done(null, user.userId);
     });
 
-    passport.deserializeUser(function(id, done) {
-        console.log('deserializeUser: ' + id);
+    passport.deserializeUser(function(user, done) {
+        console.log('deserializeUser: ' + user.userId);
         User.findOne(id, function(err, user){
-            done(err, user);
+            done(err, user.userid);
         })
     });
 
