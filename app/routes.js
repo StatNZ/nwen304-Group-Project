@@ -94,6 +94,8 @@ module.exports = function (app, passport) {
 
     });
 
+
+
     /* Get categories page. */
     app.get('/category_women', function (req, res) {
         res.render ('categories');
@@ -174,7 +176,8 @@ module.exports = function (app, passport) {
 
     /* Database Query Routes */
     //app.get('/items/:category', db.getItemsByCategory);
-    app.get('/categories/:gender', db.getItemsByGender);
+    app.get('/category/:gender', db.test);
+    // app.get('/categories/:gender', db.getItemsByGender);
     app.get('/categories/:gender/:category', db.getItemsByCategory);
     app.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
     app.get('/search/:desc', db.getItemsByDescription);
