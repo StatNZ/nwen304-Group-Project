@@ -178,8 +178,10 @@ module.exports = function (app, passport) {
     //app.get('/items/:category', db.getItemsByCategory);
     app.get('/category/:gender', db.test);
     // app.get('/categories/:gender', db.getItemsByGender);
-    app.get('/categories/:gender/:category', db.getItemsByCategory);
-    app.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
+    //app.get('/categories/:gender/:category', db.getItemsByCategory);
+    app.get('/categories/:gender/:category', db.test);
+    //app.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
+    app.get('/categories/:gender/:category/:subcategory', db.test);
     app.get('/search/:desc', db.getItemsByDescription);
     app.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
     app.get('/item/:itemid', db.getItemByItemID);

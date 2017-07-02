@@ -19,6 +19,10 @@ $(document).ready(function () {
             }
 
         }).then(displayCategoryItems);
+
+        $('#item-name').click(function(e){
+            five();
+        });
     };
 
     $('#cat-gender').text(newHrf.replace('http://localhost:3000/category/', ' ').toUpperCase());
@@ -56,10 +60,10 @@ $(document).ready(function () {
                 '                       <img class="category-img" src="/public/images/men-shirt1.jpg" alt="" width="300" height="200" />' +
                 '                   </a>'+
                 '                   <div class="desc">' +
-                '                       <a class="item-name"></a>' +
+                '                       <a class="item-name" style="color: black"></a>' +
                 '                   </div>' +
                 '                   <div class="desc">' +
-                '                        <a class="item-price"></a>' +
+                '                        <a class="item-price" style="color: black"></a>' +
                 '                   </div>' +
                 '               </div>' +
                 '           </div>'+
@@ -83,5 +87,9 @@ $(document).ready(function () {
         }
 
 
+    }
+
+    function five(){
+        alert(location);
     }
 });
