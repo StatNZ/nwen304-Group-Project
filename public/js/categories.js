@@ -20,8 +20,8 @@ $(document).ready(function () {
 
         }).then(displayCategoryItems);
 
-        $('#item-name').click(function(e){
-            five();
+        $('#item-name').on(click, function(e){
+            itemdetails();
         });
     };
 
@@ -89,7 +89,7 @@ $(document).ready(function () {
 
     }
 
-    function five(){
-        alert(location);
+    function itemdetails(){
+        alert('hi');
     }
 });
