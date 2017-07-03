@@ -131,7 +131,7 @@ module.exports = function (app, passport) {
             gender: 'WOMEN',
             subcat: subcat,
             callback: '/categories/women/' + subcat
-        }
+        };
 
         res.redirect('/subcategory');
     });
@@ -161,7 +161,7 @@ module.exports = function (app, passport) {
 
     /** Displays profile page */
     app.get('/profile', isLoggedIn, function (req, res, next) {
-        res.render('profile');
+        res.render('profile', req.success_msg);
     });
 
     /** Updates the profile */
@@ -182,9 +182,7 @@ module.exports = function (app, passport) {
         console.log('NO ERRORS');
 
         // Now we must submit our results to our database for processing
-        res.render('profile', {
-            success_msg: 'Profile has been updated'
-        });
+        res.redirect(307, '/user/update');
     });
 
     // =========================================================================
@@ -219,7 +217,7 @@ module.exports = function (app, passport) {
     app.get('/kart/:customerID', db.getKart);
     app.delete('/kart/removeItem/:customerID/:itemID', isLoggedIn, db.removeItemFromKart);
     app.put('/kart/addItem/:customerID/:itemID/:quantity', db.addItemToKart);
-    app.put('/user/update/:customerID/', db.updateUser);
+    app.post('/user/update/', isLoggedIn, db.updateUser);
     app.get('/test', db.test);
 
 };

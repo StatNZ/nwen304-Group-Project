@@ -15,7 +15,7 @@ function User() {
     this.last_name = '';
     this.email = '';
     this.accessToken = '';
-    this.address = '77A Frobisher St';
+    this.address = '';
     this.password = '';
 
     this.save = function (callback) {

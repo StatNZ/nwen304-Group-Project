@@ -230,15 +230,15 @@ function updateUser(req, res, next) {
         "SET firstname = $1, lastname = $2, address = $3, email = $4, password = $5 " +
         "WHERE customerid = $6";
     const values = [
-        req.body.firstname,
-        req.body.lastname,
+        req.body.first_name,
+        req.body.last_name,
         req.body.address,
         req.body.email,
-        req.body.password,
-        parseInt(req.params.customerID)
+        req.user.password,
+        req.user.userId
     ];
 
-    console.log(req.body.firstname);
+    console.log(req.body.first_name);
 
     client = new pg.Client(connectionString);
     client.connect();
@@ -251,10 +251,7 @@ function updateUser(req, res, next) {
 
     query.on('end', function() {
         client.end();
-        res.json({
-            status: "success",
-            //message: "Updated user " + itemID + " to kart"
-        });
+        res.redirect('/profile');
     });
 }
 

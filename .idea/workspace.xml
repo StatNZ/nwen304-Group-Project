@@ -4,6 +4,7 @@
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.js" afterPath="$PROJECT_DIR$/app/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/users.js" afterPath="$PROJECT_DIR$/app/users.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/queries.js" afterPath="$PROJECT_DIR$/queries.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="queries.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="queries.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/queries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="273" column="2" lean-forward="true" selection-start-line="273" selection-start-column="2" selection-end-line="273" selection-end-column="2" />
+            <state relative-caret-position="63">
+              <caret line="230" column="32" lean-forward="true" selection-start-line="230" selection-start-column="32" selection-end-line="230" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -35,18 +36,28 @@
       <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="220" column="75" lean-forward="false" selection-start-line="220" selection-start-column="62" selection-end-line="220" selection-end-column="75" />
+            <state relative-caret-position="164">
+              <caret line="163" column="45" lean-forward="false" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile.handlebars" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/profile.handlebars">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1618">
+              <caret line="137" column="50" lean-forward="false" selection-start-line="137" selection-start-column="50" selection-end-line="137" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -65,7 +76,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>original</find>
       <find>log</find>
       <find>kart</find>
       <find>hide()</find>
@@ -95,6 +105,7 @@
       <find>wome</find>
       <find>gender</find>
       <find>app.post</find>
+      <find>add</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,9 +159,9 @@
         <option value="$PROJECT_DIR$/views/layouts/main.handlebars" />
         <option value="$PROJECT_DIR$/public/js/sub_category.js" />
         <option value="$PROJECT_DIR$/views/sub_category.handlebars" />
-        <option value="$PROJECT_DIR$/app/users.js" />
         <option value="$PROJECT_DIR$/app/routes.js" />
         <option value="$PROJECT_DIR$/queries.js" />
+        <option value="$PROJECT_DIR$/app/users.js" />
       </list>
     </option>
   </component>
@@ -469,14 +480,7 @@
       <workItem from="1498993560296" duration="4671000" />
       <workItem from="1499060624581" duration="1643000" />
       <workItem from="1499065895521" duration="2217000" />
-      <workItem from="1499068503120" duration="1214000" />
-    </task>
-    <task id="LOCAL-00011" summary="Added a men's shirt page and more content in the dropdown">
-      <created>1496312156872</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1496312156872</updated>
+      <workItem from="1499068503120" duration="2808000" />
     </task>
     <task id="LOCAL-00012" summary="Added a men's shirt page and more content in the dropdown">
       <created>1496313375680</created>
@@ -814,11 +818,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499069278044</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="fixed queries route">
+      <created>1499069758468</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1499069758468</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233439000" />
+    <option name="totallyTimeSpent" value="235033000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -866,7 +877,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created profile page, have not added users profile information yet" />
     <MESSAGE value="profile page, kart page almost completed" />
     <MESSAGE value="error with bodyParser, cannot retrieve info. needs fixing" />
     <MESSAGE value="Added edit page within profile page" />
@@ -891,7 +901,8 @@
     <MESSAGE value="Merge remote-tracking branch 'remotes/origin/kieran-backend'&#10;&#10;# Conflicts:&#10;#&#9;app/routes.js&#10;#&#9;queries.js&#10;#&#9;schema.sql" />
     <MESSAGE value="latest changes" />
     <MESSAGE value="pushing fixes to the latest users info" />
-    <option name="LAST_COMMIT_MESSAGE" value="pushing fixes to the latest users info" />
+    <MESSAGE value="fixed queries route" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed queries route" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1116,14 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/profile.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="137" column="50" lean-forward="false" selection-start-line="137" selection-start-column="50" selection-end-line="137" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/categories.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3520">
@@ -1192,26 +1195,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/users.js">
+    <entry file="file://$PROJECT_DIR$/views/profile.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="1618">
+          <caret line="137" column="50" lean-forward="false" selection-start-line="137" selection-start-column="50" selection-end-line="137" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="220" column="75" lean-forward="false" selection-start-line="220" selection-start-column="62" selection-end-line="220" selection-end-column="75" />
+        <state relative-caret-position="164">
+          <caret line="163" column="45" lean-forward="false" selection-start-line="163" selection-start-column="45" selection-end-line="163" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/queries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="273" column="2" lean-forward="true" selection-start-line="273" selection-start-column="2" selection-end-line="273" selection-end-column="2" />
+        <state relative-caret-position="63">
+          <caret line="230" column="32" lean-forward="true" selection-start-line="230" selection-start-column="32" selection-end-line="230" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding />
         </state>
       </provider>
