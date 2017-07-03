@@ -199,6 +199,64 @@ function removeItemFromKart(req, res, next) {
         });
     });
 }
+function addItemToKart(req, res, next) {
+    const queryText = "INSERT INTO purchasedetails(purchaseID, itemID, quantity) " +
+        "SELECT purchaseID, $1, $3 FROM purchase " +
+        "WHERE customerID = $2";
+    const values = [parseInt(req.params.itemID), parseInt(req.params.customerID), req.params.quantity];
+
+
+    client = new pg.Client(connectionString);
+    client.connect();
+
+    var query = client.query(queryText, values);
+
+    query.on('error', function(err) {
+        console.log(err);
+    });
+
+    query.on('end', function() {
+        client.end();
+        res.json({
+            status: "success",
+            message: "Added item to kart"
+        });
+    });
+}
+
+
+function updateUser(req, res, next) {
+    const queryText = "UPDATE customer " +
+        "SET firstname = $1, lastname = $2, address = $3, email = $4, password = $5 " +
+        "WHERE customerid = $6";
+    const values = [
+        req.body.firstname,
+        req.body.lastname,
+        req.body.address,
+        req.body.email,
+        req.body.password,
+        parseInt(req.params.customerID)
+    ];
+
+    console.log(req.body.firstname);
+
+    client = new pg.Client(connectionString);
+    client.connect();
+
+    var query = client.query(queryText, values);
+
+    query.on('error', function(err) {
+        console.log(err);
+    });
+
+    query.on('end', function() {
+        client.end();
+        res.json({
+            status: "success",
+            //message: "Updated user " + itemID + " to kart"
+        });
+    });
+}
 
 module.exports = {
     connectionString: connectionString,
@@ -210,5 +268,7 @@ module.exports = {
     getItemsByPrice: getItemsByPrice,
     getItemByItemID: getItemByItemID,
     getKart: getKart,
-    removeItemFromKart: removeItemFromKart
+    removeItemFromKart: removeItemFromKart,
+    addItemToKart: addItemToKart,
+    updateUser: updateUser
 };
