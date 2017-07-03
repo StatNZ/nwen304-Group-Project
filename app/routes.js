@@ -136,10 +136,6 @@ module.exports = function (app, passport) {
         res.redirect('/subcategory');
     });
 
-
-
-
-
     // =========================================================================
     // KART ROUTES =============================================================
     // =========================================================================
@@ -214,17 +210,16 @@ module.exports = function (app, passport) {
     // =========================================================================
 
     /* Database Query Routes */
-    //app.get('/items/:category', db.getItemsByCategory);
-    // app.get('/category/:gender', db.test);
     app.get('/categories/:gender', db.getItemsByGender);
     app.get('/categories/:gender/:category', db.getItemsByCategory);
-    // app.get('/categories/:gender/:category', db.test);
-    //app.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
-    app.get('/categories/:gender/:category/:subcategory', db.test);
+    app.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
     app.get('/search/:desc', db.getItemsByDescription);
     app.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
-    app.get('/item/:itemid', db.getItemByItemID);
-    app.delete('/kart/removeItem/:email/:itemID', isLoggedIn, db.removeItemFromKart);
+    app.get('/item/:itemID', db.getItemByItemID);
+    app.get('/kart/:customerID', db.getKart);
+    app.delete('/kart/removeItem/:customerID/:itemID', isLoggedIn, db.removeItemFromKart);
+    app.put('/kart/addItem/:customerID/:itemID/:quantity', db.addItemToKart);
+    app.put('/user/update/:customerID/', db.updateUser);
     app.get('/test', db.test);
 
 };

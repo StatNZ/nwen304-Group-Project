@@ -1,19 +1,13 @@
-/*
 CREATE TABLE customer (
 	CustomerID varchar(255) NOT NULL,
-	Name varchar(255),
 	FirstName varchar(255),
 	LastName varchar(255),
-	AccessToken varchar(255) NOT NULL,
+	AccessToken varchar(255),
 	Address varchar(255),
 	Email varchar(255) NOT NULL,
 	Password varchar(255),
 	PRIMARY KEY (CustomerID)
 );
-
-CREATE TABLE kart {
-
-};
 
 CREATE TABLE category (
 	CategoryID SERIAL PRIMARY KEY,
@@ -38,16 +32,30 @@ CREATE TABLE item (
 
 CREATE TABLE purchase (
 	PurchaseID SERIAL PRIMARY KEY,
-	Date date NOT NULL,
-	Email varchar(255)
+	CustomerID varchar NOT NULL REFERENCES customer
 );
 
 CREATE TABLE purchasedetails (
 	PurchaseDetailsID SERIAL PRIMARY KEY,
 	PurchaseID integer NOT NULL REFERENCES purchase,
 	ItemID integer NOT NULL REFERENCES item,
-	Quantity integer NOT NULL
+	Quantity integer NOT NULL,
+	CONSTRAINT u_constrain UNIQUE (PurchaseID, ItemID)
 );
+
+CREATE OR REPLACE FUNCTION create_kart() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	INSERT INTO purchase(CustomerID) VALUES (new.CustomerID);
+	RETURN new;
+END;
+$BODY$
+language plpgsql;
+
+CREATE TRIGGER trig_kart
+	AFTER INSERT ON customer
+	FOR EACH ROW
+	EXECUTE PROCEDURE create_kart();
 
 INSERT INTO category (Name, Gender) VALUES ('Tops', 'MEN');
 INSERT INTO category (Name, Gender) VALUES ('Bottoms', 'MEN');
@@ -94,11 +102,15 @@ INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Volcom Puffe
 INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 32\n Color:White', 129.99, 4);
 INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 30\n Color:White', 129.99, 4);
 INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('ABrand Slim Fit Jeans', 'ABrand Slim Fit Jeans\nSize: 32\n Color:Black', 139.99, 4);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Plain T-Shirt', 'Plain T-Shirt\nSize: Medium\n Color:White', 29.99, 9);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Plain T-Shirt', 'Plain T-Shirt\nSize: Small\n Color:White', 29.99, 9);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Plain T-Shirt', 'Plain T-Shirt\nSize: Medium\n Color:Black', 29.99, 9);
 
-INSERT INTO purchase(Date, Email) VALUES (now(), 'test');
-INSERT INTO purchase(Date, Email) VALUES (now(), 'guest');
+INSERT INTO customer(Email) VALUES ('test@gmail.com');
+INSERT INTO customer(Email) VALUES ('guest@gmail.com');
 
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 1, 2);
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 11, 1);
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 13, 1);
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (2, 5, 1);
+
