@@ -43,9 +43,9 @@ var $userInfoURL = $siteURL + '/user/info';
 
 /** KART ROUTES */
 var $kartURL = $siteURL + '/kart';
-var $deleteKartItemURL = $siteURL + '/kart/removeItem/';
+var $deleteKartItemURL = $siteURL + '/kart/removeItem';
 var $checkoutKartURL = $siteURL + '/kart/checkout';
-var $addItemToKartURL = $siteURL + '/kart/addItem/';
+var $addItemToKartURL = $siteURL + '/kart/addItem';
 
 /** CATEGORY ROUTES */
 var $subCategoryURL = $siteURL + '/subCategory';
@@ -73,6 +73,18 @@ function getUserKartItems (func) {
             return;
         }
     }).then(func);
+}
+
+function getTheItemsForTheCart(uuid) {
+    $.ajax({
+        url: $getItemURL + '/' + uuid,
+        type: 'GET',
+
+        error: function (err) {
+            // User must sign in to access kart
+            return;
+        }
+    });
 }
 
 /** Retrieves the current logged in user information */
@@ -115,7 +127,7 @@ function deleteKartItem (element) {
 }
 
 function addItemToKart (element) {
-    var uuid = $(element).attr('name');
+    var uuid = element.itemid;
 
     $.ajax ({
         url: $addItemToKartURL + '/' + uuid,
@@ -123,8 +135,7 @@ function addItemToKart (element) {
 
         error: function (err) {
             // User must sign in to access kart
-            alert ('error');
-            return false;
+            alert ('error on adding item');
         }
     });
 }
@@ -166,6 +177,8 @@ function displayDrowdownKartItems (rows) {
     // update our number of items in kart
     // $('#kartNumber').text(' ' + rows.length);
     updateKartCount(rows.length);
+
+    getTheItemsForTheCart(rows);
 
     // needs to be more accurately defined
     if ($('#kart-items').children().length == rows.length)

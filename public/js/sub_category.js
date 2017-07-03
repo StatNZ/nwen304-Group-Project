@@ -8,6 +8,8 @@ $(document).ready(function () {
     var subcat = $('#cat-subcat').text();
     var href = $('#cat-gender-call').attr('name');
 
+    var itemObject;
+
     window.onload = function () {
 
         $('.gender-cas').hide();
@@ -78,6 +80,8 @@ $(document).ready(function () {
 
         function displayItem(rows) {
 
+            itemObject = rows[0];
+
             $('#category-item-display').hide();
             $('.gender-cas').show('clip', 250);
 
@@ -89,4 +93,9 @@ $(document).ready(function () {
         }
 
     }
+
+    $('#add-to-cart-btn').on('click', function () {
+        // get the current item
+        addItemToKart(itemObject);
+    });
 });
