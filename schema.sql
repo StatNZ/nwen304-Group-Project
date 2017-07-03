@@ -10,7 +10,6 @@ CREATE TABLE customer (
 	Password varchar(255),
 	PRIMARY KEY (CustomerID)
 );
-*/
 
 CREATE TABLE kart {
 
@@ -19,7 +18,7 @@ CREATE TABLE kart {
 CREATE TABLE category (
 	CategoryID SERIAL PRIMARY KEY,
 	Name varchar(55) NOT NULL,
-	Gender char NOT NULL
+	Gender varchar(5) NOT NULL
 );
 
 CREATE TABLE subcategory (
@@ -50,11 +49,11 @@ CREATE TABLE purchasedetails (
 	Quantity integer NOT NULL
 );
 
-INSERT INTO category (Name, Gender) VALUES ('Tops', 'M');
-INSERT INTO category (Name, Gender) VALUES ('Bottoms', 'M');
-INSERT INTO category (Name, Gender) VALUES ('Tops', 'F');
-INSERT INTO category (Name, Gender) VALUES ('Bottoms', 'F');
-INSERT INTO category (Name, Gender) VALUES ('Dresses', 'F');
+INSERT INTO category (Name, Gender) VALUES ('Tops', 'MEN');
+INSERT INTO category (Name, Gender) VALUES ('Bottoms', 'MEN');
+INSERT INTO category (Name, Gender) VALUES ('Tops', 'WOMEN');
+INSERT INTO category (Name, Gender) VALUES ('Bottoms', 'WOMEN');
+INSERT INTO category (Name, Gender) VALUES ('Dresses', 'WOMEN');
 
 INSERT INTO subcategory(Name, CategoryID) VALUES ('Shirts', 1);
 INSERT INTO subcategory(Name, CategoryID) VALUES ('T-Shirts', 1);

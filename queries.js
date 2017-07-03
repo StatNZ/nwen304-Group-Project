@@ -23,7 +23,7 @@ function test(req, res, next) {
 }
 
 function getItemsByGender(req, res, next) {
-    var gender = req.params.gender.charAt(0).toUpperCase();
+    var gender = req.params.gender.toUpperCase();
     client = new pg.Client(connectionString);
     client.connect();
 
@@ -46,7 +46,7 @@ function getItemsByGender(req, res, next) {
 }
 
 function getItemsByCategory(req, res, next) {
-    var gender = req.params.gender;
+    var gender = req.params.gender.toUpperCase();
     var category = req.params.category;
 
     client = new pg.Client(connectionString);
@@ -66,7 +66,7 @@ function getItemsByCategory(req, res, next) {
 }
 
 function getItemsBySubcategory(req, res, next) {
-    var gender = req.params.gender;
+    var gender = req.params.gender.toUpperCase();
     var category = req.params.category;
     var subcategory = req.params.subcategory;
 
