@@ -179,6 +179,25 @@ function removeItemFromKart(req, res, next) {
  	 });
 }
 
+function addItemToKart(req, res, next) {
+  	var itemID = parseInt(req.params.itemID);
+  	var customerID = parseInt(req.params.customerID);
+  	var quantity = req.params.quantity;
+  
+  	client = new pg.Client(connectionString);
+  	client.connect();
+  
+  	var query = client.query("INSERT INTO purchasedetails(purchaseID, itemID, quantity) SELECT purchaseID, " + itemID + ", " + quantity + " FROM purchase WHERE customerID = " + customerID);
+
+  	query.on('end', function() {
+    	client.end();
+    	res.json({
+    		status: "success",
+    		message: "Added item " + itemID + " to kart" 
+    	});
+  	});
+}
+
 module.exports = {
     connectionString: connectionString,
     test: test,
@@ -189,5 +208,6 @@ module.exports = {
     getItemsByPrice: getItemsByPrice,
     getItemByItemID: getItemByItemID,
     getKart: getKart,
-    removeItemFromKart: removeItemFromKart
+    removeItemFromKart: removeItemFromKart,
+    addItemToKart: addItemToKart
 };

@@ -183,6 +183,7 @@ module.exports = function (app, passport) {
     app.get('/item/:itemid', db.getItemByItemID);
     app.get('/kart/:customerID', db.getKart);
     app.delete('/kart/removeItem/:customerID/:itemID', isLoggedIn, db.removeItemFromKart);
+	 app.post('/kart/addItem/:customerID/:itemID/:quantity', db.addItemToKart);    
     app.get('/test', db.test);
 };
 
