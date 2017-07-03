@@ -226,7 +226,7 @@ div.desc {
     color: black;
 }
 
-#item-name1:hover{
+#item-name1:hover, #item-price1:hover{
     text-decoration: none;
 }
 
@@ -236,7 +236,16 @@ div.desc {
 }
 
 .desc1{
-    margin-left: 900px;
+    margin-left: 800px;
     margin-top: -500px;
     height: 550px;
+}
+
+#add-item {
+    color: black;
+}
+
+#add-item:hover{
+    text-decoration: none;
+    color: gray;
 }
