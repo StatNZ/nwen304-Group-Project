@@ -45,7 +45,7 @@ $(document).ready(function () {
                 '                       <img class="category-img" src="images/men-shirt1.jpg" alt="" width="300" height="200" />' +
                 '                   </a>'+
                 '                   <div class="desc">' +
-                '                       <a class="item-name" style="color: black; font-size: 20px;"></a>' +
+                '                       <a class="item-name" style="color: black"></a>' +
                 '                   </div>' +
                 '                   <div class="desc">' +
                 '                        <a class="item-price" style="color: black"></a>' +

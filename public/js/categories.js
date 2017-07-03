@@ -58,7 +58,7 @@ $(document).ready(function () {
             var product_disp = '' +
                 '       <div id="gender-cat" class="gender-cas">' +
                 '           <div class="responsive">' +
-                '               <div class="gallery">' +
+                '               <div class="gallery" >' +
                 '                   <a href="#" >' +
                     //will need to replace static image - place holder for now, can't find from db
                 '                       <img class="category-img" src="images/men-shirt1.jpg" alt="" width="300" height="200" />' +
