@@ -215,8 +215,8 @@ module.exports = function (app, passport) {
     app.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
     app.get('/item/:itemID', db.getItemByItemID);
     app.get('/kart/:customerID', db.getKart);
-    app.delete('/kart/removeItem/:customerID/:itemID', isLoggedIn, db.removeItemFromKart);
-    app.put('/kart/addItem/:customerID/:itemID/:quantity', db.addItemToKart);
+    app.delete('/kart/removeItem/:itemID', isLoggedIn, db.removeItemFromKart);
+    app.put('/kart/addItem/:itemID', db.addItemToKart);
     app.post('/user/update/', isLoggedIn, db.updateUser);
     app.get('/test', db.test);
 

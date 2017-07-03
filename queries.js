@@ -183,7 +183,7 @@ function getKart(req, res, next) {
 }
 
 function removeItemFromKart(req, res, next) {
-    var itemID = parseInt(req.params.itemID);
+    var itemID = req.user.userId;
     var email = req.params.email;
 
     client = new pg.Client(connectionString);
@@ -203,7 +203,7 @@ function addItemToKart(req, res, next) {
     const queryText = "INSERT INTO purchasedetails(purchaseID, itemID, quantity) " +
         "SELECT purchaseID, $1, $3 FROM purchase " +
         "WHERE customerID = $2";
-    const values = [parseInt(req.params.itemID), parseInt(req.params.customerID), req.params.quantity];
+    const values = [parseInt(req.params.itemID), parseInt(req.user.userId), 1];
 
 
     client = new pg.Client(connectionString);

@@ -43,8 +43,9 @@ var $userInfoURL = $siteURL + '/user/info';
 
 /** KART ROUTES */
 var $kartURL = $siteURL + '/kart';
-var $deleteKartItemURL = $siteURL + '/kart/removeItem';
+var $deleteKartItemURL = $siteURL + '/kart/removeItem/';
 var $checkoutKartURL = $siteURL + '/kart/checkout';
+var $addItemToKart = $siteURL + '/kart/addItem/';
 
 /** CATEGORY ROUTES */
 var $subCategoryURL = $siteURL + '/subCategory';
@@ -91,6 +92,38 @@ function processCheckout () {
         url: $checkoutKartURL,
         type: 'GET'
 
+    });
+}
+
+function deleteKartItem (element) {
+    var uuid = $(element).attr('name');
+    alert ('delete kart items: ' + uuid);
+    // ajax call to delete element
+    $.ajax ({
+        url: $deleteKartItemURL + '/' + uuid,
+        type: 'DELETE',
+
+        error: function (err) {
+            // User must sign in to access kart
+            alert ('error');
+            return false;
+        }
+    });
+    return true;
+}
+
+function addItemToKart (element) {
+    var uuid = $(element).attr('name');
+
+    $.ajax ({
+        url: $addItemToKart + '/' + uuid,
+        type: 'PUT',
+
+        error: function (err) {
+            // User must sign in to access kart
+            alert ('error');
+            return false;
+        }
     });
 }
 
@@ -224,23 +257,6 @@ function displayProfileKartItems (rows) {
     else
         totalPrice = totalPrice.toPrecision(4);
     $('.kart-total-price').text('$ ' + totalPrice);
-}
-
-function deleteKartItem (element) {
-    var uuid = $(element).attr('name');
-    alert ('delete kart items: ' + uuid);
-    // ajax call to delete element
-    $.ajax ({
-        url: $deleteKartItemURL + '/' + $User.email + '/' + uuid,
-        type: 'DELETE',
-
-        error: function (err) {
-            // User must sign in to access kart
-            alert ('error');
-            return false;
-        }
-    });
-    return true;
 }
 
 // =========================================================================

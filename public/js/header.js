@@ -237,16 +237,10 @@ $(document).ready(function () {
         var $this = $(this);
         var uuid = $this.attr('name');
         //alert ('delete: ' + uuid);
-        $.ajax ({
-            url: $deleteKartItemURL + '/' + $User.email + '/' + uuid,
-            type: 'DELETE',
-
-            error: function (err) {
-                // User must sign in to access kart
-                alert ('error');
-                return;
-            }
-        }).then(stuff);
+        if (deleteKartItem($this)) {
+            var deletedItem = $this.parent('span').parent('span').parent('li');
+            deletedItem.remove();
+        }
     });
 
     function stuff() {
