@@ -45,7 +45,7 @@ var $userInfoURL = $siteURL + '/user/info';
 var $kartURL = $siteURL + '/kart';
 var $deleteKartItemURL = $siteURL + '/kart/removeItem/';
 var $checkoutKartURL = $siteURL + '/kart/checkout';
-var $addItemToKart = $siteURL + '/kart/addItem/';
+var $addItemToKartURL = $siteURL + '/kart/addItem/';
 
 /** CATEGORY ROUTES */
 var $subCategoryURL = $siteURL + '/subCategory';
@@ -55,6 +55,8 @@ var $categoryMenURL = $siteURL + '/category_men';
 /** LOGIN ROUTES */
 var $logInURL = $siteURL + '/login';
 var $logOutURL = $siteURL + '/logout';
+
+var $getItemURL = $siteURL + '/item';
 
 /**
  * Ajax call to the server to retrieve the kart items contained by the
@@ -116,7 +118,7 @@ function addItemToKart (element) {
     var uuid = $(element).attr('name');
 
     $.ajax ({
-        url: $addItemToKart + '/' + uuid,
+        url: $addItemToKartURL + '/' + uuid,
         type: 'PUT',
 
         error: function (err) {
@@ -125,6 +127,19 @@ function addItemToKart (element) {
             return false;
         }
     });
+}
+
+function getItem (uuid, func) {
+    $.ajax ({
+        url: $getItemURL + '/' + uuid,
+        type: 'GET',
+
+        error: function (err) {
+            // User must sign in to access kart
+            alert ('Error in getItem');
+            return false;
+        }
+    }).then(func);
 }
 
 

@@ -144,7 +144,9 @@ function getItemsByPrice(req, res, next) {
 }
 
 function getItemByItemID(req, res, next) {
-    var itemID = parseInt(req.params.itemid);
+    var itemID = req.params.itemid;
+
+    console.log('trying to get the item from database: ' + itemID);
 
     client = new pg.Client(connectionString);
     client.connect();
