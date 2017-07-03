@@ -1,16 +1,12 @@
-/*
 CREATE TABLE customer (
-	CustomerID varchar(255) NOT NULL,
-	Name varchar(255),
+	CustomerID SERIAL PRIMARY KEY,
 	FirstName varchar(255),
 	LastName varchar(255),
-	AccessToken varchar(255) NOT NULL,
+	AccessToken varchar(255),
 	Address varchar(255),
 	Email varchar(255) NOT NULL,
-	Password varchar(255),
-	PRIMARY KEY (CustomerID)
+	Password varchar(255)
 );
-*/
 
 CREATE TABLE kart {
 
@@ -39,8 +35,7 @@ CREATE TABLE item (
 
 CREATE TABLE purchase (
 	PurchaseID SERIAL PRIMARY KEY,
-	Date date NOT NULL,
-	Email varchar(255)
+	CustomerID integer NOT NULL REFERENCES customer
 );
 
 CREATE TABLE purchasedetails (
@@ -96,8 +91,11 @@ INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation S
 INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 30\n Color:White', 129.99, 4);
 INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('ABrand Slim Fit Jeans', 'ABrand Slim Fit Jeans\nSize: 32\n Color:Black', 139.99, 4);
 
-INSERT INTO purchase(Date, Email) VALUES (now(), 'test');
-INSERT INTO purchase(Date, Email) VALUES (now(), 'guest');
+INSERT INTO customer(Email) VALUES ('test@gmail.com');
+INSERT INTO customer(Email) VALUES ('guest@gmail.com');
+
+INSERT INTO purchase(CustomerID) VALUES (1);
+INSERT INTO purchase(CustomerID) VALUES (2);
 
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 1, 2);
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 11, 1);
