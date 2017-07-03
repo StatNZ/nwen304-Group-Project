@@ -45,6 +45,20 @@ CREATE TABLE purchasedetails (
 	Quantity integer NOT NULL
 );
 
+CREATE OR REPLACE FUNCTION create_kart() RETURNS TRIGGER AS 
+$BODY$
+BEGIN 
+	INSERT INTO purchase(CustomerID) VALUES (new.CustomerID);
+	RETURN new;
+END;
+$BODY$
+language plpgsql;
+
+CREATE TRIGGER trig_kart
+	AFTER INSERT ON customer
+	FOR EACH ROW 
+	EXECUTE PROCEDURE create_kart();
+
 INSERT INTO category (Name, Gender) VALUES ('Tops', 'M');
 INSERT INTO category (Name, Gender) VALUES ('Bottoms', 'M');
 INSERT INTO category (Name, Gender) VALUES ('Tops', 'F');
@@ -97,10 +111,8 @@ INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Plain T-Shir
 INSERT INTO customer(Email) VALUES ('test@gmail.com');
 INSERT INTO customer(Email) VALUES ('guest@gmail.com');
 
-INSERT INTO purchase(CustomerID) VALUES (1);
-INSERT INTO purchase(CustomerID) VALUES (2);
-
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 1, 2);
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 11, 1);
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (1, 13, 1);
 INSERT INTO purchasedetails(PurchaseID, ItemID, Quantity) VALUES (2, 5, 1);
+
