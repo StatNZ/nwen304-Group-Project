@@ -222,10 +222,21 @@ div.desc {
 }
 
 #item-name1, #item-price1{
-    margin-top: 200px;
+
     color: black;
 }
 
 #item-name1:hover{
     text-decoration: none;
+}
+
+#category-img1 {
+    margin-top: -300px;
+    margin-left: 300px;
+}
+
+.desc1{
+    margin-left: 900px;
+    margin-top: -500px;
+    height: 550px;
 }

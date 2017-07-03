@@ -81,31 +81,11 @@ $(document).ready(function () {
             $('#category-item-display').hide();
             $('.gender-cas').show('clip', 250);
 
-            //need check for what item it is
-            //var i;
-            //for(i=0; i<rows.length; i++) {
             // doesn't display correct one
             $('#item-name1').text(rows[0].name);
-            //$('#item-price').text(rows[i].price);
             $('#item-price1').text(rows[0].price);
-            $('#category-img').attr('src', rows[0].imagesource);
-            //}
+            //$('#category-img').attr('src', rows[0].imagesource);
 
-            /* var productdisp = '' +
-             ' <a href="#" >' +
-             ' <img id="category-img" src="" alt="" width="300" height="200" >' +
-             ' </a>' +
-             ' <div class="desc">' +
-             ' <a id="item-name">name</a>' +
-             ' </div>' +
-             ' <div class="desc">' +
-             ' <a id="item-price">price</a>' +
-             ' </div>';
-
-             var disp = $(productdisp);
-             disp.find('.item-name').text(name);
-             disp.find('.item-price').text(price);
-             disp.find('.category-img').attr('src', image);*/
         }
 
     }
