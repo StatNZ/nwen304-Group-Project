@@ -44,7 +44,7 @@ $(document).ready(function () {
 
          }*/
          //alert (rows[0].name);
-
+        alert(rows);
         var i;
 
         for (i=0; i<rows.length; i++) {

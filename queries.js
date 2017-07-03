@@ -23,7 +23,7 @@ function test(req, res, next) {
 }
 
 function getItemsByGender(req, res, next) {
-    var gender = req.params.gender;
+    var gender = req.params.gender.charAt(0).toUpperCase();
     client = new pg.Client(connectionString);
     client.connect();
 
