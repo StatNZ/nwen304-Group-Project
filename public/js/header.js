@@ -234,17 +234,30 @@ $(document).ready(function () {
 
     $('#kart-display-header').on('click', '.kart-item-delete-btn', function () {
         // call gloabal vars function to run
-        if (deleteKartItem($(this))) {
-            var deleteItem = $(this).parent('span').parent('li');
-            deleteItem.effect('puff', function () {
-                deleteItem.remove();
-            });
-            alert ('deleted');
-            return;
-        }
-        alert ('no delete');
-        // else error display module
+        var $this = $(this);
+        var uuid = $this.attr('name');
+        //alert ('delete: ' + uuid);
+        $.ajax ({
+            url: $deleteKartItemURL + '/' + $User.email + '/' + uuid,
+            type: 'DELETE',
+
+            error: function (err) {
+                // User must sign in to access kart
+                alert ('error');
+                return;
+            }
+        }).then(stuff);
     });
+
+    function stuff() {
+        var deleteItem = $(this).parent('span').parent('li');
+        deleteItem.remove();
+        alert ('deleted');
+    }
+
+    // $('#kart-dropdown').on('click', function () {
+    //     $('#kart-dropdown-items').slideDown();
+    // });
 
 });
 

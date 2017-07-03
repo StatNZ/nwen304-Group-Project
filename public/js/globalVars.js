@@ -28,8 +28,8 @@ window.onload = function () {
 /**
  * @type {string} URL to redirect to
  */
-// var $siteURL = 'http://localhost:3000';
-var $siteURL = 'https://urbanapparel.herokuapp.com';
+var $siteURL = 'http://localhost:3000';
+// var $siteURL = 'https://urbanapparel.herokuapp.com';
 
 var $searchURL = $siteURL + '/search';
 
@@ -152,9 +152,7 @@ function displayDrowdownKartItems (rows) {
         newItem.find('.item-name').text(rows[i].name);
         newItem.find('.item-price').text(rows[i].price);
 
-        newItem.hide();
         $('#kart-display-header').prepend(newItem);
-        newItem.show('clip',250).effect('highlight',1000);
     }
 
     // append 'view cart' to the back
@@ -216,9 +214,7 @@ function displayProfileKartItems (rows) {
         newItem.find('.item-price').text(price);
         newItem.find('.item-subtotal').text(subTotal);
 
-        newItem.hide();
         $('#kart-display-profile').prepend(newItem);
-        newItem.show('clip',250).effect('highlight',1000);
     }
 
     //update total price, to be precise
@@ -232,7 +228,7 @@ function displayProfileKartItems (rows) {
 
 function deleteKartItem (element) {
     var uuid = $(element).attr('name');
-
+    alert ('delete kart items: ' + uuid);
     // ajax call to delete element
     $.ajax ({
         url: $deleteKartItemURL + '/' + $User.email + '/' + uuid,
@@ -240,6 +236,7 @@ function deleteKartItem (element) {
 
         error: function (err) {
             // User must sign in to access kart
+            alert ('error');
             return false;
         }
     });

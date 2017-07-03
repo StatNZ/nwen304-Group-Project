@@ -84,22 +84,61 @@ module.exports = function (app, passport) {
     // CATEGORY ROUTES =========================================================
     // =========================================================================
 
-    app.get('/subCategory', function (req, res) {
-        res.render('sub_category');
+    /* Get mens categories page. */
+    app.get('/men', function (req, res) {
+        console.log('called men category');
+        res.render ('categories', {
+            // returns get items by gender
+            gender: 'MEN',
+            callback: '/categories/men'
+        });
+
     });
 
-    /* Get categories page. */
-    app.get('/category_men', function (req, res) {
-        res.render ('categories');
+    /* Get womens categories page. */
+    app.get('/women', function (req, res) {
+        res.render ('categories', {
+            // returns get items by gender
+            gender: 'WOMEN',
+            callback: '/categories/women'
+        });
+    });
 
+    var store;
+    app.get("/men/:subcategory", function (req, res) {
+        var subcat = req.params.subcategory;
+        console.log(subcat);
+
+        store = {
+            gender: 'MEN',
+            subcat: subcat.toUpperCase(),
+            callback: '/categories/men/' + subcat
+        };
+
+        // because this plays up all the time
+        res.redirect('/subcategory');
+    });
+
+    app.get('/subcategory', function (req, res) {
+        res.render('sub_category', store);
+    });
+
+    app.get('/women/:subcategory', function (req, res) {
+        var subcat = req.params.subcategory;
+
+        store = {
+            // returns get items by gender/category (shirt,tops,etc)
+            gender: 'WOMEN',
+            subcat: subcat,
+            callback: '/categories/women/' + subcat
+        }
+
+        res.redirect('/subcategory');
     });
 
 
 
-    /* Get categories page. */
-    app.get('/category_women', function (req, res) {
-        res.render ('categories');
-    });
+
 
     // =========================================================================
     // KART ROUTES =============================================================
@@ -176,10 +215,10 @@ module.exports = function (app, passport) {
 
     /* Database Query Routes */
     //app.get('/items/:category', db.getItemsByCategory);
-    app.get('/category/:gender', db.test);
-    // app.get('/categories/:gender', db.getItemsByGender);
-    //app.get('/categories/:gender/:category', db.getItemsByCategory);
-    app.get('/categories/:gender/:category', db.test);
+    // app.get('/category/:gender', db.test);
+    app.get('/categories/:gender', db.getItemsByGender);
+    app.get('/categories/:gender/:category', db.getItemsByCategory);
+    // app.get('/categories/:gender/:category', db.test);
     //app.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
     app.get('/categories/:gender/:category/:subcategory', db.test);
     app.get('/search/:desc', db.getItemsByDescription);
@@ -208,7 +247,7 @@ function isLoggedIn(req, res, next) {
     // user is not logged in, raise error for user
     console.log ('user not logged in');
     //res.sendStatus(404);
-    res.redirect('/');
+    res.redirect('/login');
 }
 
 /**

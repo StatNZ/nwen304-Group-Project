@@ -19,13 +19,13 @@ require('./config/paspport')(passport);
 
 // forces us to become https
 // must go live on heroku
-app.use(function (req, res, next) {
-    if (req.headers['x-forwarded-proto'] !== 'https') {
-        let https = ['https://urbanapparel.herokuapp.com', req.url].join('');
-        return res.redirect(https);
-    }
-    return next();
-});
+// app.use(function (req, res, next) {
+//     if (req.headers['x-forwarded-proto'] !== 'https') {
+//         let https = ['https://urbanapparel.herokuapp.com', req.url].join('');
+//         return res.redirect(https);
+//     }
+//     return next();
+// });
 
 
 // uncomment after placing your favicon in /public

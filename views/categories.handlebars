@@ -1,34 +1,35 @@
 
 
-<div id="lhs-info-bar" class="men-sec-shirt">
-    <div class="breadcrumb-bar">
-        <a href="/">HOME</a> / <a style="color: #9d9d9d" id="cat-gender"></a>
+<div id="main-body">
+    <div id="lhs-info-bar" class="men-sec-shirt">
+        <div class="breadcrumb-bar">
+            <a href="/">HOME</a> / {{#if callback}} <a name="{{callback}}" id="cat-gender-call" style="color: #9d9d9d;">{{gender}}</a>{{/if}}
+        </div>
+        <div class="filter">
+            <a href="#" class="filter-title">SHOP BY LOOK</a>
+            <ul id="display-men-shirts">
+                <li><a href="#" class="filter-formal">Formal</a></li>
+                <li><a href="#" class="filter-content">Casual</a></li>
+                <li><a href="#" class="filter-content">Active</a></li>
+                <li><a href="#" class="filter-content">Lounge Wear</a></li>
+            </ul>
+            <a href="#" class="filter-title">SHOP BY BRAND</a>
+            <ul id="display-men-shirts">
+                <li><a href="#" class="filter-content">Calvin Klein</a></li>
+                <li><a href="#" class="filter-content">Tommy Hilfiger</a></li>
+                <li><a href="#" class="filter-content">Country Road</a></li>
+                <li><a href="#" class="filter-content">Lacoste</a></li>
+                <li><a href="#" class="filter-content">More brands</a></li>
+            </ul>
+            <a href="#" class="filter-title">SHOP BY PRICE</a>
+            <ul id="display-men-shirts">
+                <li><a href="#" class="filter-content">$5-$50</a></li>
+                <li><a href="#" class="filter-content">$50-$100</a></li>
+                <li><a href="#" class="filter-content">$100-$500</a></li>
+                <li><a href="#" class="filter-content">$500-$1000</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="filter">
-        <a href="#" class="filter-title">SHOP BY LOOK</a>
-        <ul id="display-men-shirts">
-            <li><a href="#" class="filter-formal">Formal</a></li>
-            <li><a href="#" class="filter-content">Casual</a></li>
-            <li><a href="#" class="filter-content">Active</a></li>
-            <li><a href="#" class="filter-content">Lounge Wear</a></li>
-        </ul>
-        <a href="#" class="filter-title">SHOP BY BRAND</a>
-        <ul id="display-men-shirts">
-            <li><a href="#" class="filter-content">Calvin Klein</a></li>
-            <li><a href="#" class="filter-content">Tommy Hilfiger</a></li>
-            <li><a href="#" class="filter-content">Country Road</a></li>
-            <li><a href="#" class="filter-content">Lacoste</a></li>
-            <li><a href="#" class="filter-content">More brands</a></li>
-        </ul>
-        <a href="#" class="filter-title">SHOP BY PRICE</a>
-        <ul id="display-men-shirts">
-            <li><a href="#" class="filter-content">$5-$50</a></li>
-            <li><a href="#" class="filter-content">$50-$100</a></li>
-            <li><a href="#" class="filter-content">$100-$500</a></li>
-            <li><a href="#" class="filter-content">$500-$1000</a></li>
-        </ul>
-    </div>
-</div>
 
     <div id="category-item-display">
         <table id="cart" class="table table-hover table-condensed">
@@ -37,17 +38,6 @@
             </tbody>
         </table>
     </div>
-
-    <div id="gender-cat" class="gender-cas">
-            <a href="#" >
-                <img id="category-img" src="" alt="" width="300" height="200" >
-            </a>
-            <div class="desc">
-                <a id="item-name"></a>
-            </div>
-            <div class="desc">
-                <a id="item-price"></a>
-            </div>
-    </div>
+</div>
 
 <script src="js/categories.js"></script>

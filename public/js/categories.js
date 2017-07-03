@@ -5,8 +5,6 @@
 
 // call to get information
 $(document).ready(function () {
-    var newHrf = location.href.replace('_', '/');
-    var gender = newHrf.replace('http://localhost:3000/category/', ' ').trim();
 
     var uuid;
     var name;
@@ -14,11 +12,19 @@ $(document).ready(function () {
     var price;
     var image;
 
+    var gender = $('#cat-gender-call').text().trim();
+    var callback = $('#cat-gender-call').attr('name');
+
     window.onload = function () {
 
+        // this callback was sent from the server and stored in this
+        // attribute
+
+
         $.ajax({
+
+            url: $siteURL + callback,
             type: 'GET',
-            url: newHrf,
 
             error: function (error) {
                 alert ('something gone wrong');
@@ -26,8 +32,6 @@ $(document).ready(function () {
 
         }).then(displayCategoryItems);
     };
-
-    $('#cat-gender').text(gender.toUpperCase());
 
     function displayCategoryItems (rows) {
          /*var i;
@@ -67,15 +71,12 @@ $(document).ready(function () {
                 '                   </div>' +
                 '               </div>' +
                 '           </div>'+
-                '       </div>';//+
+                '       </div>';
 
             var disp = $(product_disp);
             //disp.find('.kart-item-delete-btn').attr('name', uuid);
             disp.find('.item-name').text(name);
-            //disp.find('.category-img').attr('src', image);
-            //disp.find('.item-description').text(desc);
-            //disp.find('.nomargin').text(name);
-            disp.find('.item-price').text(price);
+            disp.find('.item-name').attr('href', '/' + gender + '/' + name.trim());
 
 
             $('#catpage-display-items').prepend(disp);
@@ -87,12 +88,12 @@ $(document).ready(function () {
     }
     //should be taken to view the actual product webpage
     $('#catpage-display-items').on('click', '.gallery',  function(){
-        //alert('item info');
-        //alert(location);
+        // alert ('redirecting');
+        // window.redirect($siteURL + '/' + gender + '/' + $(this).find('.item-name').text());
 
-        $("#catpage-display-items").empty();// use .empty() to clear out function???
-        //delete displayCategoryItems;
-        displayItem();
+        // $("#catpage-display-items").empty();// use .empty() to clear out function???
+        // //delete displayCategoryItems;
+        // displayItem();
     });
 
     function displayItem(rows) {

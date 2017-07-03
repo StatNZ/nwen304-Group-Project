@@ -3,7 +3,7 @@
 
     <div id="lhs-info-bar" class="men-sec-shirt">
         <div class="breadcrumb-bar">
-            <a href="/">HOME</a> / <a id="cat-gender"> ... </a> <a id="gender-shirt"> ... </a>
+            <a href="/">HOME</a> / {{#if callback}} <a name="{{callback}}" id="cat-gender-call" style="color: #9d9d9d;">{{gender}}</a> / <a name="{{callback}}" id="cat-subcat" style="color: #9d9d9d;">{{subcat}}</a>{{/if}}
         </div>
         <div class="filter">
             <a href="#" class="filter-title">SHOP BY STYLE</a>
@@ -31,100 +31,120 @@
     </div>
 
     <div id="category-item-display">
-
-        <!--<table id="cart" class="table table-hover table-condensed">
+        <table id="cart" class="table table-hover table-condensed">
             <tbody id="catpage-display-items">
-            &lt;!&ndash; Add items in here via javascript &ndash;&gt;
+            <!-- Add items in here via javascript -->
             </tbody>
-        </table>-->
+        </table>
     </div>
 
-    <!--<div id="men-casual" class="men-cas">
-        <div class="responsive">
-            <div class="gallery">
-                <a href="#" onclick="dispMenCas1()">
-                    <img src="images/men-shirt1.jpg" width="300" height="200">
-                </a>
-                <div class="desc">MEN CASUAL</div>
-            </div>
+    <div id="gender-cat" class="gender-cas">
+        <a href="#" >
+            <img id="category-img" src="" alt="" width="300" height="200" >
+        </a>
+        <div class="desc">
+            <a id="item-name"></a>
         </div>
-
-
-        <div class="responsive">
-            <div class="gallery">
-                <a href="#">
-                    <img src="images/men-shirt2.jpg" width="600" height="400">
-                </a>
-                <div class="desc">MEN CASUAL</div>
-            </div>
+        <div class="desc">
+            <a id="item-price"></a>
         </div>
-
-        <div class="responsive" >
-            <div class="gallery">
-                <a href="#">
-                    <img src="images/men-shirt3.jpg" width="600" height="400">
-                </a>
-                <div class="desc">MEN CASUAL</div>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
     </div>
 
-    <div id="men-formal" class="men-form">
-        <div class="responsive">
-            <div class="gallery">
-                <a href="#">
-                    <img src="images/men-shirt1.jpg" width="300" height="200">
-                </a>
-                <div class="desc">MEN FORMAL</div>
-            </div>
-        </div>
+    <!--<div id="category-item-display">-->
+
+        <!--&lt;!&ndash;<table id="cart" class="table table-hover table-condensed">-->
+            <!--<tbody id="catpage-display-items">-->
+            <!--&lt;!&ndash; Add items in here via javascript &ndash;&gt;-->
+            <!--</tbody>-->
+        <!--</table>&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;<div id="men-casual" class="men-cas">-->
+        <!--<div class="responsive">-->
+            <!--<div class="gallery">-->
+                <!--<a href="#" onclick="dispMenCas1()">-->
+                    <!--<img src="images/men-shirt1.jpg" width="300" height="200">-->
+                <!--</a>-->
+                <!--<div class="desc">MEN CASUAL</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
 
-        <div class="responsive">
-            <div class="gallery">
-                <a href="#">
-                    <img src="images/men-shirt2.jpg" width="600" height="400">
-                </a>
-                <div class="desc">MEN FORMAL</div>
-            </div>
-        </div>
+        <!--<div class="responsive">-->
+            <!--<div class="gallery">-->
+                <!--<a href="#">-->
+                    <!--<img src="images/men-shirt2.jpg" width="600" height="400">-->
+                <!--</a>-->
+                <!--<div class="desc">MEN CASUAL</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="responsive" >
-            <div class="gallery">
-                <a href="#">
-                    <img src="images/men-shirt3.jpg" width="600" height="400">
-                </a>
-                <div class="desc">MEN FORMAL</div>
-            </div>
-        </div>
+        <!--<div class="responsive" >-->
+            <!--<div class="gallery">-->
+                <!--<a href="#">-->
+                    <!--<img src="images/men-shirt3.jpg" width="600" height="400">-->
+                <!--</a>-->
+                <!--<div class="desc">MEN CASUAL</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="clearfix"></div>
-    </div>-->
-</div>
+        <!--<div class="clearfix"></div>-->
+    <!--</div>-->
+
+    <!--<div id="men-formal" class="men-form">-->
+        <!--<div class="responsive">-->
+            <!--<div class="gallery">-->
+                <!--<a href="#">-->
+                    <!--<img src="images/men-shirt1.jpg" width="300" height="200">-->
+                <!--</a>-->
+                <!--<div class="desc">MEN FORMAL</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
 
-<!--
-<div id="men-casual-top1" class="men-cas-top1">
-    <div class="men-img1">
-        <img src="images/men-shirt1.jpg">
+        <!--<div class="responsive">-->
+            <!--<div class="gallery">-->
+                <!--<a href="#">-->
+                    <!--<img src="images/men-shirt2.jpg" width="600" height="400">-->
+                <!--</a>-->
+                <!--<div class="desc">MEN FORMAL</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-    </div>
+        <!--<div class="responsive" >-->
+            <!--<div class="gallery">-->
+                <!--<a href="#">-->
+                    <!--<img src="images/men-shirt3.jpg" width="600" height="400">-->
+                <!--</a>-->
+                <!--<div class="desc">MEN FORMAL</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-    <div class="add-to-cart">
-        <a>Add to cart!</a>
-    </div>
+        <!--<div class="clearfix"></div>-->
+    <!--</div>&ndash;&gt;-->
+<!--</div>-->
 
-    <div class="men-img1-description">
-        <p>$120 (get price from db)</p>
-        <p>(get description from db)</p>
-        <p>out of stock? get info from db</p>
-        <p>Product code</p>
-        <p> </p>
-    </div>
 
-</div>-->
+<!--&lt;!&ndash;-->
+<!--<div id="men-casual-top1" class="men-cas-top1">-->
+    <!--<div class="men-img1">-->
+        <!--<img src="images/men-shirt1.jpg">-->
+
+    <!--</div>-->
+
+    <!--<div class="add-to-cart">-->
+        <!--<a>Add to cart!</a>-->
+    <!--</div>-->
+
+    <!--<div class="men-img1-description">-->
+        <!--<p>$120 (get price from db)</p>-->
+        <!--<p>(get description from db)</p>-->
+        <!--<p>out of stock? get info from db</p>-->
+        <!--<p>Product code</p>-->
+        <!--<p> </p>-->
+    <!--</div>-->
+
+<!--</div>&ndash;&gt;-->
 
 
 
