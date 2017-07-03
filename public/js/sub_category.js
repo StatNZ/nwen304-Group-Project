@@ -8,6 +8,12 @@ $(document).ready(function () {
     var subcat = $('#cat-subcat').text();
     var href = $('#cat-gender-call').attr('name');
 
+
+    var uuid;
+    var name;
+    var desc;
+    var price;
+    var image;
     window.onload = function () {
 
         $.ajax({
@@ -27,11 +33,11 @@ $(document).ready(function () {
         var i;
 
         for (i=0; i<rows.length; i++) {
-            var uuid = rows[i].itemid;
-            var name = rows[i].name;
-            var desc = rows[i].description;
-            var price = rows[i].price;
-            var image = rows[i].imagesource;
+            uuid = rows[i].itemid;
+            name = rows[i].name;
+            desc = rows[i].description;
+            price = rows[i].price;
+            image = rows[i].imagesource;
 
 
             var product_disp = '' +
@@ -82,9 +88,9 @@ $(document).ready(function () {
             //var i;
             //for(i=0; i<rows.length; i++) {
             // doesn't display correct one
-            $('#item-name').text(name);
+            $('#item-name1').text(name);
             //$('#item-price').text(rows[i].price);
-            $('#item-price').text(price);
+            $('#item-price1').text(price);
             $('#category-img').image(image);
             //}
 
