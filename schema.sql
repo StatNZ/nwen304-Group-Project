@@ -1,11 +1,12 @@
 CREATE TABLE customer (
-	CustomerID SERIAL PRIMARY KEY,
+	CustomerID varchar(255) NOT NULL,
 	FirstName varchar(255),
 	LastName varchar(255),
 	AccessToken varchar(255),
 	Address varchar(255),
 	Email varchar(255) NOT NULL,
-	Password varchar(255)
+	Password varchar(255),
+	PRIMARY KEY (CustomerID)
 );
 
 CREATE TABLE category (
@@ -31,7 +32,7 @@ CREATE TABLE item (
 
 CREATE TABLE purchase (
 	PurchaseID SERIAL PRIMARY KEY,
-	CustomerID integer NOT NULL REFERENCES customer
+	CustomerID varchar NOT NULL REFERENCES customer
 );
 
 CREATE TABLE purchasedetails (

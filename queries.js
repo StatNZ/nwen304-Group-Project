@@ -1,8 +1,8 @@
 var pg = require('pg');
 
 //var connectionString = 'postgres://lewiskier:nwen304databasepass@depot:5432/lewiskier_jdbc';
-var connectionString = 'postgres://monaruan:urban@localhost:5432/urban_apparel';
 // var connectionString = 'postgres://monaruan:urban@localhost:5432/urban_apparel';
+var connectionString = 'postgres://jackmac:urban@localhost:5432/urban_apparel';
 // var connectionString = 'postgres://mwfhvxkwcmovyn:75c651736433430e45e42fd6b0e1ac98a67d7ecc15792ea738fdc7a8a7f94c14@ec2-174-129-227-116.compute-1.amazonaws.com:5432/deqra3kji894nd';
 
 
@@ -31,14 +31,15 @@ function test(req, res, next) {
 }
 
 function getItemsByGender(req, res, next) {
-    var gender = req.params.gender;
+    var gender = req.params.gender.toUpperCase();
     client = new pg.Client(connectionString);
     client.connect();
 
-    var query = client.query("SELECT * FROM item WHERE subcategoryid IN " +
-        "(SELECT s.SubCategoryID FROM subcategory s " +
-        "INNER JOIN category c ON s.CategoryID = c.CategoryID " +
-        "WHERE c.gender = '" + gender + "')");
+    // var query = client.query("SELECT * FROM item WHERE subcategoryid IN " +
+    //     "(SELECT s.SubCategoryID FROM subcategory s " +
+    //     "INNER JOIN category c ON s.CategoryID = c.CategoryID " +
+    //     "WHERE c.gender = '" + gender + "')");
+    var query = client.query("SELECT * FROM category WHERE gender = '" + gender + "'");
     var results = [];
 
    query.on('row', function(row) {
@@ -56,13 +57,16 @@ function getItemsByGender(req, res, next) {
 }
 
 function getItemsByCategory(req, res, next) {
-    var gender = req.params.gender;
+    var gender = req.params.gender.toUpperCase();
     var category = req.params.category;
 
     client = new pg.Client(connectionString);
     client.connect();
 
-    var query = client.query("SELECT * FROM item WHERE subcategoryid IN (SELECT s.SubCategoryID FROM subcategory s INNER JOIN category c ON s.CategoryID = c.CategoryID WHERE c.gender = '" + gender + "' AND c.name = '" + category + "')");
+    var query = client.query("SELECT * FROM item WHERE subcategoryid IN " +
+        "(SELECT s.SubCategoryID FROM subcategory s " +
+        "INNER JOIN category c ON s.CategoryID = c.CategoryID " +
+        "WHERE c.gender = '" + gender + "' AND c.name = '" + category + "')");
     var results = [];
 
     query.on('row', function(row) {
@@ -83,7 +87,11 @@ function getItemsBySubcategory(req, res, next) {
     client = new pg.Client(connectionString);
     client.connect();
 
-    var query = client.query("SELECT * FROM item WHERE subcategoryid IN (SELECT s.SubCategoryID FROM subcategory s INNER JOIN category c ON s.CategoryID = c.CategoryID WHERE c.gender = '" + gender + "' AND c.name = '" + category + "' AND s.name = '" + subcategory + "')");
+    var query = client.query("SELECT * FROM item " +
+        "WHERE subcategoryid IN (SELECT s.SubCategoryID " +
+        "FROM subcategory s " +
+        "INNER JOIN category c ON s.CategoryID = c.CategoryID " +
+        "WHERE c.gender = '" + gender + "' AND c.name = '" + category + "' AND s.name = '" + subcategory + "')");
     var results = [];
 
     query.on('row', function(row) {
@@ -160,7 +168,8 @@ function getKart(req, res, next) {
     client = new pg.Client(connectionString);
     client.connect();
 
-    var query = client.query("SELECT itemid, quantity FROM purchasedetails pd INNER JOIN purchase p ON p.purchaseid = pd.purchaseid WHERE email = '" + email + "'");
+    var query = client.query("SELECT itemid, quantity " +
+        "FROM purchasedetails pd INNER JOIN purchase p ON p.purchaseid = pd.purchaseid WHERE email = '" + email + "'");
     var results = [];
 
     query.on('row', function(row) {

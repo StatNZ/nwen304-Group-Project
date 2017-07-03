@@ -21,7 +21,7 @@ function User() {
     this.save = function (callback) {
         connectDB();
         console.log('Saving new user into database');
-        client.query('INSERT INTO customer(CustomerID, FirstName, LastName, AccessToken, Name, Email, Address, Password) ' +
+        client.query('INSERT INTO customer(CustomerID, FirstName, LastName, AccessToken, Email, Address, Password) ' +
             'VALUES($1, $2, $3, $4, $5, $6, $7, $8)',
             [this.userId, this.first_name, this.last_name, this.accessToken, this.user_name,
                 this.email, this.address, this.password], function (err, result) {
@@ -81,7 +81,7 @@ User.findOne = function (id, callback) {
 
 function buildUser (result) {
     var newUser = new User();
-    newUser.user_name = result.rows[0].name;
+    newUser.user_name = result.rows[0].firstname + ' ' + result.rows[0].lastname;
     newUser.first_name = result.rows[0].firstname;
     newUser.last_name = result.rows[0].lastname;
     newUser.accessToken = result.rows[0].acesstoken;
