@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/men-shirt1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/men-shirts.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/queries.js" afterPath="$PROJECT_DIR$/queries.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,19 +42,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="categories.handlebars" pinned="false" current-in-tab="true">
+      <file leaf-file-name="categories.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/categories.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="496">
+              <caret line="31" column="10" lean-forward="false" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.handlebars" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile.handlebars" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/profile.handlebars">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
@@ -86,11 +85,11 @@
       <file leaf-file-name="categories.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/categories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="81" column="21" lean-forward="false" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
+            <state relative-caret-position="215">
+              <caret line="63" column="71" lean-forward="false" selection-start-line="63" selection-start-column="71" selection-end-line="63" selection-end-column="71" />
               <folding>
-                <marker date="1499057341000" expanded="true" signature="1908:1920" ph="..." />
-                <marker date="1499057341000" expanded="true" signature="2104:2116" ph="..." />
+                <marker date="1499058222000" expanded="true" signature="1908:1920" ph="..." />
+                <marker date="1499058222000" expanded="true" signature="2104:2116" ph="..." />
               </folding>
             </state>
           </provider>
@@ -202,8 +201,8 @@
         <option value="$PROJECT_DIR$/app/routes.js" />
         <option value="$PROJECT_DIR$/views/sub_category.handlebars" />
         <option value="$PROJECT_DIR$/views/layouts/main.handlebars" />
-        <option value="$PROJECT_DIR$/public/js/categories.js" />
         <option value="$PROJECT_DIR$/public/js/sub_category.js" />
+        <option value="$PROJECT_DIR$/public/js/categories.js" />
         <option value="$PROJECT_DIR$/views/categories.handlebars" />
       </list>
     </option>
@@ -328,24 +327,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nwen304-Group-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nwen304-Group-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -633,13 +614,6 @@
       <workItem from="1498888635761" duration="28692000" />
       <workItem from="1498957236337" duration="5183000" />
       <workItem from="1498993560296" duration="4671000" />
-    </task>
-    <task id="LOCAL-00005" summary="test">
-      <created>1495597365550</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1495597365550</updated>
     </task>
     <task id="LOCAL-00006" summary="Change header css">
       <created>1495597526993</created>
@@ -977,11 +951,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499057915845</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="fixed the getItemsByGender query">
+      <created>1499057952564</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1499057952566</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226375000" />
+    <option name="totallyTimeSpent" value="226806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1044,7 +1025,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="resizing categories.handlebars layout, near complete" />
     <MESSAGE value="adding in what needs to be pulled from database" />
     <MESSAGE value="Completed fb OAuth" />
     <MESSAGE value="Updated Customer schema, added accestoken and took away not null on certain entries" />
@@ -1069,7 +1049,8 @@
     <MESSAGE value="made some changes to monas code" />
     <MESSAGE value="fixed search bar stuff" />
     <MESSAGE value="fixed all of monas stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed all of monas stuff" />
+    <MESSAGE value="fixed the getItemsByGender query" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the getItemsByGender query" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1362,14 +1343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/globalVars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="31" column="53" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/sub_category.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
@@ -1382,6 +1355,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/categories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="63" column="71" lean-forward="false" selection-start-line="63" selection-start-column="71" selection-end-line="63" selection-end-column="71" />
+          <folding>
+            <marker date="1499058222000" expanded="true" signature="1908:1920" ph="..." />
+            <marker date="1499058222000" expanded="true" signature="2104:2116" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/globalVars.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="31" column="53" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/sub_category.handlebars">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
@@ -1390,14 +1382,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/categories.js">
+    <entry file="file://$PROJECT_DIR$/views/categories.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="81" column="21" lean-forward="false" selection-start-line="81" selection-start-column="21" selection-end-line="81" selection-end-column="21" />
-          <folding>
-            <marker date="1499057341000" expanded="true" signature="1908:1920" ph="..." />
-            <marker date="1499057341000" expanded="true" signature="2104:2116" ph="..." />
-          </folding>
+        <state relative-caret-position="496">
+          <caret line="31" column="10" lean-forward="false" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1411,16 +1400,6 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/categories.handlebars">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
