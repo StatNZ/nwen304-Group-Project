@@ -74,6 +74,7 @@ $(document).ready(function () {
         //should be taken to view the actual product webpage
         $('#category-item-display').on('click', '.gallery',  function(){
              alert ('redirecting');
+             //window.redirect($siteURL);
              //window.redirect($siteURL + '/' + gender + '/' + $(this).find('.item-name').text());
 
              $("#category-item-display").empty();// use .empty() to clear out function???

@@ -136,6 +136,38 @@ module.exports = function (app, passport) {
         res.redirect('/subcategory');
     });
 
+    app.get('/item', function (req, res) {
+        res.render('item', store);
+    });
+
+    app.get("/men/:item", function (req, res) {
+        var subcat = req.params.item;
+        console.log(subcat);
+
+        store = {
+            gender: 'MEN',
+            subcat: subcat.toUpperCase(),
+            callback: '/categories/men/' + subcat
+        };
+
+        // because this plays up all the time
+        res.redirect('/item');
+    });
+
+    app.get("/women/:item", function (req, res) {
+        var subcat = req.params.item;
+        console.log(subcat);
+
+        store = {
+            gender: 'WOMEN',
+            subcat: subcat.toUpperCase(),
+            callback: '/categories/women/' + subcat
+        };
+
+        // because this plays up all the time
+        res.redirect('/item');
+    });
+
     // =========================================================================
     // KART ROUTES =============================================================
     // =========================================================================
