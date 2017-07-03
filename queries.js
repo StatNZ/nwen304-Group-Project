@@ -1,52 +1,62 @@
 var pg = require('pg');
 
 //var connectionString = 'postgres://lewiskier:nwen304databasepass@depot:5432/lewiskier_jdbc';
-//var connectionString = 'postgres://jackmac:urban@localhost:5432/urban_apparel';
 var connectionString = 'postgres://monaruan:urban@localhost:5432/urban_apparel';
+// var connectionString = 'postgres://monaruan:urban@localhost:5432/urban_apparel';
 // var connectionString = 'postgres://mwfhvxkwcmovyn:75c651736433430e45e42fd6b0e1ac98a67d7ecc15792ea738fdc7a8a7f94c14@ec2-174-129-227-116.compute-1.amazonaws.com:5432/deqra3kji894nd';
 
 
 function test(req, res, next) {
-    client = new pg.Client(connectionString);
-    client.connect();
-    var query = client.query("SELECT * FROM item WHERE description LIKE '%Black%'");
-    var results = [];
+	const queryText = "SELECT * FROM category WHERE gender = $1";
+	const values = ['C'];
 
-    query.on('row', function(row) {
-        results.push(row);
-    });
+   client = new pg.Client(connectionString);
+   client.connect();
 
-    query.on('end', function() {
-        client.end();
-        res.json(results);
-    });
+	var query = client.query(queryText, values);
+	var results = [];
+
+	query.on('row', function(row) {
+   	results.push(row);
+   });
+
+   query.on('error', function(error) {
+		console.log(error);
+   });
+
+	query.on('end', function() {
+   	client.end();
+      res.json(results);
+   });
 }
 
 function getItemsByGender(req, res, next) {
-    var gender = req.params.gender.toUpperCase();
+    var gender = req.params.gender;
     client = new pg.Client(connectionString);
     client.connect();
 
-    // var query = client.query("SELECT * FROM item WHERE subcategoryid IN " +
-    //     "(SELECT s.SubCategoryID FROM subcategory s " +
-    //     "INNER JOIN category c ON s.CategoryID = c.CategoryID " +
-    //     "WHERE c.gender = '" + gender + "')");
-    var query = client.query("SELECT * FROM category WHERE gender = '" + gender +"'");
-
+    var query = client.query("SELECT * FROM item WHERE subcategoryid IN " +
+        "(SELECT s.SubCategoryID FROM subcategory s " +
+        "INNER JOIN category c ON s.CategoryID = c.CategoryID " +
+        "WHERE c.gender = '" + gender + "')");
     var results = [];
 
-    query.on('row', function(row) {
-        results.push(row);
-    });
+   query.on('row', function(row) {
+   	results.push(row);
+   });
 
-    query.on('end', function() {
-        client.end();
-        res.json(results);
-    });
+   query.on('error', function(err) {
+   	console.log(err);
+	});
+
+   query.on('end', function() {
+   	client.end();
+   	res.json(results);
+   });
 }
 
 function getItemsByCategory(req, res, next) {
-    var gender = req.params.gender.toUpperCase();
+    var gender = req.params.gender;
     var category = req.params.category;
 
     client = new pg.Client(connectionString);
@@ -66,7 +76,7 @@ function getItemsByCategory(req, res, next) {
 }
 
 function getItemsBySubcategory(req, res, next) {
-    var gender = req.params.gender.toUpperCase();
+    var gender = req.params.gender;
     var category = req.params.category;
     var subcategory = req.params.subcategory;
 

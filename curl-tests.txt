@@ -1,0 +1,29 @@
+curl -X GET http://localhost:3000/categories/M
+curl -X GET http://localhost:3000/categories/F
+
+curl -X GET http://localhost:3000/categories/M/Tops
+curl -X GET http://localhost:3000/categories/M/Bottoms
+
+curl -X GET http://localhost:3000/categories/M/Tops/Shirts
+curl -X GET http://localhost:3000/categories/M/Bottoms/Jeans
+
+curl -X GET http://localhost:3000/search/black
+curl -X GET http://localhost:3000/search/Black
+curl -X GET http://localhost:3000/search/Medium
+
+curl -X GET http://localhost:3000/item/1
+curl -X GET http://localhost:3000/item/2
+
+curl -X GET http://localhost:3000/price/40-100
+curl -X GET http://localhost:3000/price/30-50
+
+curl -X GET http://localhost:3000/kart/1
+curl -X GET http://localhost:3000/kart/2
+
+//wont work as we need to be logged in
+curl -X DELETE http://localhost:3000/kart/removeItem/1/1 
+curl -X DELETE http://localhost:3000/kart/removeItem/2/5
+
+curl -X POST http://localhost:3000/kart/addItem/2/2/2
+
+curl -X PUT http://localhost:3000/user/update/1 -d '{"firstname:":"test", "email":"test@gmail.com"}'
