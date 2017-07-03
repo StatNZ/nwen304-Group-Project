@@ -1,7 +1,7 @@
 var pg = require('pg');
 
 //var connectionString = 'postgres://lewiskier:nwen304databasepass@depot:5432/lewiskier_jdbc';
-var connectionString = 'postgres://jackmac:urban@localhost:5432/urban_apparel';
+var connectionString = 'postgres://monaruan:urban@localhost:5432/urban_apparel';
 // var connectionString = 'postgres://monaruan:urban@localhost:5432/urban_apparel';
 // var connectionString = 'postgres://mwfhvxkwcmovyn:75c651736433430e45e42fd6b0e1ac98a67d7ecc15792ea738fdc7a8a7f94c14@ec2-174-129-227-116.compute-1.amazonaws.com:5432/deqra3kji894nd';
 
