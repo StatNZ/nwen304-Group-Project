@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/categories.css" afterPath="$PROJECT_DIR$/public/css/categories.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/categories.js" afterPath="$PROJECT_DIR$/public/js/categories.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/sub_category.handlebars" afterPath="$PROJECT_DIR$/views/sub_category.handlebars" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/sub_category.js" afterPath="$PROJECT_DIR$/public/js/sub_category.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +34,8 @@
       <file leaf-file-name="sub_category.handlebars" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/sub_category.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="49">
+              <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -68,12 +66,11 @@
       <file leaf-file-name="categories.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/categories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="63" column="90" lean-forward="false" selection-start-line="63" selection-start-column="90" selection-end-line="63" selection-end-column="90" />
+            <state relative-caret-position="-150">
+              <caret line="66" column="82" lean-forward="true" selection-start-line="66" selection-start-column="82" selection-end-line="66" selection-end-column="82" />
               <folding>
-                <marker date="1499078858000" expanded="true" signature="1703:1720" ph="..." />
-                <marker date="1499078858000" expanded="true" signature="1957:1969" ph="..." />
-                <marker date="1499078858000" expanded="true" signature="2153:2165" ph="..." />
+                <marker date="1499077743000" expanded="true" signature="1931:1943" ph="..." />
+                <marker date="1499077743000" expanded="true" signature="2127:2139" ph="..." />
               </folding>
             </state>
           </provider>
@@ -91,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="categories.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="categories.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/categories.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="228" column="37" lean-forward="false" selection-start-line="228" selection-start-column="37" selection-end-line="228" selection-end-column="37" />
+            <state relative-caret-position="335">
+              <caret line="225" column="16" lean-forward="false" selection-start-line="225" selection-start-column="11" selection-end-line="225" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -111,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sub_category.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sub_category.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/sub_category.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="797">
-              <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+            <state relative-caret-position="262">
+              <caret line="50" column="82" lean-forward="false" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
               <folding>
                 <marker date="1499078049000" expanded="true" signature="1298:1315" ph="..." />
                 <marker date="1499078049000" expanded="true" signature="1517:1529" ph="..." />
@@ -231,10 +228,10 @@
         <option value="$PROJECT_DIR$/public/js/globalVars.js" />
         <option value="$PROJECT_DIR$/queries.js" />
         <option value="$PROJECT_DIR$/app/routes.js" />
-        <option value="$PROJECT_DIR$/public/js/sub_category.js" />
-        <option value="$PROJECT_DIR$/public/js/categories.js" />
         <option value="$PROJECT_DIR$/views/sub_category.handlebars" />
         <option value="$PROJECT_DIR$/public/css/categories.css" />
+        <option value="$PROJECT_DIR$/public/js/categories.js" />
+        <option value="$PROJECT_DIR$/public/js/sub_category.js" />
       </list>
     </option>
   </component>
@@ -668,6 +665,13 @@
       <workItem from="1499065895521" duration="2217000" />
       <workItem from="1499068503120" duration="1214000" />
     </task>
+    <task id="LOCAL-00014" summary="added in a filter section">
+      <created>1496315615329</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1496315615329</updated>
+    </task>
     <task id="LOCAL-00015" summary="added in a filter section">
       <created>1496315805400</created>
       <option name="number" value="00015" />
@@ -1004,18 +1008,11 @@
       <option name="project" value="LOCAL" />
       <updated>1499077843008</updated>
     </task>
-    <task id="LOCAL-00063" summary="changed category display page">
-      <created>1499078200043</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1499078200043</updated>
-    </task>
-    <option name="localTasksCounter" value="64" />
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238324000" />
+    <option name="totallyTimeSpent" value="237535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1355,6 +1352,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/globalVars.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1965">
@@ -1387,13 +1394,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/item.js">
+    <entry file="file://$PROJECT_DIR$/public/css/categories.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="335">
+          <caret line="225" column="16" lean-forward="false" selection-start-line="225" selection-start-column="11" selection-end-line="225" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1407,20 +1412,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/categories.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="63" column="90" lean-forward="false" selection-start-line="63" selection-start-column="90" selection-end-line="63" selection-end-column="90" />
+        <state relative-caret-position="-150">
+          <caret line="66" column="82" lean-forward="true" selection-start-line="66" selection-start-column="82" selection-end-line="66" selection-end-column="82" />
           <folding>
-            <marker date="1499078858000" expanded="true" signature="1703:1720" ph="..." />
-            <marker date="1499078858000" expanded="true" signature="1957:1969" ph="..." />
-            <marker date="1499078858000" expanded="true" signature="2153:2165" ph="..." />
+            <marker date="1499077743000" expanded="true" signature="1931:1943" ph="..." />
+            <marker date="1499077743000" expanded="true" signature="2127:2139" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/sub_category.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="49">
+          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -1429,21 +1433,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/sub_category.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="797">
-          <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+        <state relative-caret-position="262">
+          <caret line="50" column="82" lean-forward="false" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
           <folding>
             <marker date="1499078049000" expanded="true" signature="1298:1315" ph="..." />
             <marker date="1499078049000" expanded="true" signature="1517:1529" ph="..." />
             <marker date="1499078049000" expanded="true" signature="1713:1725" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/categories.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="228" column="37" lean-forward="false" selection-start-line="228" selection-start-column="37" selection-end-line="228" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -165,13 +165,14 @@ function getItemByItemID(req, res, next) {
 }
 
 function getKart(req, res, next) {
-    var email = req.params.email;
+    var userid = req.user.userId;
 
     client = new pg.Client(connectionString);
     client.connect();
 
     var query = client.query("SELECT itemid, quantity " +
-        "FROM purchasedetails pd INNER JOIN purchase p ON p.purchaseid = pd.purchaseid WHERE email = '" + email + "'");
+        "FROM purchasedetails pd INNER JOIN purchase p " +
+        "ON p.purchaseid = pd.purchaseid WHERE customerid = '" + userid + "'");
     var results = [];
 
     query.on('row', function(row) {
@@ -185,19 +186,21 @@ function getKart(req, res, next) {
 }
 
 function removeItemFromKart(req, res, next) {
-    var itemID = req.user.userId;
-    var email = req.params.email;
+    var itemID = req.params.itemid;
+    var userid = req.user.userid;
 
     client = new pg.Client(connectionString);
     client.connect();
 
-    var query = client.query("DELETE FROM purchasedetails pd WHERE itemid = " + itemID + " AND purchaseid IN (SELECT purchaseid FROM purchase WHERE email = '" + email + "')");
+    var query = client.query("DELETE FROM purchasedetails pd " +
+        "WHERE itemid = " + itemID + " AND purchaseid " +
+        "IN (SELECT purchaseid FROM purchase WHERE customerid = '" + userid + "')");
 
     query.on('end', function() {
         client.end();
         res.json({
             status: "success",
-            message: "Removed item " + itemID + " from " + email +  "'s kart"
+            message: "Removed item " + itemID + " from " + userid +  "'s kart"
         });
     });
 }
@@ -205,7 +208,7 @@ function addItemToKart(req, res, next) {
     const queryText = "INSERT INTO purchasedetails(purchaseID, itemID, quantity) " +
         "SELECT purchaseID, $1, $3 FROM purchase " +
         "WHERE customerID = $2";
-    const values = [parseInt(req.params.itemID), parseInt(req.user.userId), 1];
+    const values = [parseInt(req.params.itemid), req.user.userId, 1];
 
 
     client = new pg.Client(connectionString);

@@ -172,8 +172,6 @@ module.exports = function (app, passport) {
     // KART ROUTES =============================================================
     // =========================================================================
 
-    app.get('/kart', isLoggedInSpecialCase, db.test);
-
     app.get('/kart/checkout', isLoggedIn, function (req, res, next) {
 
         // call the correct function of the database,
@@ -246,9 +244,9 @@ module.exports = function (app, passport) {
     app.get('/search/:desc', db.getItemsByDescription);
     app.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
     app.get('/item/:itemid', db.getItemByItemID);
-    app.get('/kart/:customerID', db.getKart);
-    app.delete('/kart/removeItem/:itemID', isLoggedIn, db.removeItemFromKart);
-    app.put('/kart/addItem/:itemID', db.addItemToKart);
+    app.get('/kart', isLoggedInSpecialCase, db.getKart);
+    app.delete('/kart/removeItem/:itemid', isLoggedIn, db.removeItemFromKart);
+    app.put('/kart/addItem/:itemid', db.addItemToKart);
     app.post('/user/update/', isLoggedIn, db.updateUser);
     app.get('/test', db.test);
 
