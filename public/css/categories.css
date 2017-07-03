@@ -226,6 +226,9 @@ div.desc {
     color: black;
 }
 
+#item-price1 {
+}
+
 #item-name1:hover, #item-price1:hover{
     text-decoration: none;
 
@@ -243,6 +246,7 @@ div.desc {
 }
 
 #add-item {
+    margin-left: 200px;
     color: black;
 }
 
@@ -250,3 +254,4 @@ div.desc {
     text-decoration: none;
     color: gray;
 }
+

@@ -62,7 +62,7 @@ $(document).ready(function () {
             disp.find('.item-name').attr('name', uuid);
             //disp.find('.category-img').attr('src', image);
             disp.find('.item-description').text(desc);
-            disp.find('.item-price').text(price);
+            disp.find('.item-price').text('$'+price);
 
             $('#category-item-display').prepend(disp);
             disp.show('clip',250).effect('highlight',1000);
@@ -87,14 +87,16 @@ $(document).ready(function () {
 
             // doesn't display correct one
             $('#item-name1').text(rows[0].name);
-            $('#item-price1').text(rows[0].price);
+            $('#item-price1').text("$"+rows[0].price);
             //$('#category-img').attr('src', rows[0].imagesource);
 
         }
 
     }
 
-    $('#add-to-cart-btn').on('click', function () {
+
+
+    $('#add-item').on('click', function () {
         // get the current item
         addItemToKart(itemObject);
     });
