@@ -220,3 +220,12 @@ div.desc {
     text-decoration: none;
     color: gray;
 }
+
+#item-name1, #item-price1{
+    margin-top: 200px;
+    color: black;
+}
+
+#item-name1:hover{
+    text-decoration: none;
+}
