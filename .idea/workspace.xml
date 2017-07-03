@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae8b58a1-b627-48fb-823d-68242151bd8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/categories.js" afterPath="$PROJECT_DIR$/public/js/categories.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/sub_category.js" afterPath="$PROJECT_DIR$/public/js/sub_category.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/sub_category.handlebars" afterPath="$PROJECT_DIR$/views/sub_category.handlebars" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -113,11 +111,12 @@
       <file leaf-file-name="sub_category.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/sub_category.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="47" column="80" lean-forward="false" selection-start-line="47" selection-start-column="80" selection-end-line="47" selection-end-column="80" />
+            <state relative-caret-position="262">
+              <caret line="50" column="82" lean-forward="false" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
               <folding>
-                <marker date="1499077816000" expanded="true" signature="1491:1503" ph="..." />
-                <marker date="1499077816000" expanded="true" signature="1687:1699" ph="..." />
+                <marker date="1499078049000" expanded="true" signature="1298:1315" ph="..." />
+                <marker date="1499078049000" expanded="true" signature="1517:1529" ph="..." />
+                <marker date="1499078049000" expanded="true" signature="1713:1725" ph="..." />
               </folding>
             </state>
           </provider>
@@ -666,13 +665,6 @@
       <workItem from="1499065895521" duration="2217000" />
       <workItem from="1499068503120" duration="1214000" />
     </task>
-    <task id="LOCAL-00013" summary="created a shop.css file for pages that have items for sale">
-      <created>1496313891870</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1496313891870</updated>
-    </task>
     <task id="LOCAL-00014" summary="added in a filter section">
       <created>1496315615329</created>
       <option name="number" value="00014" />
@@ -1009,11 +1001,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499076812041</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="changed category display page">
+      <created>1499077843007</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1499077843008</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237166000" />
+    <option name="totallyTimeSpent" value="237535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1071,7 +1070,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added edit page within profile page" />
     <MESSAGE value="restructured file system for website" />
     <MESSAGE value="modificcations to google oauth" />
     <MESSAGE value="test push" />
@@ -1096,7 +1094,8 @@
     <MESSAGE value="profile now updates" />
     <MESSAGE value="fixed monas image again" />
     <MESSAGE value="made item appear nicer" />
-    <option name="LAST_COMMIT_MESSAGE" value="made item appear nicer" />
+    <MESSAGE value="changed category display page" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed category display page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1434,11 +1433,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/sub_category.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="47" column="80" lean-forward="false" selection-start-line="47" selection-start-column="80" selection-end-line="47" selection-end-column="80" />
+        <state relative-caret-position="262">
+          <caret line="50" column="82" lean-forward="false" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
           <folding>
-            <marker date="1499077816000" expanded="true" signature="1491:1503" ph="..." />
-            <marker date="1499077816000" expanded="true" signature="1687:1699" ph="..." />
+            <marker date="1499078049000" expanded="true" signature="1298:1315" ph="..." />
+            <marker date="1499078049000" expanded="true" signature="1517:1529" ph="..." />
+            <marker date="1499078049000" expanded="true" signature="1713:1725" ph="..." />
           </folding>
         </state>
       </provider>

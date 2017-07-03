@@ -42,7 +42,7 @@ $(document).ready(function () {
                 '               <div class="gallery">' +
                 '                   <a href="#" >' +
                 //will need to replace static image - place holder for now, can't find from db
-                '                       <img class="category-img" src="images/men-shirt1.jpg" alt="" width="300" height="200" />' +
+                '                       <img class="category-img" src="images/men-shirt1.jpg" alt="" style="margin-top: -10px" width="300" height="200" />' +
                 '                   </a>'+
                 '                   <div class="desc">' +
                 '                       <a class="item-name" style="color: black"></a>' +
