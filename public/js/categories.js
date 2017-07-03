@@ -44,7 +44,7 @@ $(document).ready(function () {
 
          }*/
          //alert (rows[0].name);
-        alert(rows);
+        //alert(rows);
         var i;
 
         for (i=0; i<rows.length; i++) {
@@ -93,7 +93,8 @@ $(document).ready(function () {
 
         // $("#catpage-display-items").empty();// use .empty() to clear out function???
         // //delete displayCategoryItems;
-        // displayItem();
+
+         //displayItem();
     });
 
     function displayItem(rows) {

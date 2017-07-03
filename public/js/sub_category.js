@@ -19,6 +19,7 @@ $(document).ready(function () {
             }
 
         }).then(displaySubCategoryItems);
+
     };
 
     function displaySubCategoryItems (rows) {
@@ -34,27 +35,22 @@ $(document).ready(function () {
 
 
             var product_disp = '' +
-                //'<tr>' +
-                //'    <tr data-th="item">' +
                 '       <div id="gender-cat" class="gender-cas">' +
                 '           <div class="responsive">' +
                 '               <div class="gallery">' +
                 '                   <a href="#" >' +
                 //will need to replace static image - place holder for now, can't find from db
-                '                       <img class="category-img" src="" alt="" width="300" height="200" />' +
+                '                       <img class="category-img" src="/public/images/men-shirt1.jpg" alt="" width="300" height="200" />' +
                 '                   </a>'+
                 '                   <div class="desc">' +
-                '                       <a class="item-name" style="color: black"></a>' +
+                '                       <a class="item-name" style="color: black; font-size: 20px;"></a>' +
                 '                   </div>' +
                 '                   <div class="desc">' +
                 '                        <a class="item-price" style="color: black"></a>' +
                 '                   </div>' +
                 '               </div>' +
                 '           </div>'+
-                //'       <div class="clearfix"></div>' +
-                '       </div>';//+
-            //'   </tr>'+
-            //'</tr>';
+                '       </div>';
 
             var disp = $(product_disp);
             //disp.find('.kart-item-delete-btn').attr('name', uuid);
@@ -67,8 +63,47 @@ $(document).ready(function () {
             disp.show('clip',250).effect('highlight',1000);
 
 
-        }
 
+        }
+        //should be taken to view the actual product webpage
+        $('#category-item-display').on('click', '.gallery',  function(){
+             alert ('redirecting');
+             //window.redirect($siteURL + '/' + gender + '/' + $(this).find('.item-name').text());
+
+             $("#category-item-display").empty();// use .empty() to clear out function???
+            // //delete displayCategoryItems;
+
+            displayItem();
+        });
+
+        function displayItem(rows) {
+
+            //need check for what item it is
+            //var i;
+            //for(i=0; i<rows.length; i++) {
+            // doesn't display correct one
+            $('#item-name').text(name);
+            //$('#item-price').text(rows[i].price);
+            $('#item-price').text(price);
+            $('#category-img').image(image);
+            //}
+
+            /* var productdisp = '' +
+             ' <a href="#" >' +
+             ' <img id="category-img" src="" alt="" width="300" height="200" >' +
+             ' </a>' +
+             ' <div class="desc">' +
+             ' <a id="item-name">name</a>' +
+             ' </div>' +
+             ' <div class="desc">' +
+             ' <a id="item-price">price</a>' +
+             ' </div>';
+
+             var disp = $(productdisp);
+             disp.find('.item-name').text(name);
+             disp.find('.item-price').text(price);
+             disp.find('.category-img').attr('src', image);*/
+        }
 
     }
 });
