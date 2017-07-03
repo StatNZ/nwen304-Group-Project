@@ -181,9 +181,9 @@ module.exports = function (app, passport) {
     app.get('/search/:desc', db.getItemsByDescription);
     app.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
     app.get('/item/:itemid', db.getItemByItemID);
-    app.delete('/kart/removeItem/:email/:itemID', isLoggedIn, db.removeItemFromKart);
+    app.get('/kart/:customerID', db.getKart);
+    app.delete('/kart/removeItem/:customerID/:itemID', isLoggedIn, db.removeItemFromKart);
     app.get('/test', db.test);
-
 };
 
 

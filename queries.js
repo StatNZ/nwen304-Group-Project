@@ -143,40 +143,40 @@ function getItemByItemID(req, res, next) {
 }
 
 function getKart(req, res, next) {
-    var email = req.params.email;
-
+    var customerID = parseInt(req.params.customerID);
+  
     client = new pg.Client(connectionString);
     client.connect();
-
-    var query = client.query("SELECT itemid, quantity FROM purchasedetails pd INNER JOIN purchase p ON p.purchaseid = pd.purchaseid WHERE email = '" + email + "'");
+  
+    var query = client.query("SELECT itemid, quantity FROM purchasedetails pd INNER JOIN purchase p ON p.purchaseid = pd.purchaseid WHERE customerID = " + customerID);
     var results = [];
 
     query.on('row', function(row) {
-        results.push(row);
+      results.push(row);
     });
 
     query.on('end', function() {
-        client.end();
-        res.json(results);
+      client.end();
+      res.json(results);
     });
 }
 
 function removeItemFromKart(req, res, next) {
     var itemID = parseInt(req.params.itemID);
-    var email = req.params.email;
+    var customerID = parseInt(req.params.customerID);
 
-    client = new pg.Client(connectionString);
-    client.connect();
+  	 client = new pg.Client(connectionString);
+ 	 client.connect();
+  
+ 	 var query = client.query("DELETE FROM purchasedetails pd WHERE itemid = " + itemID + " AND purchaseid IN (SELECT purchaseid FROM purchase WHERE customerID = " + customerID + ")");
 
-    var query = client.query("DELETE FROM purchasedetails pd WHERE itemid = " + itemID + " AND purchaseid IN (SELECT purchaseid FROM purchase WHERE email = '" + email + "')");
-
-    query.on('end', function() {
-        client.end();
-        res.json({
-            status: "success",
-            message: "Removed item " + itemID + " from " + email +  "'s kart"
-        });
-    });
+ 	 query.on('end', function() {
+   	 client.end();
+   	 res.json({
+  		  	status: "success",
+   	 	message: "Removed item " + itemID + " from kart" 
+   	 });
+ 	 });
 }
 
 module.exports = {
