@@ -22,8 +22,8 @@ function User() {
         connectDB();
         console.log('Saving new user into database');
         client.query('INSERT INTO customer(CustomerID, FirstName, LastName, AccessToken, Email, Address, Password) ' +
-            'VALUES($1, $2, $3, $4, $5, $6, $7, $8)',
-            [this.userId, this.first_name, this.last_name, this.accessToken, this.user_name,
+            'VALUES($1, $2, $3, $4, $5, $6, $7)',
+            [this.userId, this.first_name, this.last_name, this.accessToken,
                 this.email, this.address, this.password], function (err, result) {
                 if (err)
                     return callback(err, null) // error inserting into db
