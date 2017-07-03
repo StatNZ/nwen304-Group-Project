@@ -180,10 +180,11 @@ module.exports = function (app, passport) {
     app.get('/categories/:gender/:category/:subcategory', db.getItemsBySubcategory);
     app.get('/search/:desc', db.getItemsByDescription);
     app.get('/price/:minPrice-:maxPrice', db.getItemsByPrice);
-    app.get('/item/:itemid', db.getItemByItemID);
+    app.get('/item/:itemID', db.getItemByItemID);
     app.get('/kart/:customerID', db.getKart);
     app.delete('/kart/removeItem/:customerID/:itemID', isLoggedIn, db.removeItemFromKart);
-	 app.post('/kart/addItem/:customerID/:itemID/:quantity', db.addItemToKart);    
+	 app.post('/kart/addItem/:customerID/:itemID/:quantity', db.addItemToKart);  
+	 //app.put('/user/update/:customerID/:firstname/:lastname/:address/:email', db.updateUser);  
     app.get('/test', db.test);
 };
 

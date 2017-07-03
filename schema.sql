@@ -8,10 +8,6 @@ CREATE TABLE customer (
 	Password varchar(255)
 );
 
-CREATE TABLE kart {
-
-};
-
 CREATE TABLE category (
 	CategoryID SERIAL PRIMARY KEY,
 	Name varchar(55) NOT NULL,
@@ -42,7 +38,8 @@ CREATE TABLE purchasedetails (
 	PurchaseDetailsID SERIAL PRIMARY KEY,
 	PurchaseID integer NOT NULL REFERENCES purchase,
 	ItemID integer NOT NULL REFERENCES item,
-	Quantity integer NOT NULL
+	Quantity integer NOT NULL,
+	CONSTRAINT u_constrain UNIQUE (PurchaseID, ItemID)
 );
 
 CREATE OR REPLACE FUNCTION create_kart() RETURNS TRIGGER AS 
