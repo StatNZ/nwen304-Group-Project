@@ -8,6 +8,11 @@ $(document).ready(function () {
     var newHrf = location.href.replace('_', '/');
     var gender = newHrf.replace('http://localhost:3000/category/', ' ').trim();
 
+    var uuid;
+    var name;
+    var desc;
+    var price;
+    var image;
 
     window.onload = function () {
 
@@ -39,16 +44,14 @@ $(document).ready(function () {
         var i;
 
         for (i=0; i<rows.length; i++) {
-            var uuid = rows[i].itemid;
-            var name = rows[i].name;
-            var desc = rows[i].description;
-            var price = rows[i].price;
-            var image = rows[i].imagesource;
+            uuid = rows[i].itemid;
+            name = rows[i].name;
+            desc = rows[i].description;
+            price = rows[i].price;
+            image = rows[i].imagesource;
 
 
             var product_disp = '' +
-                //'<tr>' +
-                //'    <tr data-th="item">' +
                 '       <div id="gender-cat" class="gender-cas">' +
                 '           <div class="responsive">' +
                 '               <div class="gallery">' +
@@ -64,10 +67,7 @@ $(document).ready(function () {
                 '                   </div>' +
                 '               </div>' +
                 '           </div>'+
-                //'       <div class="clearfix"></div>' +
                 '       </div>';//+
-                //'   </tr>'+
-                //'</tr>';
 
             var disp = $(product_disp);
             //disp.find('.kart-item-delete-btn').attr('name', uuid);
@@ -77,14 +77,53 @@ $(document).ready(function () {
             //disp.find('.nomargin').text(name);
             disp.find('.item-price').text(price);
 
+
             $('#catpage-display-items').prepend(disp);
             disp.show('clip',250).effect('highlight',1000);
 
 
+
         }
     }
+    //should be taken to view the actual product webpage
+    $('#catpage-display-items').on('click', '.gallery',  function(){
+        //alert('item info');
+        //alert(location);
 
-    $('#catpage-display-items').on('click', '.item-name',  function(){
-
+        $("#catpage-display-items").empty();// use .empty() to clear out function???
+        //delete displayCategoryItems;
+        displayItem();
     });
+
+    function displayItem(rows) {
+        //alert(location.href);
+        //need check for what item it is
+        //var i;
+        //for(i=0; i<rows.length; i++) {
+        // doesn't display correct one
+            $('#item-name').text(name);
+            //$('#item-price').text(rows[i].price);
+            $('#item-price').text(price);
+            $('#category-img').image(image);
+        //}
+
+           /* var productdisp = '' +
+                ' <a href="#" >' +
+                ' <img id="category-img" src="" alt="" width="300" height="200" >' +
+                ' </a>' +
+                ' <div class="desc">' +
+                ' <a id="item-name">name</a>' +
+                ' </div>' +
+                ' <div class="desc">' +
+                ' <a id="item-price">price</a>' +
+                ' </div>';
+
+            var disp = $(productdisp);
+            disp.find('.item-name').text(name);
+            disp.find('.item-price').text(price);
+            disp.find('.category-img').attr('src', image);*/
+    }
+    // $('#catpage-display-items').on('click', '.category-img',  function(){
+    //     $("#catpage-display-items").empty();
+    // });
 });
