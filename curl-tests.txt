@@ -25,3 +25,5 @@ curl -X DELETE http://localhost:3000/kart/removeItem/1/1
 curl -X DELETE http://localhost:3000/kart/removeItem/2/5
 
 curl -X POST http://localhost:3000/kart/addItem/2/2/2
+
+curl -X PUT http://localhost:3000/user/update/1 -d '{"firstname:":"test", "email":"test@gmail.com"}'

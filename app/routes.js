@@ -10,7 +10,7 @@ var lastNameEmpty = 'Last name is required';
 var addressEmpty = 'Address is required';
 
 module.exports = function (app, passport) {
-
+	 
     /** GET home page. */
     app.get('/', function(req, res, next) {
         res.render('index');
@@ -184,7 +184,7 @@ module.exports = function (app, passport) {
     app.get('/kart/:customerID', db.getKart);
     app.delete('/kart/removeItem/:customerID/:itemID', isLoggedIn, db.removeItemFromKart);
 	 app.post('/kart/addItem/:customerID/:itemID/:quantity', db.addItemToKart);  
-	 //app.put('/user/update/:customerID/:firstname/:lastname/:address/:email', db.updateUser);  
+	 app.put('/user/update/:customerID/', db.updateUser);  
     app.get('/test', db.test);
 };
 

@@ -262,13 +262,30 @@ function addItemToKart(req, res, next) {
   	});
 }
 
-/*
+
 function updateUser(req, res, next) {   
+   const queryText = "UPDATE customer " +
+   						"SET firstname = $1, lastname = $2, address = $3, email = $4, password = $5 " +
+   						"WHERE customerid = $6";
+	const values = [
+   	req.body.firstname, 
+   	req.body.lastname, 
+   	req.body.address,
+   	req.body.email,
+   	req.body.password,
+   	parseInt(req.params.customerID)
+   ]; 
+   
+   console.log(req.body.firstname);  
    
   	client = new pg.Client(connectionString);
   	client.connect();
   
-  	var query = client.query("");
+  	var query = client.query(queryText, values);
+  	
+  	query.on('error', function(err) {
+   	console.log(err);	 	   
+	});
 
   	query.on('end', function() {
     	client.end();
@@ -277,7 +294,7 @@ function updateUser(req, res, next) {
     		//message: "Updated user " + itemID + " to kart" 
     	});
   	});
-}*/
+}
 
 module.exports = {
     connectionString: connectionString,
@@ -290,5 +307,6 @@ module.exports = {
     getItemByItemID: getItemByItemID,
     getKart: getKart,
     removeItemFromKart: removeItemFromKart,
-    addItemToKart: addItemToKart
+    addItemToKart: addItemToKart,
+    updateUser, updateUser
 };
