@@ -90,6 +90,9 @@ INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Volcom Puffe
 INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 32\n Color:White', 129.99, 4);
 INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Federation Skinny Jeans', 'Federation Skinny Jeans\nSize: 30\n Color:White', 129.99, 4);
 INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('ABrand Slim Fit Jeans', 'ABrand Slim Fit Jeans\nSize: 32\n Color:Black', 139.99, 4);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Plain T-Shirt', 'Plain T-Shirt\nSize: Medium\n Color:White', 29.99, 9);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Plain T-Shirt', 'Plain T-Shirt\nSize: Small\n Color:White', 29.99, 9);
+INSERT INTO item( Name, Description, Price, SubCategoryID) VALUES ('Plain T-Shirt', 'Plain T-Shirt\nSize: Medium\n Color:Black', 29.99, 9);
 
 INSERT INTO customer(Email) VALUES ('test@gmail.com');
 INSERT INTO customer(Email) VALUES ('guest@gmail.com');
