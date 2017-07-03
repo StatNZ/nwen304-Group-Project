@@ -10,6 +10,8 @@ $(document).ready(function () {
 
     window.onload = function () {
 
+        $('.gender-cas').hide();
+
         $.ajax({
             type: 'GET',
             url: $siteURL + href,
@@ -75,6 +77,9 @@ $(document).ready(function () {
         });
 
         function displayItem(rows) {
+
+            $('#category-item-display').hide();
+            $('.gender-cas').show('clip', 250);
 
             //need check for what item it is
             //var i;
